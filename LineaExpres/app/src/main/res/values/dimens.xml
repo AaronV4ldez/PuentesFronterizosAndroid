@@ -1,0 +1,35 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">190dp</dimen>
+
+    <dimen name="PaddingBottomNav">120dp</dimen>
+    <dimen name="PaddingBottomNavStatic">100dp</dimen>
+
+
+    <dimen name="TramitesFirstBTN">150dp</dimen>
+    <dimen name="TramitesGroupBtns">250dp</dimen>
+
+
+    <dimen name="globalFontSize">16sp</dimen>
+    <dimen name="globalFontSubs">18sp</dimen>  <!--Se usa para los subtitulos de tramites -->
+    <dimen name="newsFontSize">19sp</dimen>
+
+
+    <!--Dimens for Box-->
+    <dimen name="boxCornerRadius">20dp</dimen>
+    <dimen name="boxMargin">15dp</dimen>
+    <dimen name="boxPadding">10dp</dimen>
+
+    <!--Dimens for Box to Notas-->
+    <dimen name="boxMarginNotas">7dp</dimen>
+    <dimen name="boxPaddingNotas">5dp</dimen>
+
+    <!--Dimens for Box to Tramites-->
+    <dimen name="boxMarginTramites">7dp</dimen>
+    <dimen name="boxPaddingTramites">10dp</dimen>
+
+
+</resources>

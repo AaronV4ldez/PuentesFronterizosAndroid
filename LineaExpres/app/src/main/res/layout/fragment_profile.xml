@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ColorGlobal"
+    android:layout_gravity="center"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/global_rounded"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:padding="@dimen/boxPadding"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/LoginMainConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/titleProfile"
+                style="@style/login_title"
+                android:layout_marginBottom="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                app:layout_constraintBottom_toTopOf="@+id/emailProfile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/emailProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Email"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/hr1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/hr1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/titleTramites"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="14dp"
+                />
+
+            <TextView
+                android:id="@+id/titleTramites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Hay 0 Tramites pendientes"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/ButtonTramites"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ButtonTramites"
+                style="@style/login_btns"
+                android:textSize="@dimen/globalFontSize"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/BtnTramitesProfile"
+                app:layout_constraintBottom_toTopOf="@+id/hr2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/hr2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/citasTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="14dp"
+                />
+
+            <TextView
+                android:id="@+id/citasTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/CitasTitle"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/ButtonCitas"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ButtonCitas"
+                style="@style/login_btns"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/BtnCitasProfile"
+                android:textSize="@dimen/globalFontSize"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/hr4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/hr4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/currentCitaChangeTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="14dp"
+                />
+
+            <TextView
+                android:id="@+id/currentCitaChangeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/CitasTitle"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/currentCitaChangeButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/currentCitaChangeButton"
+                style="@style/login_btns"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/BtnCitasProfile"
+                android:textSize="@dimen/globalFontSize"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/hr3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/hr3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/LineaLayoutContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="14dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/LineaLayoutContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnTelepeaje"
+                    style="@style/buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/newcolorbluegraded"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Telepeaje"
+                    android:textSize="@dimen/globalFontSize"
+                    android:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnADP"
+                    style="@style/buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/newcolorbluegraded"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Acceso Digital Peatonal"
+                    android:textSize="@dimen/globalFontSize"
+                    android:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLineaExpres"
+                    style="@style/buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:visibility="gone"
+                    android:layout_margin="5dp"
+                    android:text="Línea Exprés"
+                    android:textSize="@dimen/globalFontSize" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnBorrarCuenta"
+                    style="@style/buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/newcolorbluegraded"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Borrar cuenta"
+                    android:textSize="@dimen/globalFontSize"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="3dp"
+                    android:text="Si aún no tienes Línea Exprés"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/goToSolInsc"
+                    style="@style/buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:visibility="gone"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="¡Registrate aquí!"
+                    android:textSize="@dimen/globalFontSize" />
+
+                <!-- <androidx.appcompat.widget.AppCompatButton
+                     android:id="@+id/btnProfileCars"
+                     style="@style/login_btns"
+                     android:textSize="@dimen/globalFontSize"
+                     android:layout_width="match_parent"
+                     android:layout_marginLeft="20dp"
+                     android:layout_marginRight="20dp"
+                     android:layout_marginBottom="16dp"
+                     android:text="Mis vehículos"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent" /> -->
+
+                 <!-- <androidx.appcompat.widget.AppCompatButton
+                     android:id="@+id/btnAddCars"
+                     style="@style/login_btns"
+                     android:textSize="@dimen/globalFontSize"
+                     android:layout_width="match_parent"
+                     android:layout_marginLeft="20dp"
+                     android:layout_marginRight="20dp"
+                     android:layout_marginBottom="16dp"
+                     android:text="Agregar vehículos"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent" /> -->
+                <!-- <androidx.appcompat.widget.AppCompatButton
+                     android:id="@+id/ButtonChangeEmail"
+                     style="@style/login_btns"
+                     android:textSize="@dimen/globalFontSize"
+                     android:layout_width="match_parent"
+                     android:layout_marginLeft="20dp"
+                     android:layout_marginRight="20dp"
+                     android:layout_marginBottom="16dp"
+                     android:text="@string/BtnChangeEmailProfile"
+                     app:layout_constraintBottom_toTopOf="@+id/ButtonChangePassword"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent" /> -->
+
+                 <!-- <androidx.appcompat.widget.AppCompatButton
+                      android:id="@+id/ButtonChangePassword"
+                      style="@style/login_btns"
+                      android:textSize="@dimen/globalFontSize"
+                      android:layout_width="match_parent"
+                      android:layout_marginLeft="20dp"
+                      android:layout_marginRight="20dp"
+                      android:layout_marginBottom="16dp"
+                      android:text="@string/BtnChangePasswordProfile"
+                      app:layout_constraintBottom_toBottomOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent" /> -->
+
+                 <!-- <androidx.appcompat.widget.AppCompatButton
+                      android:id="@+id/btnBillingData"
+                      style="@style/login_btns"
+                      android:textSize="@dimen/globalFontSize"
+                      android:layout_width="match_parent"
+                      android:layout_marginLeft="20dp"
+                      android:layout_marginRight="20dp"
+                      android:layout_marginBottom="16dp"
+                      android:text="Datos de facturación"
+                      app:layout_constraintBottom_toBottomOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent" /> -->
+
+            <!--     <androidx.appcompat.widget.AppCompatButton
+                     android:id="@+id/btnLogout"
+                     style="@style/login_btns"
+                     android:textSize="@dimen/globalFontSize"
+                     android:layout_width="match_parent"
+                     android:layout_marginLeft="20dp"
+                     android:layout_marginRight="20dp"
+                     android:layout_marginBottom="16dp"
+                     android:text="Cerrar sesión"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent" /> -->
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/MainBorraCuentaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorblackopac"
+        android:paddingBottom="100dp"
+        android:visibility="gone"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/BorrarCuentaContstraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/global_rounded"
+            android:layout_margin="@dimen/boxMargin"
+            android:padding="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="¿Estás seguro?"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_margin="@dimen/boxMargin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/secChildBorrarCuenta"
+                />
+
+            <TextView
+                android:id="@+id/secChildBorrarCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="Estás a punto de borrar tu cuenta permanentemente, esta acción no se puede deshacer."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btnContainerBorrarCuenta"
+                />
+
+            <LinearLayout
+                android:id="@+id/btnContainerBorrarCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCancelarBorrarCuenta"
+                    style="@style/buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:layout_margin="5dp"
+                    android:text="Cancelar"
+                    android:textSize="@dimen/globalFontSize" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAceptarCancelarCuenta"
+                    style="@style/buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:layout_margin="5dp"
+                    android:text="De acuerdo"
+                    android:textSize="@dimen/globalFontSize" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

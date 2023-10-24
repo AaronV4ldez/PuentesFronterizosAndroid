@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="70dp"
+    android:background="@color/ColorGlobal"
+    >
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BtnReqRegister"
+        style="@style/formalitiesBtns"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:text="@string/form_sol_01"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnReqChangeBridge"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            style="@style/formalitiesBtns3"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/form_sol_02"
+            app:layout_constraintTop_toBottomOf="@+id/BtnReqRegister"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/BtnReqChangeVehicle"
+            app:layout_constraintBottom_toTopOf="@id/BtnReqBalanceTransfer"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnReqChangeVehicle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            style="@style/formalitiesBtns3"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/form_sol_03"
+            app:layout_constraintStart_toEndOf="@+id/BtnReqChangeBridge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BtnReqRegister"
+            app:layout_constraintBottom_toTopOf="@+id/BtnReqBajaDeVehiculoOTagLineaExpress" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnReqBalanceTransfer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            style="@style/formalitiesBtns2"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/form_sol_04"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/BtnReqBajaDeVehiculoOTagLineaExpress"
+            app:layout_constraintTop_toBottomOf="@+id/BtnReqChangeBridge" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnReqBajaDeVehiculoOTagLineaExpress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            style="@style/formalitiesBtns2"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/form_sol_05"
+            app:layout_constraintTop_toBottomOf="@id/BtnReqChangeVehicle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/BtnReqBalanceTransfer"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_changeemail"
+            android:title="Cambiar correo" />
+        <item
+            android:id="@+id/navigation_changepass"
+            android:title="Cambiar contraseña" />
+        <item
+            android:id="@+id/navigation_vehiculos"
+            android:title="Trámites" />
+        <item
+            android:id="@+id/navigation_facturacion"
+            android:title="Datos de facturación" />
+
+        <item
+            android:id="@+id/navigation_lineamientos"
+            android:title="@string/menu_Lineamientos" />
+
+        <item
+            android:id="@+id/navigation_whoweare"
+            android:title="@string/menu_WhoWeAre" />
+
+         <item
+             android:id="@+id/navigation_mision"
+             android:title="@string/menu_Mision" />
+
+         <item
+             android:id="@+id/navigation_derechos"
+             android:title="Derechos y obligaciones" />
+
+         <item
+             android:id="@+id/navigation_vision"
+             android:title="@string/menu_Vision" />
+
+         <item
+             android:id="@+id/navigation_privacy"
+             android:title="@string/menu_privacy" />
+
+         <item android:id="@+id/navigation_CurrentRates"
+             android:title="@string/tax" />
+
+        <item android:id="@+id/navigation_contactanos"
+            android:title="Contáctanos" />
+
+    </group>
+
+    <group >
+        <item
+            android:id="@+id/navigation_logout"
+            android:visible="true"
+            android:title="Cerrar sesión" />
+    </group>
+</menu>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ColorGlobal"
+    android:layout_gravity="center"
+    android:paddingBottom="100dp"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        style="@style/global_rounded"
+        android:layout_margin="@dimen/boxMargin"
+        android:padding="@dimen/boxPadding"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/Tramites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/inscriptionContainerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Solicitud Inscripción"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                />
+            <LinearLayout
+                android:id="@+id/inscriptionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                />
+            <TextView
+                android:id="@+id/bridgesContainerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inscripción en otro puente"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                />
+            <LinearLayout
+                android:id="@+id/bridgesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                />
+            <TextView
+                android:id="@+id/vehicleChangeContainerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Solicitud cambio de vehiculo"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                />
+            <LinearLayout
+                android:id="@+id/vehicleChangeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                />
+            <TextView
+                android:id="@+id/balanceTransferContainerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Solicitud transferencia de saldo"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                />
+            <LinearLayout
+                android:id="@+id/balanceTransferContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                />
+            <TextView
+                android:id="@+id/bajaVehTagContainerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Solicitud baja de vehiculo o tag"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                />
+            <LinearLayout
+                android:id="@+id/bajaVehTagContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

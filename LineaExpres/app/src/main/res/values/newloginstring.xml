@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyTextStyle">
+        <item name="android:fontFamily">Avenir Next LT Pro</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>

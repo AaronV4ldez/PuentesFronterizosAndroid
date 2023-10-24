@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1021631095208",
+    "project_id": "linea-expres-a4266",
+    "storage_bucket": "linea-expres-a4266.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021631095208:android:fc8e51f1320c015c193d9d",
+        "android_client_info": {
+          "package_name": "mx.gob.puentesfronterizos.lineaexpres"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021631095208-cfbqv71fr8f9jav58j5lm9f82inp15ca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBme8FLVpfaZeNgvUcoeiIJ1iq16K-S-jc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021631095208-cfbqv71fr8f9jav58j5lm9f82inp15ca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

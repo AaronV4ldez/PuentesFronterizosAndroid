@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_recharge"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.recharge.RechargeFragment"
+        android:label="@string/title_recharge"
+        tools:layout="@layout/fragment_recharge" />
+
+    <fragment
+        android:id="@+id/navigation_callus"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.callus.CallUsFragment"
+        android:label="@string/title_callus"
+        tools:layout="@layout/fragment_callus" />
+
+    <fragment
+        android:id="@+id/navigation_formalities"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.formalities.FormalitiesFragment"
+        android:label="@string/title_tramites"
+        tools:layout="@layout/fragment_formalities" />
+
+
+    <fragment
+        android:id="@+id/navigation_privacy"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.privacy.PrivacyFragment"
+        android:label="@string/menu_privacy"
+        tools:layout="@layout/fragment_privacy" />
+
+    <fragment
+        android:id="@+id/navigation_derechos"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.derechos.DerechosFragment"
+        android:label="Derechos y Obligaciones4"
+        tools:layout="@layout/fragment_derechos" />
+
+    <fragment
+        android:id="@+id/navigation_services"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.services.ServicesFragment"
+        android:label="@string/menu_Services"
+        tools:layout="@layout/fragment_services" />
+
+    <fragment
+        android:id="@+id/navigation_lineamientos"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.lineamientos.LineamientosFragment"
+        android:label="@string/menu_Lineamientos"
+        tools:layout="@layout/fragment_lineamientos" />
+
+    <fragment
+        android:id="@+id/navigation_whoweare"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.whoweare.WhoWeAreFragment"
+        android:label="@string/menu_WhoWeAre"
+        tools:layout="@layout/fragment_who_we_are" />
+
+    <fragment
+        android:id="@+id/navigation_objectives"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.objectives.ObjectivesFragment"
+        android:label="@string/menu_Objectives"
+        tools:layout="@layout/fragment_objectives" />
+
+    <fragment
+        android:id="@+id/navigation_mision"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.mision.MisionFragment"
+        android:label="@string/menu_Mision"
+        tools:layout="@layout/fragment_mision" />
+
+    <fragment
+        android:id="@+id/navigation_vision"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.vision.VisionFragment"
+        android:label="@string/menu_Vision"
+        tools:layout="@layout/fragment_vision" />
+
+    <fragment
+        android:id="@+id/navigation_process"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.process.ProcessFragment"
+        android:label="@string/menu_Process"
+        tools:layout="@layout/fragment_process" />
+
+    <fragment
+        android:id="@+id/navigation_notas"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.notas.NotasFragment"
+        android:label="@string/menu_Notas"
+        tools:layout="@layout/fragment_notas" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.login.LoginFragment"
+        android:label="@string/menu_Login"
+        tools:layout="@layout/fragment_login" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.register.RegisterFragment"
+        android:label="@string/menu_Register"
+        tools:layout="@layout/fragment_register" >
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_forgotpass"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.forgotpass.ForgotpassFragment"
+        android:label="@string/menu_Register"
+        tools:layout="@layout/fragment_forgotpass" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_CurrentRates"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.rates.RatesFragment"
+        android:label="@string/menu_Rates"
+        tools:layout="@layout/fragment_rates" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_subservices"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.subservices.SubservicesFragment"
+        android:label="@string/menu_subservices"
+        tools:layout="@layout/fragment_subservices" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_inscription"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqinscription.ReqInscriptionFragment"
+        android:label="@string/menu_Req_Inscription"
+        tools:layout="@layout/fragment_reqinscription" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_bridges"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqbridges.ReqBridgesFragment"
+        android:label="@string/menu_Req_Bridges"
+        tools:layout="@layout/fragment_reqbridges" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_change_vehicle"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqchangevehicle.ReqChangeVehicleFragment"
+        android:label="@string/menu_Req_Change_Vehicle"
+        tools:layout="@layout/fragment_req_change_vehicle" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_balance_transfer"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.balancetransfer.BalanceTransferFragment"
+        android:label="@string/BalanceTransferTitle"
+        tools:layout="@layout/fragment_req_balance_transfer" >
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_req_unsubscribe"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.unsubscribe.UnsubscribeFragment"
+        android:label="Solicitud de baja"
+        tools:layout="@layout/fragment_req_baja_vehiculo_o_tag_linea_expres" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_devmode"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.devmode.DevmodeFragment"
+        android:label="Modo desarrollador"
+        tools:layout="@layout/fragment_devmode" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_logout"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.logout.LogoutFragment"
+        android:label="Cerrar Sesión"
+        tools:layout="@layout/fragment_logout" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_terms"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.termsandconditions.TermsandconditionsFragment"
+        android:label="Terminos y Condiciones"
+        tools:layout="@layout/fragment_termsandconditions" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_recharge_amount"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.rechargeamount.RechargeamountFragment"
+        android:label="Recharge Amount"
+        tools:layout="@layout/recharge_amount" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_banortest"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.banortest.BanortestFragment"
+        android:label="Banorte Test"
+        tools:layout="@layout/fragment_banortest" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_congratmsg"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.congratmsg.CongratmsgFragment"
+        android:label="CongratMessage"
+        tools:layout="@layout/fragment_congratmsg" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_changepass"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.changepass.ChangePassFragment"
+        android:label="ChangePass"
+        tools:layout="@layout/fragment_change_pass" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_cameras"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.cameras.CamerasFragment"
+        android:label="Cameras"
+        tools:layout="@layout/fragment_cameras" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_sendpasschange"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.sendpasschange.SendPassChangeFragment"
+        android:label="SendPassChangeFragment"
+        tools:layout="@layout/fragment_sendpasschange" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_changeemail"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.changeemail.ChangeEmailFragment"
+        android:label="ChangeEmailFragment"
+        tools:layout="@layout/fragment_change_email" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_tramites_pend"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.tramitespend.TramitesPendFragment"
+        android:label="TramitesPend"
+        tools:layout="@layout/fragment_tramites_pend" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_fix_data"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.fixdata.FixDataFragment"
+        android:label="FixData"
+        tools:layout="@layout/fragment_fix_data" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_citas"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.citas.CitasFragment"
+        android:label="Citas"
+        tools:layout="@layout/fragment_citas" >
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_crearcita"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.crearcita.CrearCitaFragment"
+        android:label="CrearCitas"
+        tools:layout="@layout/fragment_crearcita" >
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_cita_change_date"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.citaschangedate.ChangeCitaDateFragment"
+        android:label="ChangeCitaDate"
+        tools:layout="@layout/fragment_citas_change_date" >
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_current_citas"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.currentcitas.CurrentCitasFragment"
+        android:label="Current Citas"
+        tools:layout="@layout/fragment_current_citas" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_current_change_citas"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.currentchangecitas.CurrentChangeCitasFragment"
+        android:label="Current Change Citas"
+        tools:layout="@layout/fragment_current_change_citas" >
+    </fragment>
+
+    <!-- Seccion de vehiculos de la parte de abajo del bottom bar -->
+    <fragment
+        android:id="@+id/navigation_vehiculos"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.vehiculos.VehiculosFragment"
+        android:label="Vehiculos"
+        tools:layout="@layout/fragment_vehiculos" >
+    </fragment>
+    <!-- Seccion de vehiculos de la parte de abajo del bottom bar -->
+
+    <fragment
+        android:id="@+id/navigation_cambio_veh"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.cambiovehiculo.CambioVehiculoFragment"
+        android:label="Cambio de vehículo"
+        tools:layout="@layout/fragment_cambio_vehiculo" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_cambio_tag"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqcambiotag.ReqCambioTagFragment"
+        android:label="Cambio de tag"
+        tools:layout="@layout/fragment_req_cambio_tag" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_actualizacion_poliza"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqactualizacionpoliza.ReqActualizacionPolizaFragment"
+        android:label="Actualizaacion de Poliza"
+        tools:layout="@layout/fragment_req_actualizacion_poliza" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_actualizacion_placas"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqactualizacionplacas.ReqActualizacionPlacasFragment"
+        android:label="Actualizacion de placas"
+        tools:layout="@layout/fragment_req_actualizacion_placas" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_baja_vehiculo"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqbajavehiculo.ReqBajaVehiculoFragment"
+        android:label="baja de vehiculo"
+        tools:layout="@layout/fragment_req_baja_vehiculo" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_baja_tag"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqbajatag.ReqBajaTagFragment"
+        android:label="Baja de tag"
+        tools:layout="@layout/fragment_req_baja_tag" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_cambio_puente"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqcambiopuente.ReqCambioPuenteFragment"
+        android:label="Cambio de puente"
+        tools:layout="@layout/fragment_req_cambio_puente" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_cambio_convenio"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqcambioconvenio.ReqCambioConvenioFragment"
+        android:label="Cambio de convenio"
+        tools:layout="@layout/fragment_req_cambio_convenio" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_req_transferencia_saldo"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.reqtransferenciasaldo.ReqTransferenciaSaldoFragment"
+        android:label="Transferencia de saldo"
+        tools:layout="@layout/fragment_req_transferencia_saldo" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_facturacion"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.facturacion.FacturacionFragment"
+        android:label="Datos de facturacion"
+        tools:layout="@layout/fragment_facturacion" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_vehiculos_perfil"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.vehiculosperfil.VehiculosPerfilFragment"
+        android:label="Vehiculos de perfil"
+        tools:layout="@layout/fragment_vehiculos_perfil" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_choose_veh_add"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.choosevehadd.ChooseVehAddFragment"
+        android:label="Escoger vehiculos a registrar"
+        tools:layout="@layout/fragment_choose_veh_add" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_linea_expres_add_vehicle"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.addlineaexpres.AddLineaExpresFragment"
+        android:label="Agregar vehiculo de linea expres"
+        tools:layout="@layout/fragment_add_linea_expres" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_telepeaje_add_vehicle"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.addtelepeaje.AddTelepeajeFragment"
+        android:label="Agregar vehiculo de telepeaje"
+        tools:layout="@layout/fragment_add_telepeaje" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_adp_add_vehicle"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.addadp.AddADPFragment"
+        android:label="Agregar vehiculo de acceso digital peatonal"
+        tools:layout="@layout/fragment_add_adp" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_mis_cruces"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.miscruces.MisCrucesFragment"
+        android:label="Ver mis cruces"
+        tools:layout="@layout/fragment_mis_cruces" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_contactanos"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.contactanos.ContactanosFragment"
+        android:label="Contactanos"
+        tools:layout="@layout/fragment_contactanos" >
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_account_verified"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.accountverified.AccountVerifiedFragment"
+        android:label="Account Verified"
+        tools:layout="@layout/fragment_account_verified" >
+    </fragment>
+
+
+
+
+</navigation>

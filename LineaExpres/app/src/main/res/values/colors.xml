@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#121212</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="popup">#2495af</color>
+    <color name="white_opac">#828282</color>
+    <color name="white_1">#f5f5f5</color>
+    <color name="links">#0081ff</color>
+    <color name="plecas">#015287</color>
+    <color name="fourNotes">#f5f8fa</color>
+    <color name="light_blue">#008ac0</color>
+
+    <color name="white_login">#f4f5fb</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="disabled">#dedede</color>
+
+    <color name="colorblackopac">#3000</color>
+
+    <color name="tempColor">#121212</color>
+
+
+    <color name="ColorGlobal">#CACFD6</color>
+
+    <color name="BottomNavBarColor">#015287</color>
+    <color name="FloatingButtonNavBarColor">#1991C3</color>
+
+    <!-- Color fuerte potentene  015287 -->
+    <!-- Color fuerte bajito    1991C3 -->
+
+
+    <color name="GreenSuccess">#4BB543</color>
+
+    <color name="Red">#e63629</color>
+
+
+
+</resources>

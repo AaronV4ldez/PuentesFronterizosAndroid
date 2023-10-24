@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/weatherContainerLL"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Zaragoza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/PasoDelNorte"
+        >
+
+        <TextView
+            android:id="@+id/ZaragozaTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Actualizando"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ZaragozacarImageOne"
+            />
+
+        <ImageView
+            android:id="@+id/ZaragozacarImageOne"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_car"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/ZaragozacarImageTwo"
+            app:layout_constraintBottom_toTopOf="@+id/ZaragozastandardTitle"
+            />
+
+        <TextView
+            android:id="@+id/ZaragozastandardTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Standard Lane"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/ZaragozaReadyTitle"
+            app:layout_constraintBottom_toTopOf="@+id/ZaragozastandardLanesDelay"
+            />
+
+        <TextView
+            android:id="@+id/ZaragozaReadyTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ready Lane"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/ZaragozastandardTitle"
+            app:layout_constraintBottom_toTopOf="@+id/ZaragozareadyLanesDelay"
+            />
+
+        <TextView
+            android:id="@+id/ZaragozastandardLanesDelay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/ZaragozareadyLanesDelay"
+            app:layout_constraintBottom_toTopOf="@+id/ZaragozareadyLanesOpen"
+            />
+
+        <ImageView
+            android:id="@+id/ZaragozacarImageTwo"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_car"
+            app:layout_constraintLeft_toRightOf="@+id/ZaragozacarImageOne"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ZaragozaReadyTitle"
+
+
+            />
+
+        <TextView
+            android:id="@+id/ZaragozareadyLanesDelay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/ZaragozastandardLanesDelay"
+            app:layout_constraintBottom_toTopOf="@+id/ZaragozareadyLanesOpen"
+            />
+
+
+        <TextView
+            android:id="@+id/ZaragozastandardLanesOpen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/ZaragozareadyLanesOpen"
+            app:layout_constraintBottom_toTopOf="@+id/ZaragozaupdateTime"
+            />
+
+        <TextView
+            android:id="@+id/ZaragozareadyLanesOpen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/ZaragozastandardLanesOpen"
+            app:layout_constraintBottom_toTopOf="@+id/ZaragozaupdateTime"
+            />
+
+        <TextView
+            android:id="@+id/ZaragozaupdateTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/PasoDelNorte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/Lerdo"
+        >
+
+        <TextView
+            android:id="@+id/PasoDelNorteTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Actualizando"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/PasoDelNortecarImageOne"
+            />
+
+        <ImageView
+            android:id="@+id/PasoDelNortecarImageOne"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_car"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/PasoDelNortecarImageTwo"
+            app:layout_constraintBottom_toTopOf="@+id/PasoDelNortestandardTitle"
+            />
+
+        <TextView
+            android:id="@+id/PasoDelNortestandardTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Standard Lane"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/PasoDelNorteReadyTitle"
+            app:layout_constraintBottom_toTopOf="@+id/PasoDelNortestandardLanesDelay"
+            />
+
+        <TextView
+            android:id="@+id/PasoDelNorteReadyTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ready Lane"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/PasoDelNortestandardTitle"
+            app:layout_constraintBottom_toTopOf="@+id/PasoDelNortereadyLanesDelay"
+            />
+
+        <TextView
+            android:id="@+id/PasoDelNortestandardLanesDelay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/PasoDelNortereadyLanesDelay"
+            app:layout_constraintBottom_toTopOf="@+id/PasoDelNortereadyLanesOpen"
+            />
+
+        <ImageView
+            android:id="@+id/PasoDelNortecarImageTwo"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_car"
+            app:layout_constraintLeft_toRightOf="@+id/PasoDelNortecarImageOne"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/PasoDelNorteReadyTitle"
+
+            />
+
+        <TextView
+            android:id="@+id/PasoDelNortereadyLanesDelay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/PasoDelNortestandardLanesDelay"
+            app:layout_constraintBottom_toTopOf="@+id/PasoDelNortereadyLanesOpen"
+            />
+
+
+        <TextView
+            android:id="@+id/PasoDelNortestandardLanesOpen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/PasoDelNortereadyLanesOpen"
+            app:layout_constraintBottom_toTopOf="@+id/PasoDelNorteupdateTime"
+            />
+
+        <TextView
+            android:id="@+id/PasoDelNortereadyLanesOpen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/PasoDelNortestandardLanesOpen"
+            app:layout_constraintBottom_toTopOf="@+id/PasoDelNorteupdateTime"
+            />
+
+        <TextView
+            android:id="@+id/PasoDelNorteupdateTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Lerdo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/Guadalupe"
+        >
+
+        <TextView
+            android:id="@+id/LerdoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Actualizando"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/LerdocarImageOne"
+            />
+
+        <ImageView
+            android:id="@+id/LerdocarImageOne"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_car"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/LerdocarImageTwo"
+            app:layout_constraintBottom_toTopOf="@+id/LerdostandardTitle"
+            />
+
+        <TextView
+            android:id="@+id/LerdostandardTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Standard Lane"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/LerdoReadyTitle"
+            app:layout_constraintBottom_toTopOf="@+id/LerdostandardLanesDelay"
+            />
+
+        <TextView
+            android:id="@+id/LerdoReadyTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ready Lane"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/LerdostandardTitle"
+            app:layout_constraintBottom_toTopOf="@+id/LerdoreadyLanesDelay"
+            />
+
+        <TextView
+            android:id="@+id/LerdostandardLanesDelay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/LerdoreadyLanesDelay"
+            app:layout_constraintBottom_toTopOf="@+id/LerdoreadyLanesOpen"
+            />
+
+        <ImageView
+            android:id="@+id/LerdocarImageTwo"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_car"
+            app:layout_constraintLeft_toRightOf="@+id/LerdocarImageOne"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/LerdoReadyTitle"
+
+            />
+
+        <TextView
+            android:id="@+id/LerdoreadyLanesDelay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/LerdostandardLanesDelay"
+            app:layout_constraintBottom_toTopOf="@+id/LerdoreadyLanesOpen"
+            />
+
+
+        <TextView
+            android:id="@+id/LerdostandardLanesOpen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/LerdoreadyLanesOpen"
+            app:layout_constraintBottom_toTopOf="@+id/LerdoupdateTime"
+            />
+
+        <TextView
+            android:id="@+id/LerdoreadyLanesOpen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/LerdostandardLanesOpen"
+            app:layout_constraintBottom_toTopOf="@+id/LerdoupdateTime"
+            />
+
+        <TextView
+            android:id="@+id/LerdoupdateTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Guadalupe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/GuadalupeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Actualizando"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/GuadalupecarImageOne"
+            />
+
+        <ImageView
+            android:id="@+id/GuadalupecarImageOne"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_car"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/GuadalupecarImageTwo"
+            app:layout_constraintBottom_toTopOf="@+id/GuadalupestandardTitle"
+            />
+
+        <TextView
+            android:id="@+id/GuadalupestandardTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Standard Lane"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/GuadalupeReadyTitle"
+            app:layout_constraintBottom_toTopOf="@+id/GuadalupestandardLanesDelay"
+            />
+
+        <TextView
+            android:id="@+id/GuadalupeReadyTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ready Lane"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/GuadalupestandardTitle"
+            app:layout_constraintBottom_toTopOf="@+id/GuadalupereadyLanesDelay"
+            />
+
+        <TextView
+            android:id="@+id/GuadalupestandardLanesDelay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/GuadalupereadyLanesDelay"
+            app:layout_constraintBottom_toTopOf="@+id/GuadalupereadyLanesOpen"
+            />
+
+        <ImageView
+            android:id="@+id/GuadalupecarImageTwo"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_car"
+            app:layout_constraintLeft_toRightOf="@+id/GuadalupecarImageOne"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/GuadalupeReadyTitle"
+
+            />
+
+        <TextView
+            android:id="@+id/GuadalupereadyLanesDelay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/GuadalupestandardLanesDelay"
+            app:layout_constraintBottom_toTopOf="@+id/GuadalupereadyLanesOpen"
+            />
+
+
+        <TextView
+            android:id="@+id/GuadalupestandardLanesOpen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/GuadalupereadyLanesOpen"
+            app:layout_constraintBottom_toTopOf="@+id/GuadalupeupdateTime"
+            />
+
+        <TextView
+            android:id="@+id/GuadalupereadyLanesOpen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/merriweather_regular"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/GuadalupestandardLanesOpen"
+            app:layout_constraintBottom_toTopOf="@+id/GuadalupeupdateTime"
+            />
+
+        <TextView
+            android:id="@+id/GuadalupeupdateTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Actualizando"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

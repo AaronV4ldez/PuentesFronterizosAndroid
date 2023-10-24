@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorGlobal"
+    android:padding="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="110dp"
+        android:paddingTop="20dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/boxMarginTramites"
+            android:padding="@dimen/boxPaddingTramites"
+            style="@style/global_rounded"
+            >
+
+            <TextView
+                android:id="@+id/req_inscription_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleTitle"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                style="@style/pelcahomemasinformacion"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/noSentriLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleSentriLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/noSentriInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadSentriPhotoBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadSentri"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/SentriPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                />
+
+            <TextView
+                android:id="@+id/expirationDateSentriLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/SentriExpirationDateLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <EditText
+                android:id="@+id/expirationDateSentriInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:focusableInTouchMode="false"
+                android:inputType="date|number"
+                app:layout_constraintBottom_toTopOf="@+id/nameLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/nameLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/Nombre"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/nameInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/nameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputTextDisabled"
+                android:ems="10"
+                android:hint="Autorellenable"
+                android:enabled="false"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/middleNameLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/middleNameLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/ApellidoP"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/middleNameInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/middleNameInput"
+                style="@style/inputTextDisabled"
+                android:ems="10"
+                android:hint="Autorellenable"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/lastNameLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/lastNameLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/ApellidoM"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/lastNameInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/lastNameInput"
+                style="@style/inputTextDisabled"
+                android:ems="10"
+                android:hint="Autorellenable"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/uploadOfficialIDPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadOfficialIDPhotoBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadOfficialID"
+                app:layout_constraintBottom_toTopOf="@+id/IdOficialPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IdOficialPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/uploadOfficialReverseIDPhotoBtn"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadOfficialReverseIDPhotoBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadOfficialIDReverse"
+                app:layout_constraintBottom_toTopOf="@+id/IdOficialReversePhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IdOficialReversePhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/PersonalEmailLbl"
+                />
+
+            <TextView
+                android:id="@+id/PersonalEmailLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/EmailLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/PersonalEmailInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/PersonalEmailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputTextDisabled"
+                android:ems="10"
+                android:hint="Autorellenable"
+                android:enabled="false"
+                android:layout_marginBottom="8dp"
+                android:inputType="textEmailAddress"
+                app:layout_constraintBottom_toTopOf="@+id/PersonalCelLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/PersonalCelLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/CelNumberLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/PersonalCelInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/PersonalCelInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputTextDisabled"
+                android:ems="10"
+                android:hint="Autorellenable"
+                android:enabled="false"
+                android:layout_marginBottom="8dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@+id/billingTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/billingTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BillingTitle"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/BusinessNameLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/BusinessNameLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BusinessNameLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/BusinessNameInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/BusinessNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/RFCLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/RFCLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/RFCLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/RFCInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/RFCInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/ResidenceLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ResidenceLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/ResidenceLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/ResidenceInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/ResidenceInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/FactEmailLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/FactEmailLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/EmailLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/FactEmailInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/FactEmailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="textEmailAddress"
+                app:layout_constraintBottom_toTopOf="@+id/FactCelLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/FactCelLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/CelNumberLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/FactCelInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/FactCelInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@+id/TagTitleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/TagTitleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleNumberTagTitle"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/TagTitleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/TagTitleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:hint="Número del engomado en el vehiculo"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/oldVehicleTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/oldVehicleTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleOldCar"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/BrandOldVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/BrandOldVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleBrandOld"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/BrandOldVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/BrandOldVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/ColorOldVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ColorOldVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleColorOld"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/ColorOldVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/ColorOldVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/PlatesOldVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/PlatesOldVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehiclePlatesOld"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/PlatesOldVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/PlatesOldVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/ModelOldVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ModelOldVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleModelOld"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/ModelOldVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/ModelOldVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/YearOldVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/YearOldVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleYearOld"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/YearOldVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/YearOldVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@+id/OldPlatesStateRG"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/OldPlatesStateRG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/OldOtherPlates"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <RadioButton
+                    android:id="@+id/OldChihRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/Chih"/>
+
+                <RadioButton
+                    android:id="@+id/OldTxRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/Tx" />
+
+                <RadioButton
+                    android:id="@+id/OldOtherRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/Other" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/OldOtherPlates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:hint="Otro"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/newVehicleTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/newVehicleTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleNewCar"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/BrandNewVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/BrandNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleBrandNew"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/BrandNewVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/BrandNewVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/ColorNewVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ColorNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleColorNew"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/ColorNewVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/ColorNewVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/PlatesNewVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/PlatesNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehiclePlatesNew"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/PlatesNewVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/PlatesNewVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/ModelNewVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ModelNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleModelNew"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/ModelNewVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/ModelNewVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/YearNewVehicleLbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/YearNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleYearNew"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/YearNewVehicleInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/YearNewVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@+id/NewPlatesStateRG"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/NewPlatesStateRG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/NewOtherPlates"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <RadioButton
+                    android:id="@+id/NewChihRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/Chih"/>
+
+                <RadioButton
+                    android:id="@+id/NewTxRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/Tx" />
+
+                <RadioButton
+                    android:id="@+id/NewOtherRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/Other" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/NewOtherPlates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:hint="Otro"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/uploadCirculationCardPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadCirculationCardPhotoBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadCirculationCard"
+                app:layout_constraintBottom_toTopOf="@+id/TarjetaCirculacionPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/TarjetaCirculacionPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/uploadInsurancePolicyBtn"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadInsurancePolicyBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadInsurancePolicy"
+                app:layout_constraintBottom_toTopOf="@+id/PolizaSeguroPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/PolizaSeguroPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/uploadUSAApprovalBtn"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadUSAApprovalBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadUSAApproval"
+                app:layout_constraintBottom_toTopOf="@+id/AprovacionUSAPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/AprovacionUSAPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/uploadPowerAttorney"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadPowerAttorney"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadPowerAttorney"
+                app:layout_constraintBottom_toTopOf="@+id/CartaPoderPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/CartaPoderPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/LineamientosLblTitle"
+                />
+
+            <TextView
+                android:id="@+id/LineamientosLblTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LINEAMIENTOS PARA EL USO DE LA LÍNEA EXPRÉS"
+                app:layout_constraintBottom_toTopOf="@+id/LineamientosText"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/LineamientosText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"
+                android:text="@string/LineamientosInscripcion1"
+                app:layout_constraintBottom_toTopOf="@+id/ProtestoLoNecesariolbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ProtestoLoNecesariolbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Protesto lo necesario."
+                app:layout_constraintBottom_toTopOf="@+id/signature_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/signature_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/SignContainer"
+                android:text="Firme en la pantalla"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black" />
+
+            <RelativeLayout
+                android:id="@+id/SignContainer"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/sendFormBtn"
+                android:layout_height="500dp">
+
+                <RelativeLayout
+                    android:id="@+id/signature_pad_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_above="@+id/buttons_container"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp">
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_above="@+id/signature_pad_description"
+                        android:layout_marginBottom="8dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/signature_pad_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="16dp"
+                        android:text="Acepto Los Lineamientos"
+                        android:textColor="@android:color/darker_gray" />
+
+                    <com.github.gcacace.signaturepad.views.SignaturePad
+                        android:id="@+id/signature_pad"
+                        android:saveEnabled="false"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        style="@style/rounded_containers"
+
+                        />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/buttons_container"
+                    android:paddingTop="16dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/clear_button"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
+                        android:text="Borrar Firma"
+                        android:enabled="true" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sendFormBtn"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="32dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                style="@style/firmarBtn"
+                android:text="Aceptar / Enviar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

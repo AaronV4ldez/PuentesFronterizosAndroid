@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+
+        >
+
+        <ImageView
+            android:id="@+id/vehicleImg"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/image_loader" />
+
+        <TextView
+            android:id="@+id/modeloText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Cargando..."/>
+        <TextView
+            android:id="@+id/placasText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Cargando..."/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <TextView
+            android:id="@+id/tagText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/merriweather_regular"
+            android:text="Tag: cargando..."/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            />
+        <TextView
+            android:id="@+id/saldoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/merriweather_regular"
+            android:text="Saldo: cargando..."/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:text="Trámites para este vehículo"/>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:id="@+id/btnContainer"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCambioVeh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trámite para cambio de vehículo"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="10dp"
+                    android:layout_margin="2dp"
+                    style="@style/buttons2"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCambioTag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trámite para cambio de TAG"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="10dp"
+                    android:layout_margin="2dp"
+                    style="@style/buttons2"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCambioPuente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trámite para cambio de puente"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="10dp"
+                    android:layout_margin="2dp"
+                    style="@style/buttons2"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCambioConvenio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trámite para cambio de convenio"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="10dp"
+                    android:layout_margin="2dp"
+                    style="@style/buttons2"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnActualizarPoliza"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Actualización de poliza de seguro"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="10dp"
+                    android:layout_margin="2dp"
+                    style="@style/buttons2"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnActualizarPlaca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Actualización de placas"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="10dp"
+                    android:layout_margin="2dp"
+                    style="@style/buttons2"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnBajaVehiculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Baja de vehículo"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="10dp"
+                    android:layout_margin="2dp"
+                    style="@style/buttons2"
+                    />
+              <!--  <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDesactivarTAG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Desactivar TAG"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="10dp"
+                    android:layout_margin="2dp"
+                    style="@style/buttons2"
+                    /> -->
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnTransferenciaSaldo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Transferencia de saldo"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:padding="10dp"
+                    android:layout_margin="2dp"
+                    style="@style/buttons2"
+                    />
+
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

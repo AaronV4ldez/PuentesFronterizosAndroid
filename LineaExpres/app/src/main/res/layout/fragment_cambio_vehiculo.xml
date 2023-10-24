@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorGlobal"
+    android:padding="10dp"
+
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            style="@style/global_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/boxPaddingTramites"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/req_inscription_title"
+                style="@style/pelcahomemasinformacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleTitle"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/VehicleDataTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="3dp"
+                android:text="Datos del vehículo"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSubs"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/BrandNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="3dp"
+                android:text="Marca"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/BrandNewVehicleInput"
+                style="@style/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ModelNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="3dp"
+                android:text="Modelo"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/ModelNewVehicleInput"
+                style="@style/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ColorNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="3dp"
+                android:text="Color"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/ColorNewVehicleInput"
+                style="@style/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/YearNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="3dp"
+                android:text="Año"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/YearNewVehicleInput"
+                style="@style/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/PlatesNewVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="3dp"
+                android:text="Placas"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/PlatesNewVehicleInput"
+                style="@style/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/OriginVehTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Seleccione el origen de su vehículo nuevo"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSubs"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnNewVehiculeOriginNational"
+                    style="@style/buttons2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="-10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Nacional"
+                    android:textSize="@dimen/globalFontSize" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnNewVehiculeOriginUSA"
+                    style="@style/buttons2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="USA"
+                    android:textSize="@dimen/globalFontSize" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnUploadCirculationCard"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadCirculationCard"
+                android:textSize="@dimen/globalFontSize"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IMGCirculationCard"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnUploadInsurancePolicy"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadInsurancePolicy"
+                android:textSize="@dimen/globalFontSize"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IMGInsurancePolicy"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnUploadInsurancePolicySecond"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Poliza Hoja 2 (si aplica)"
+                android:textSize="@dimen/globalFontSize"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IMGInsurancePolicySecond"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnUploadUSAApproval"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadUSAApproval"
+                android:textSize="@dimen/globalFontSize"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IMGUSAApproval"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnUploadPowerAttorney"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadPowerAttorney"
+                android:textSize="@dimen/globalFontSize"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IMGPowerAttorney"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/LineamientosLblTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="LINEAMIENTOS PARA EL USO DE LA LÍNEA EXPRÉS"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/LineamientosText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/LineamientosText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="@string/LineamientosInscripcion1"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/ProtestoLoNecesariolbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ProtestoLoNecesariolbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Protesto lo necesario."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/signature_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/signature_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Firme en la pantalla"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/SignContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/SignContainer"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/sendFormBtn">
+
+                <RelativeLayout
+                    android:id="@+id/signature_pad_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_above="@+id/buttons_container"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp">
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_above="@+id/signature_pad_description"
+                        android:layout_marginBottom="8dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/signature_pad_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="16dp"
+                        android:text="Acepto Los Lineamientos"
+                        android:textColor="@android:color/darker_gray" />
+
+                    <com.github.gcacace.signaturepad.views.SignaturePad
+                        android:id="@+id/signature_pad"
+                        style="@style/rounded_containers"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:saveEnabled="false"
+
+                        />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/buttons_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:paddingTop="16dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/clear_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:enabled="true"
+                        android:text="Borrar Firma" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sendFormBtn"
+                style="@style/firmarBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Aceptar / Enviar"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

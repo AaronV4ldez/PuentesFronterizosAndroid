@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ColorGlobal"
+    android:layout_gravity="center"
+    android:paddingBottom="100dp"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/global_rounded"
+        android:layout_margin="@dimen/boxMargin"
+        android:padding="@dimen/boxPadding"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmación de cambio de contraseña"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/readCondition"
+                android:layout_marginBottom="20dp"
+                />
+
+            <TextView
+                android:id="@+id/readCondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@string/pass_confirm_text'
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:fontFamily="@font/merriweather_regular"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/currentEmail"
+                android:layout_marginBottom="15dp"
+                />
+
+            <EditText
+                android:id="@+id/currentEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/login_input_disabled"
+                android:layout_marginBottom="16dp"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:clickable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/NextStepChangePass"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/NextStepChangePass"
+                style="@style/login_btns"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/backgroundnewtheme"
+                android:text="Continuar"
+                android:textSize="@dimen/globalFontSize"
+                app:layout_constraintBottom_toTopOf="@+id/response"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/response"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="Revisa tu correo."
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textAlignment="center"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

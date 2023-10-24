@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ColorGlobal"
+    android:layout_gravity="center"
+    android:paddingBottom="100dp"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/global_rounded"
+        android:layout_margin="@dimen/boxMargin"
+        android:padding="@dimen/boxPadding"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TramiteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargando.."
+                android:textSize="22sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/DocoumentTitle"
+
+                />
+
+            <TextView
+                android:id="@+id/DocoumentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargando.."
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/ReazonTitle"
+                />
+
+            <TextView
+                android:id="@+id/ReazonTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargando.."
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/takePhoto"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/takePhoto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/login_btns"
+                android:textStyle="bold"
+                android:textSize="@dimen/globalFontSize"
+                android:layout_marginBottom="16dp"
+                android:text="Seleccionar documento"
+                app:layout_constraintBottom_toTopOf="@+id/imagePrev"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <ImageView
+                android:id="@+id/imagePrev"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/ConfirmAndUpload"
+                android:visibility="gone"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ConfirmAndUpload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/login_btns"
+                android:textStyle="bold"
+                android:textSize="@dimen/globalFontSize"
+                android:layout_marginBottom="16dp"
+                android:text="Enviar a revisión"
+                app:layout_constraintBottom_toTopOf="@+id/SignContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <RelativeLayout
+                android:id="@+id/SignContainer"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/SendSign"
+                android:layout_height="500dp">
+
+                <RelativeLayout
+                    android:id="@+id/signature_pad_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_above="@+id/buttons_container"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp">
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_above="@+id/signature_pad_description"
+                        android:layout_marginBottom="8dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/signature_pad_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="16dp"
+                        android:text="Acepto Los Lineamientos"
+                        android:textColor="@android:color/darker_gray" />
+
+                    <com.github.gcacace.signaturepad.views.SignaturePad
+                        android:id="@+id/signature_pad"
+                        android:saveEnabled="false"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        style="@style/rounded_containers"
+
+                        />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/buttons_container"
+                    android:paddingTop="16dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/clear_button"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
+                        android:text="Borrar Firma"
+                        android:enabled="true" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/SendSign"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/login_btns"
+                android:textStyle="bold"
+                android:textSize="@dimen/globalFontSize"
+                android:layout_marginBottom="16dp"
+                android:text="Enviar firma"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

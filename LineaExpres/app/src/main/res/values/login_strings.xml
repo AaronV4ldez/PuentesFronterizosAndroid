@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Login_Title">Iniciar sesión</string>
+    <string name="Login_Email">Correo</string>
+    <string name="Login_Password">Contraseña</string>
+    <string name="Login_Sentri">Sentri/Global Entry</string>
+
+
+    <string name="Login_LoginBtn">Ingresar</string>
+    <string name="Login_BusinessAccessControlBtn">Acceso a Control Empresarial</string>
+    <string name="Login_ForgotPasswordBtn">¿Olvidaste tu contraseña?</string>
+    <string name="Login_TermsAndConditionsBtn">Términos y Condiciones</string>
+
+    <dimen name="fontLogin">12dp</dimen>
+    <dimen name="fontInputLogin">14dp</dimen>
+
+    <color name="RedLineaExpress">#ff5757</color>
+
+
+
+
+
+</resources>

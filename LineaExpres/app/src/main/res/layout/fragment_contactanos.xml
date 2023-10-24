@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorGlobal"
+    android:padding="10dp"
+
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/boxPaddingTramites"
+        style="@style/global_rounded"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Contáctanos"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSubs"
+                android:textStyle="bold"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/Nombre"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/NombresInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Apellidos"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/ApellidosInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/EmailLbl"
+
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/EmailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/CelNumberLbl"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/NumberInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:maxLength="10"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Comentario"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/ComentarioInput"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                style="@style/inputText"
+                android:gravity="start"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:maxLines="10"
+                android:scrollbars="vertical"
+                android:hint="" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sendFormBtn"
+            style="@style/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/backgroundnewtheme"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Enviar"
+            android:textSize="@dimen/globalFontSize" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>

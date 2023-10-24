@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ColorGlobal"
+    android:padding="10dp"
+
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="100dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/boxPaddingTramites"
+            style="@style/global_rounded"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <TextView
+                android:id="@+id/req_inscription_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/Fragment_Inscription_Title"
+                android:textAlignment="center"
+                android:textSize="19sp"
+                android:textColor="@color/white"
+                style="@style/pelcahomemasinformacion"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/SentriImportant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="3dp"
+                android:text="@string/SentriImportant"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/noSentriLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/SentriLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/noSentriInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:maxLength="9"
+                android:inputType="number" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadSentriPhotoBtn"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadSentri"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/SentriPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/expirationDateSentriLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/SentriExpirationDateLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/expirationDateSentriInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:focusableInTouchMode="false"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="date|number"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadOfficialIDPhotoBtn"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadOfficialID"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/IdOficialPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadOfficialReverseIDPhotoBtn"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadOfficialIDReverse"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/IdOficialReversePhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/addressTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/addressTitle"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="3dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/streetLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/StreetLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"/>
+
+            <EditText
+                android:id="@+id/streetInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/noExtLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/noExtLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/noExtInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/ColonyLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/ColoniaLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/ColonyInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/CityLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/CityLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"/>
+
+            <EditText
+                android:id="@+id/CityInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"/>
+
+            <TextView
+                android:id="@+id/StateLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/StateLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"/>
+
+            <EditText
+                android:id="@+id/StateInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/CPLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/CPLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/CPInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/billingTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BillingTitle"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <TextView
+                android:id="@+id/BusinessNameLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BusinessNameLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp"/>
+
+            <EditText
+                android:id="@+id/BusinessNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/RFCLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/RFCLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/RFCInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/ResidenceLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/ResidenceLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/ResidenceInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text"/>
+
+            <TextView
+                android:id="@+id/FactEmailLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/EmailLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/FactEmailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/FactCelLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/CelNumberLbl"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/FactCelInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/VehicleDataTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/VehicleData"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="3dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/BrandVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BrandVehicle"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/BrandVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/ModelVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/ModelVehicle"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/ModelVehicleInput"
+                style="@style/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/ColorVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/ColorVehicle"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/ColorVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/YearVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/YearVehicle"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/YearVehicleInput"
+                style="@style/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/PlatesVehicleLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/PlatesVehicle"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/PlatesVehicleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:layout_marginBottom="8dp"
+                android:inputType="text" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnNewVehiculeOriginNational"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    style="@style/buttons2"
+                    android:textSize="@dimen/globalFontSize"
+                    android:layout_marginRight="-10dp"
+                    android:text="Nacional" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnNewVehiculeOriginUSA"
+                    android:layout_width="0dp"
+                    style="@style/buttons2"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="-10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="@dimen/globalFontSize"
+                    android:text="USA" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/OtherPlates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:ems="10"
+                android:hint="Otro"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"
+                android:inputType="text" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadCirculationCardPhotoBtn"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadCirculationCard"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/TarjetaCirculacionPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadInsurancePolicyBtn"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadInsurancePolicy"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/PolizaSeguroPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadInsurancePolicyBtnSecond"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Hoja 2 Poliza Seguro (Si aplica)"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/PolizaSeguroPhotoImageViewSecond"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadUSAApprovalBtn"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadUSAApproval"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/AprovacionUSAPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadPowerAttorney"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadPowerAttorney"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/CartaPoderPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/OriginVehTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Seleccione el país donde reside."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSubs"
+                android:textStyle="bold"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCardMX"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    style="@style/buttons2"
+                    android:textSize="@dimen/globalFontSize"
+                    android:layout_marginRight="-10dp"
+                    android:text="México" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCardUSA"
+                    style="@style/buttons2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="USA"
+                    android:textSize="@dimen/globalFontSize" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/AdscrPuenteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Anualidad"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnZaragoza"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    style="@style/buttons2"
+                    android:textSize="@dimen/globalFontSize"
+                    android:layout_marginRight="-10dp"
+                    android:text="Zaragoza" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLerdo"
+                    android:layout_width="0dp"
+                    style="@style/buttons2"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_marginRight="-5dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="@dimen/globalFontSize"
+                    android:text="Lerdo" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMixto"
+                    android:layout_width="0dp"
+                    style="@style/buttons2"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="-10dp"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="@dimen/globalFontSize"
+                    android:text="Mixto (Zaragoza - Lerdo)" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/SaldoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Saldo"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <LinearLayout
+                android:id="@+id/saldoSegment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSaldo1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    style="@style/buttons2"
+                    android:textSize="@dimen/globalFontSize"
+                    android:layout_marginRight="-10dp"
+                    android:text="2000" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSaldo2"
+                    style="@style/buttons2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="4000"
+                    android:textSize="@dimen/globalFontSize" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSelSaldo"
+                style="@style/buttons2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Ver Tarifas"
+
+                android:layout_marginBottom="5dp"
+                android:textSize="@dimen/globalFontSize" />
+
+            <EditText
+                android:id="@+id/TarifasShow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+                android:enabled="false"
+                android:textIsSelectable="false" />
+            <EditText
+                android:id="@+id/NameShow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:enabled="false"
+                android:textIsSelectable="false"
+                android:inputType="text" />
+
+
+            <TextView
+                android:id="@+id/LineamientosLblTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LINEAMIENTOS PARA EL USO DE LA LÍNEA EXPRÉS"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold" />
+
+            <TextView
+                android:id="@+id/LineamientosText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"
+                android:text="@string/LineamientosInscripcion1" />
+
+            <TextView
+                android:id="@+id/ProtestoLoNecesariolbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Protesto lo necesario."
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold" />
+
+            <TextView
+                android:id="@+id/signature_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:text="Firme en la pantalla"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black" />
+
+
+            <RelativeLayout
+                android:id="@+id/SignContainer"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_height="500dp">
+
+                <RelativeLayout
+                    android:id="@+id/signature_pad_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_above="@+id/buttons_container"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp">
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_above="@+id/signature_pad_description"
+                        android:layout_marginBottom="8dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/signature_pad_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="16dp"
+                        android:text="Acepto Los Lineamientos"
+                        android:textColor="@android:color/darker_gray" />
+
+                    <com.github.gcacace.signaturepad.views.SignaturePad
+                        android:id="@+id/signature_pad"
+                        android:saveEnabled="false"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        style="@style/rounded_containers"
+
+                        />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/buttons_container"
+                    android:paddingTop="16dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/clear_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#57348B"
+                        android:enabled="true"
+                        android:text="Borrar Firma"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sendFormBtn"
+                style="@style/firmarBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/backgroundnewtheme"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Aceptar / Enviar"
+                android:textColor="@color/white" />
+
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

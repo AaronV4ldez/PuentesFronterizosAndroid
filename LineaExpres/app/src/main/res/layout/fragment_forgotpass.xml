@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ColorGlobal"
+    android:layout_gravity="center"
+    android:paddingBottom="100dp"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        style="@style/global_rounded"
+        android:layout_margin="@dimen/boxMargin"
+        android:padding="@dimen/boxPadding"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainContainer"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="54dp"
+                android:text="Contraseña olvidada"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/inputMail"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/inputMail"
+                style="@style/forgot_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Usuario (Correo)"
+                android:inputType="textEmailAddress"
+                app:layout_constraintBottom_toTopOf="@+id/mailLabel"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/mailLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textSize="13sp"
+                android:fontFamily="@font/merriweather_regular"
+                android:text=""
+                app:layout_constraintBottom_toTopOf="@+id/sendReqChangePass"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sendReqChangePass"
+                style="@style/login_btns"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:text="Enviar solicitud"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

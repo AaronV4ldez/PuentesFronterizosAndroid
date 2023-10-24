@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ColorGlobal"
+    android:layout_gravity="center"
+    android:paddingBottom="100dp"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/global_rounded"
+        android:layout_margin="@dimen/boxMargin"
+        android:padding="@dimen/boxPadding"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TramiteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cambiar fecha de cita"
+                android:textSize="22sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/DateChecker"
+                />
+
+            <EditText
+                android:id="@+id/DateChecker"
+                style="@style/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:focusableInTouchMode="false"
+                android:hint="Seleccione una nueva fecha"
+                android:inputType="date|number"
+                app:layout_constraintBottom_toTopOf="@+id/checkDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/checkDate"
+                style="@style/login_btns"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:text="Ver horarios disponibles"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/DataHourTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/DataHourTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccione un horario"
+                android:textSize="18sp"
+                android:fontFamily="@font/merriweather_regular"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/DataHour"
+                />
+
+            <Spinner
+                android:id="@+id/DataHour"
+                style="@style/spinner_style"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/adver"
+
+                />
+
+            <TextView
+                android:id="@+id/adver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="Recuerde llegar puntual."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/confirmDate"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/confirmDate"
+                style="@style/login_btns"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/backgroundnewtheme"
+                android:text="Confirmar Cambio"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/fechaApartadaTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:text="Usted tiene esta cita: "
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/DateChecker"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TramiteTitle"
+                app:layout_constraintVertical_bias="0.0"
+                />
+
+            <TextView
+                android:id="@+id/fechaApartada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/DateChecker"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TramiteTitle"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

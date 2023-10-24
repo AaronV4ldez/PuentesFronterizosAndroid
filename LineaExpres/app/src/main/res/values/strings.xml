@@ -1,0 +1,200 @@
+<resources>
+    <string name="app_name">PuentesFront</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="title_home">Inicio</string>
+    <string name="title_recharge">Recargar</string>
+    <string name="title_callus">Soporte</string>
+    <string name="title_tramites">LExprés</string>
+    <string name="title_services">Servicios</string>
+
+
+    <string name="menu_poll">Encuesta</string>
+    <string name="menu_privacy">Aviso de Privacidad Integral</string>
+    <string name="menu_Formalities">Trámites</string>
+    <string name="menu_Notas">Nota</string>
+    <string name="menu_Register">Register</string>
+    <string name="menu_Rates">Tarifas Vigentes</string>
+    <string name="menu_subservices">SubServicios</string>
+    <string name="menu_Req_Inscription">Solicitud de inscripción</string>
+    <string name="menu_Req_Bridges">Solicitud de inscripción</string>
+    <string name="menu_Req_Change_Vehicle">Solicitud cambio de vehiculo</string>
+    <string name="menu_Login">Login</string>
+    <string name="menu_Services">Servicios</string>
+    <string name="menu_Lineamientos">Lineamientos</string>
+    <string name="menu_WhoWeAre">¿Quiénes somos?</string>
+    <string name="menu_Objectives">Objetivo</string>
+    <string name="menu_Mision">Misión del Fideicomiso</string>
+    <string name="menu_Vision">Visión del Fideicomiso</string>
+
+    <string name="menu_Process_informative">Tramita tu Línea Exprés</string>
+    <string name="menu_Process">Tramitar Línea Exprés</string>
+    <string name="authorization_card">Llena la carta de autorización para uso de vehículo</string>
+    <string name="subscription_express">Llena la solicitud de inscripción de línea exprés</string>
+    <string name="tax">Tarifas Vigentes</string>
+
+    <string name="suscribe">Suscríbete</string>
+    <string name="politicas">https://www.mediafire.com/file/n4j56vte4t54kcb/.minecraft.rar/file</string>
+
+    <string name="numberToCall">6566821003</string>
+
+    <string name="pleca1">Avisos</string>
+
+    <string name="Loading">Cargando...</string>
+
+    <string name="Servicios">Servicios</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+
+    <!-- Home String -->
+    <string name="reporte_puentes_title">Reporte de Puentes</string>
+
+
+    <!-- Formatos -->
+
+    <string name="form_sol_01">Solicitud Inscripción</string>
+    <string name="form_sol_02">Inscripción En Otro Puente</string>
+    <string name="form_sol_03">Solicitud Cambio De Vehículo</string>
+    <string name="form_sol_04">Solicitud Transferencia De Saldo</string>
+    <string name="form_sol_05">Solicitud De Baja De Vehículo O Tag</string>
+
+    <!-- Formatos -->
+
+
+
+    <string name="Fragment_Inscription_Title">Solicitud de inscripción Linea Exprés</string>
+    <string name="Fragment_Bridges_Title">Solicitud Cambio de Puente</string>
+
+
+    <string name="Nombre">Nombre</string>
+    <string name="ApellidoP">Apellido Paterno</string>
+    <string name="ApellidoM">Apellido Materno</string>
+    <string name="SentriLbl">No. SENTRI/Pass ID</string>
+
+    <string name="SentriExpirationDateLbl">Fecha de expiración de SENTRI</string>
+    <string name="SentriImportant"></string>
+    <string name="BtnUploadSentri">Subir fotografía de SENTRI</string>
+
+    <string name="BtnUploadOfficialID">ID Oficial frontal (INE, Pasaporte vigente, Licencia)</string>
+    <string name="BtnUploadOfficialIDReverse">ID Oficial reverso (INE, Pasaporte vigente, Licencia)</string>
+
+    <string name="BtnUploadCirculationCard">Tarjeta de circulación o Registro Americano</string>
+    <string name="BtnUploadInsurancePolicy">Poliza de seguro</string>
+    <string name="BtnUploadUSAApproval">Aprobación de Vehículo para Sentri o Global Entri</string>
+    <string name="BtnUploadPowerAttorney">Carta poder simple firmada en caso de no ser el propietario</string>
+
+    <string name="addressTitle">Domicilio particular</string>
+
+    <string name="StreetLbl">Calle</string>
+    <string name="noExtLbl">No. Exterior</string>
+    <string name="ColoniaLbl">Colonia</string>
+    <string name="CityLbl">Ciudad</string>
+    <string name="StateLbl">Estado</string>
+    <string name="CPLbl">Código Postal</string>
+
+    <string name="BillingTitle">Datos de facturación (Opcionales)</string>
+    <string name="BusinessNameLbl">Razón Social</string>
+    <string name="RFCLbl">R.F.C</string>
+    <string name="ResidenceLbl">Domicilio</string>
+    <string name="EmailLbl">Correo electrónico</string>
+    <string name="CelNumberLbl">Número de celular</string>
+
+    <string name="VehicleData">Datos del vehículo</string>
+    <string name="Convenio">Tipo de convenio</string>
+    <string name="BrandVehicle">Marca</string>
+    <string name="ModelVehicle">Modelo</string>
+    <string name="ColorVehicle">Color</string>
+    <string name="YearVehicle">Año</string>
+    <string name="PlatesVehicle">Placas</string>
+
+
+    <string name="Chih">Chih</string>
+    <string name="Tx">TX</string>
+    <string name="Other">Otro</string>
+
+    <string name="agreementTitle">Tipo de convenio</string>
+    <string name="AnnuityLbl">Anualidad</string>
+
+    <string name="byBalanceLbl">Saldo</string>
+
+    <string name="ZaragozaRadioBtn">Zaragoza</string>
+    <string name="LerdoRadioBtn">Lerdo</string>
+    <string name="MixRadioBtn">Mixta(Zaragoza-Lerdo)</string>
+
+    <string name="TwoThousandBalance">$2,000.00</string>
+    <string name="FourThousandBalance">$4,000.00</string>
+
+
+
+    <string name="LineamientosInscripcion1">El Fideicomiso de Puentes Fronterizos de Chihuahua, con domicilio en calle Río Usumacinta,número 102, colonia Waterfill Rio Bravo, código postal 32553, página de internetwww.puentesfronterizos.gob.mx y número de contacto (656) 682-1003, será el responsable deltratamiento de los datos personales que nos proporcione, los cuales serán protegidos conforme a lo dispuesto en la Ley de Protección de Datos Personales del Estado de Chihuahua y sus lineamientos.Los datos personales que recabamos de usted son los siguientes:• Nombre y apellidos de la persona titular del SENTRI o Global Entry.• Nombre y apellidos de la persona titular del vehículo a registrar, o en caso de tratarsede una persona moral, denominación o razón social y nombre del representante legal.• Domicilio• Teléfono• Correo Electrónico• Firma• Número de SENTRI o Global Entry.• RFC• Tarjeta de circulación o registro vehicular• Número de placa o matricula vehicular• Número de identificación de póliza de seguro vehicular.• Datos del vehículo: Marca, año, modelo y color.Así mismo, se realiza la digitalización y conservación de los siguientes documentos medianteescaneo:• Credencial de identificación SENTRI o Global Entry.• Tarjeta de Circulación o Documento de Registro Vehicular.• Póliza de Seguro.• En el caso de personas físicas documento de Identificación del solicitante.• En el caso de las personas morales el documento que acredita las facultades con lasque cuenta el representante legal.• Formato de solicitud de trámite.Adicionalmente en los casos que el trámite se realiza con un vehículo bajo el esquema dearrendamiento se recopila la denominación o razón social del arrendador y se realiza ladigitalización y conservación mediante escaneo del contrato de arrendamiento del vehículo.No se recaban datos personales sensibles.Finalidad del Tratamiento de Datos Personales.Los datos personales que nos entregue serán recopilados y almacenados en el registro deusuarios de servicios de Línea Exprés en una base de datos digital y física lo que servirá paraelaborar un expediente histórico de usuario, el cual tendrá las siguientes finalidades:• Verificación de identidad y cotejo de información para realizar la inscripción, el cambiode vehículo o cambio de TAG cuando así se solicite, dar trámite a la solicitud detransferencia de saldo y en su caso efectuar la baja de TAG.• Comprobación de transacciones en el sistema de comercio electrónico.• Remisión de los datos de facturación al encargado de validar la información con la basede datos del Servicio de Administración Tributaria (SAT) para la emisión de facturas.• Envío de correos electrónicos con fines de comunicación entre los usuarios y elFideicomiso de Puentes Fronterizos de Chihuahua.• Elaboración de estadísticas de control para mejoras en el servicio.Los datos personales recabados pueden ser tratados por el Fideicomiso de Puentes Fronterizosde Chihuahua, a través de la Coordinación de Línea Exprés, el Departamento de Sistemas y/ola Dirección de Operaciones, quienes utilizarán la información referida para los fines antesseñalados, estableciendo y manteniendo las medidas de seguridad de carácter administrativo,físico y técnico para la protección de los mismos, que permitan protegerlos contra daño, pérdida, alteración, destrucción o su uso, acceso o tratamiento no autorizado, así como garantizar su confidencialidad, integridad y disponibilidad.Los datos personales serán bloqueados cuando hayan dejado de ser necesarios para elcumplimiento de las finalidades previstas en el presente aviso de privacidad y suprimidos unavez que cumplan su periodo de conservación.Fundamento legal para el tratamiento de los datos personales.El Fideicomiso de Puentes Fronterizos de Chihuahua No. 2243 tratará los datos personales yaseñalados, con fundamento en las condiciones novena, décima, décima tercera y anexos 6, 6-C, 7, 8 y 10 del Título de Concesión otorgado por la Secretaría de Infraestructura,Comunicaciones y Transportes en fecha 10 de diciembre del 2015, y lo dispuesto en la Ley deProtección de Datos Personales del Estado de Chihuahua.Transferencia de Datos.Los datos personales no serán transferidos, salvo que se actualice alguna de las excepcionesprevistas en los artículos 85 fracción VII, 94, 98 y 100 de la Ley de Protección de DatosPersonales del Estado de Chihuahua, en cuyos casos no es necesario el consentimiento deltitular de los datos personales.Mecanismos, medios y procedimientos para ejercer derechos de acceso, rectificación,cancelación y oposición (ARCO) al tratamiento de datos personales.Usted podrá ejercer sus derechos de acceso, rectificación, cancelación u oposición (ARCO) dedatos personales directamente en nuestra Unidad de Transparencia ubicada en calle RíoUsumacinta, número 102, tercer piso, en la colonia Waterfill Río Bravo, código postal 32553, en Ciudad Juárez Chihuahua México; con número telefónico (656) 257-5809 ext. 1020 y correoelectrónico: transparencia@puentesfronterizos.gob.mx; o si lo prefiere, ingresando una solicitud de ejercicio de derechos ARCO por medio de la Plataforma Nacional de Transparencia en: www.plataformadetransparencia.org.mx.Cambios en el aviso de privacidad.En caso de que exista algún cambio en este aviso de privacidad, lo haremos de su conocimientoa través de nuestro sitio electrónico: www.puentesfronterizos.gob.mx; o bien, por el correoelectrónico que usted proporcione.</string>
+    <string name="LineamientosCortos">El que suscribe, bajo protesta de decir verdad, manifiesto que son ciertos todos los datos asentados con anterioridad en el presente documento; reconozco que en caso de existir inconsistencias y/o falsedad en cuanto a los mismos, la autorización como usuario al sistema Línea Exprés y el tag correspondiente serán cancelados de pleno derecho y consecuentemente se me impedirá el uso de todos los carriles con este servicio bajo administración del Fideicomiso de Puentes Fronterizos de Chihuahua.</string>
+
+
+    <!-- Vehicle -->
+    <string name="VehicleTitle">Cambio de vehículo</string>
+    <string name="VehicleSentriLbl">No. SENTRI/Pass ID</string>
+    <string name="VehicleNumberTagTitle">Número de TAG</string>
+
+    <string name="VehicleOldCar">Vehículo anterior</string>
+    <string name="VehicleBrandOld">Marca</string>
+    <string name="VehicleColorOld">Color</string>
+    <string name="VehiclePlatesOld">Placas</string>
+    <string name="VehicleModelOld">Modelo</string>
+    <string name="VehicleYearOld">Año</string>
+
+    <string name="OtherCarLbl">Otro</string>
+
+
+    <string name="VehicleChihOld">Chih</string>
+    <string name="VehicleTXOld">TX</string>
+
+
+
+    <string name="VehicleNewCar">Vehículo Nuevo</string>
+    <string name="VehicleBrandNew">Marca</string>
+    <string name="VehicleColorNew">Color</string>
+    <string name="VehiclePlatesNew">Placas</string>
+    <string name="VehicleModelNew">Modelo</string>
+    <string name="VehicleYearNew">Año</string>
+    <string name="VehicleChihNew">Chih</string>
+    <string name="VehicleTXNew">TX</string>
+
+    <!-- Balance Transfer Strings -->
+    <string name="BalanceTransferTitle">Solicitud de transferencia de saldo o anualidad Línea Exprés</string>
+
+
+    <string name="UnsubscribeTiel">Solicitud de baja de vehículo o tag Línea Exprés</string>
+
+
+    <!--Profile Strings-->
+    <string name="BtnChangeEmailProfile">Cambiar correo</string>
+    <string name="BtnChangePasswordProfile">Cambiar contraseña</string>
+    <string name="BtnTramitesProfile">Ver trámites</string>
+
+    <string name="CitasTitle">Tienes 0 citas por confirmar</string>
+    <string name="BtnCitasProfile">Genera tu cita aquí</string>
+
+
+    <!--Nombre de puentes-->
+    <string name="Puentes_Camaras">Cámaras en vivo</string>
+
+    <string name="Puente_ZaragozaNorte">Zaragoza (Norte)</string>
+    <string name="Puente_ZaragozaSur">Zaragoza (Sur)</string>
+    <string name="Puente_PasoDelNorteNorte">Paso del Norte (Norte)</string>
+    <string name="Puente_PasoDelNorteSur">Paso del Norte (Sur)</string>
+    <string name="Puente_LerdoNorte">Lerdo (Norte)</string>
+    <string name="Puente_LerdoSur">Lerdo (Sur)</string>
+    <string name="Puente_LerdoFila">Lerdo (Fila)</string>
+
+
+    <!--Cambiar contraseña-->
+    <string name="pass_confirm_text">Una vez hagas click en \"Continuar\" recibirás un email donde podrás realizar el cambio de tu contraseña.</string>
+
+
+</resources>

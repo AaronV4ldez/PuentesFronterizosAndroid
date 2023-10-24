@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/house_fill"
+        android:title="@string/title_home" />
+
+   <!-- <item
+        android:id="@+id/navigation_recharge"
+        android:icon="@drawable/ic_tags"
+        android:title="@string/title_recharge" />
+        !-->
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/person_crop_circle_fill"
+        android:title="Perfil" />
+
+    <item
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_callus"
+        android:icon="@drawable/phone_fill"
+        android:title="@string/title_callus" />
+
+    <item
+        android:id="@+id/navigation_formalities"
+        android:icon="@drawable/square_and_pencil"
+        android:title="@string/title_tramites" />
+
+</menu>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorGlobal"
+    android:padding="10dp"
+
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp"
+        >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/boxPaddingTramites"
+            style="@style/global_rounded"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            
+            <TextView
+                android:id="@+id/OriginVehTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Datos de facturación"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSubs"
+                android:textStyle="bold"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/razonSocialTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="Razón Social"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/razonSocial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+
+               
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/rfcTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="RFC"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/rfc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+
+               
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/DomFiscalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="Domicilio Fiscal"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/DomFiscal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+
+               
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/CodigoPostalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="Código Postal"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/CodigoPostal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+
+               
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/EmailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+
+               
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/TelefonoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:text="Télefono"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+            <EditText
+                android:id="@+id/Telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/inputText"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            
+            
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sendFormBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="32dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                style="@style/firmarBtn"
+                android:text="Enviar datos"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/msgError"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
+                android:padding="3dp" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+

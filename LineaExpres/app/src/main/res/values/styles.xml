@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="navbars_style">
+        <item name="background">@color/black</item>
+    </style>
+
+    <style name="clickable_items" >
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/items_bottom_click</item>
+    </style>
+
+    <style name="search_styled" >
+        <item name="android:background">@drawable/search_styled</item>
+    </style>
+    <style name="email_input" >
+        <item name="android:background">@drawable/email_input</item>
+    </style>
+
+    <style name="buttons" >
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/buttons</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="buttons2" >
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/buttons2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="icBackButton" >
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:src">@drawable/ic_action_back</item>
+    </style>
+
+    <style name="prevnextBtn" >
+        <item name="android:background">@drawable/dat</item>
+    </style>
+
+    <style name="rounded_containers">
+        <item name="android:foreground">@drawable/container_round</item>
+    </style>
+
+    <style name="global_rounded">
+        <item name="android:background">@drawable/global_rounded</item>
+    </style>
+
+    <style name="global_rounded_popup">
+        <item name="android:background">@drawable/container_round_2_popup</item>
+    </style>
+
+    <style name="spinner_style">
+        <item name="android:background">@drawable/spinner_style</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="weather_rounded_exterior">
+        <item name="android:background">@drawable/weather_rounded_exterior</item>
+    </style>
+
+    <style name="weather_rounded">
+        <item name="android:background">@drawable/container_round_weather</item>
+    </style>
+
+    <style name="global_rounded_plecas">
+        <item name="android:background">@drawable/global_rounded_plecas</item>
+    </style>
+
+    <style name="last4notes">
+        <item name="android:foreground">@drawable/container_round_5</item>
+        <item name="android:background">@color/fourNotes</item>
+    </style>
+
+    <style name="formalitiesBtns">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/container_round_2</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+    <style name="formalitiesBtns2">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/container_round_3</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+    <style name="formalitiesBtns3">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/container_round_4</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="inputText">
+        <item name="android:background">@drawable/box_rounded</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    <style name="inputTextWrong">
+        <item name="android:background">@drawable/box_rounded_wrong</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="inputTextDisabled">
+        <item name="android:background">@drawable/box_rounded_disabled</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="pelcahomemasinformacion">
+        <item name="android:background">@drawable/container_round_pleca_mas_informacion</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="firmarBtn">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/container_round_3</item>
+    </style>
+
+
+    <style name="Theme.Fab_Bottom_app_bar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#0F9D58</item>
+        <item name="colorPrimaryVariant">#0F9D58</item>
+        <item name="colorOnPrimary">#000</item>
+    </style>
+
+
+    <style name="transparentLay">
+        <item name="android:background">@drawable/transparent</item>
+    </style>
+
+</resources>

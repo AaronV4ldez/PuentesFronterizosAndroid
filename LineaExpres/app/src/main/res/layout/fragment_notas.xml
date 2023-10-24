@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/mainScroll"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/boxPaddingNotas"
+    android:background="@color/ColorGlobal"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp"
+        android:layout_marginTop="10dp"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/boxMarginNotas"
+        android:padding="@dimen/boxPaddingNotas"
+        style="@style/global_rounded"
+        >
+
+        <TextView
+            android:id="@+id/title_nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginBottom="16dp"
+            android:gravity="left"
+            android:text="@string/Loading"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2Container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageView2Container"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            app:cardCornerRadius="@dimen/boxCornerRadius"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/textInformative"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:scaleType="center"
+                app:srcCompat="@drawable/low_image_loader" />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/textInformative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/merriweather_regular"
+            android:text="@string/Loading"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"
+            android:textSize="@dimen/globalFontSize"
+            app:layout_constraintBottom_toTopOf="@+id/adCarousel_NotasContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/adCarousel_NotasContainer"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+
+            app:cardCornerRadius="10dp"
+
+            android:layout_marginBottom="16dp"
+            android:paddingBottom="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingTop="0dp"
+
+            app:layout_constraintBottom_toTopOf="@+id/hr1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <WebView
+                android:id="@+id/adCarousel_Notas"
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                tools:ignore="WebViewLayout" />
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:id="@+id/hr1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#3000"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/prevLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/prevLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/prevBtn"
+            android:text="Anterior"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/prevBtn"
+            style="@style/transparentLay"
+            android:stateListAnimator="@null"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/nextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/nextLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:text="Siguiente"
+            app:layout_constraintBottom_toTopOf="@+id/nextBtn"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextBtn"
+            style="@style/transparentLay"
+            android:stateListAnimator="@null"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

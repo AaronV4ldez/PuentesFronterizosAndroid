@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorGlobal"
+    android:padding="10dp"
+
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="100dp"
+        >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/boxPaddingTramites"
+            style="@style/global_rounded"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <TextView
+                android:id="@+id/req_inscription_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Actualización de poliza de seguro"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                style="@style/pelcahomemasinformacion"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnUploadInsurancePolicy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                style="@style/buttons"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadInsurancePolicy"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IMGInsurancePolicy"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="visible"
+                android:src="@drawable/image_loader"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnUploadInsurancePolicySecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                style="@style/buttons"
+                android:textSize="@dimen/globalFontSize"
+                android:text="Hoja 2 (si aplica)"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IMGInsurancePolicySecond"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="visible"
+                android:src="@drawable/image_loader"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                />
+
+            <TextView
+                android:id="@+id/OriginVehTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Origen de tu póliza de seguro"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/globalFontSubs"
+                android:textStyle="bold"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPolizaMX"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    style="@style/buttons2"
+                    android:textSize="@dimen/globalFontSize"
+                    android:layout_marginRight="-10dp"
+                    android:text="México" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPolizaUSA"
+                    android:layout_width="0dp"
+                    style="@style/buttons2"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="-10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="@dimen/globalFontSize"
+                    android:text="USA" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/LineamientosLblTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LINEAMIENTOS PARA EL USO DE LA LÍNEA EXPRÉS"
+                app:layout_constraintBottom_toTopOf="@+id/LineamientosText"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/LineamientosText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/merriweather_regular"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"
+                android:text="@string/LineamientosInscripcion1"
+                app:layout_constraintBottom_toTopOf="@+id/ProtestoLoNecesariolbl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/ProtestoLoNecesariolbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Protesto lo necesario."
+                app:layout_constraintBottom_toTopOf="@+id/signature_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/signature_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/SignContainer"
+                android:text="Firme en la pantalla"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black" />
+
+            <RelativeLayout
+                android:id="@+id/SignContainer"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/sendFormBtn"
+                android:layout_height="500dp">
+
+                <RelativeLayout
+                    android:id="@+id/signature_pad_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_above="@+id/buttons_container"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp">
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_above="@+id/signature_pad_description"
+                        android:layout_marginBottom="8dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/signature_pad_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="16dp"
+                        android:text="Acepto Los Lineamientos"
+                        android:textColor="@android:color/darker_gray" />
+
+                    <com.github.gcacace.signaturepad.views.SignaturePad
+                        android:id="@+id/signature_pad"
+                        android:saveEnabled="false"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        style="@style/rounded_containers"
+
+                        />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/buttons_container"
+                    android:paddingTop="16dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/clear_button"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
+                        android:text="Borrar Firma"
+                        android:enabled="true" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sendFormBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="32dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                style="@style/firmarBtn"
+                android:text="Aceptar / Enviar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+

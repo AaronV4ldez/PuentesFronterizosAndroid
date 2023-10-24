@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="login_btns">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:background">@drawable/container_round_4</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/fontLogin</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+    <style name="login_btns_without_background">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/fontLogin</item>
+    </style>
+
+    <style name="login_title">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="login_input">
+        <item name="android:background">@drawable/container_round_1_login_inputs</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/fontInputLogin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+    <style name="login_input_disabled">
+        <item name="android:background">@drawable/container_round_1_login_inputs_disabled</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/fontInputLogin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+    <style name="forgot_input">
+        <item name="android:background">@drawable/container_round</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/fontInputLogin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_height">45dp</item>
+
+    </style>
+
+
+    <style name="pagos_input">
+        <item name="android:background">@drawable/container_round_5</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/fontInputLogin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+
+</resources>
