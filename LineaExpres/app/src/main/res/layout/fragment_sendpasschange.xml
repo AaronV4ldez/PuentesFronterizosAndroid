@@ -85,6 +85,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/backgroundnewtheme"
                 android:text="Continuar"
                app:layout_constraintBottom_toTopOf="@+id/response"
                 app:layout_constraintEnd_toEndOf="parent"

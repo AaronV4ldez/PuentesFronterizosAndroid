@@ -97,6 +97,7 @@
                     android:layout_height="40dp"
                     android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:background="@drawable/newcolorbluegraded"
                     android:text="Escanear TAG"
                     android:textSize="@dimen/globalFontSize" />
 
@@ -115,6 +116,7 @@
                     android:layout_height="40dp"
                     android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:background="@drawable/newcolorbluegraded"
                     android:text="Validar TAG"
                     android:textSize="@dimen/globalFontSize" />
             </LinearLayout>

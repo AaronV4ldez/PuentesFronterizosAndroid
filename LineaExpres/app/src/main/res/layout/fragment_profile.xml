@@ -208,6 +208,7 @@
                     android:visibility="visible"
                     android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:background="@drawable/newcolorbluegraded"
                     android:text="Telepeaje"
                     android:textSize="@dimen/globalFontSize" />
 
@@ -219,6 +220,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:background="@drawable/newcolorbluegraded"
                     android:visibility="visible"
                     android:text="Acceso Digital Peatonal"
                     android:textSize="@dimen/globalFontSize" />
@@ -243,6 +245,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:background="@drawable/newcolorbluegraded"
                     android:visibility="visible"
                     android:text="Borrar cuenta"
                     android:textSize="@dimen/globalFontSize" />
