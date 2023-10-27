@@ -85,6 +85,7 @@
     <string name="BtnUploadOfficialIDReverse">ID Oficial reverso (INE, Pasaporte vigente, Licencia)</string>
 
     <string name="BtnUploadCirculationCard">Tarjeta de circulación o Registro Americano</string>
+    <string name="BtnUploadNewSentriOrRenowal">Subir nuevo sentri o comprobante de renovación (si aplica)</string>
     <string name="BtnUploadInsurancePolicy">Poliza de seguro</string>
     <string name="BtnUploadUSAApproval">Aprobación de Vehículo para Sentri o Global Entri</string>
     <string name="BtnUploadPowerAttorney">Carta poder simple firmada en caso de no ser el propietario</string>

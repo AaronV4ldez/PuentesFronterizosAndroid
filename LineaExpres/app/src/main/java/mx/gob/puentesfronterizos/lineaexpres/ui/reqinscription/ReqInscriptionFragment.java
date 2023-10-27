@@ -91,6 +91,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 import mx.gob.puentesfronterizos.lineaexpres.MainActivity;
 import mx.gob.puentesfronterizos.lineaexpres.R;
@@ -400,7 +402,8 @@ public class ReqInscriptionFragment extends Fragment {
             expirationDateSentriInput.setVisibility(View.GONE);
             expirationDateSentriLbl.setVisibility(View.GONE);
             noSentriLbl.setVisibility(View.GONE);
-            uploadSentriPhotoBtn.setVisibility(View.GONE);
+            uploadSentriPhotoBtn.setVisibility(View.VISIBLE);
+            uploadSentriPhotoBtn.setText("Subir nueva sentri o comprobante de renovación");
             SentriImportant.setVisibility(View.GONE);
         }
 
@@ -1343,8 +1346,22 @@ public class ReqInscriptionFragment extends Fragment {
                                 }
 
 
+                                int finalFileTypeCount = FileTypeCount;
+                                int finalI = i;
+                                CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+                                    try {
+                                        sendFile(String.valueOf(Tramite_ID), getFullNameTramites.get(finalI), String.valueOf(finalFileTypeCount));
+                                    } catch (Exception e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                });
 
-                                sendFile(String.valueOf(Tramite_ID), getFullNameTramites.get(i), String.valueOf(FileTypeCount));
+                                try {
+                                    future.get(); // Espera a que la tarea se complete
+                                } catch (InterruptedException | ExecutionException e) {
+                                    e.printStackTrace();
+                                }
+
 
                             } catch (Exception e) {
                                 e.printStackTrace();

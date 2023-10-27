@@ -202,13 +202,12 @@
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/RegisterUser"
-                            style="@style/login_btns"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/backgroundnewtheme"
-                            android:text="Registrar"
-                            android:textSize="@dimen/globalFontSize"
+                            style="@style/login_btns"
                             android:textStyle="bold"
+                            android:textSize="@dimen/globalFontSize"
+                            android:text="Registrar"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />

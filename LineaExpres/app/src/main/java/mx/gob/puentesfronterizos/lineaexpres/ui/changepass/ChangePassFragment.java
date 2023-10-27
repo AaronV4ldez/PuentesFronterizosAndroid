@@ -111,9 +111,7 @@ public class ChangePassFragment extends Fragment {
                     Toast.makeText(requireContext(), "Confirme su contraseña por favor.", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                TempPass.setText("");
-                NewPass.setText("");
-                ConfirmNewPass.setText("");
+
 
                 ChangePass(TempPassText, NewPassText, Token);
 
@@ -205,8 +203,7 @@ public class ChangePassFragment extends Fragment {
 
                 if (Status == 200){
                     requireActivity().runOnUiThread(() -> {
-
-                        // MainActivity.nav_req(R.id.navigation_home);
+                        MainActivity.nav_req(R.id.navigation_home);
                     });
                 }
 

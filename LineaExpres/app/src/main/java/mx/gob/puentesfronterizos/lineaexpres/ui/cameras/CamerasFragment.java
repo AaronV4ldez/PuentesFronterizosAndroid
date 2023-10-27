@@ -88,23 +88,23 @@ public class CamerasFragment extends Fragment {
                 URLConnection request = url.openConnection();
                 request.connect();
                 JsonObject jsonObj = JsonParser.parseReader(new InputStreamReader((InputStream) request.getContent())).getAsJsonObject();
-                JsonPrimitive mbPuenteLive1 = jsonObj.get("mbPuenteLive1").getAsJsonPrimitive();
+                JsonPrimitive mbPuenteLive1 = jsonObj.get("mbPuenteLive5").getAsJsonPrimitive();
                 String mbPuenteLive1Link = mbPuenteLive1.toString();
                 mbPuenteLive1Link = mbPuenteLive1Link.replace("\"", "");
 
-                JsonPrimitive mbPuenteLive2 = jsonObj.get("mbPuenteLive2").getAsJsonPrimitive();
+                JsonPrimitive mbPuenteLive2 = jsonObj.get("mbPuenteLive4").getAsJsonPrimitive();
                 String mbPuenteLive2Link = mbPuenteLive2.toString();
                 mbPuenteLive2Link = mbPuenteLive2Link.replace("\"", "");
 
-                JsonPrimitive mbPuenteLive3 = jsonObj.get("mbPuenteLive3").getAsJsonPrimitive();
+                JsonPrimitive mbPuenteLive3 = jsonObj.get("mbPuenteLive2").getAsJsonPrimitive();
                 String mbPuenteLive3Link = mbPuenteLive3.toString();
                 mbPuenteLive3Link = mbPuenteLive3Link.replace("\"", "");
 
-                JsonPrimitive mbPuenteLive4 = jsonObj.get("mbPuenteLive4").getAsJsonPrimitive();
+                JsonPrimitive mbPuenteLive4 = jsonObj.get("mbPuenteLive1").getAsJsonPrimitive();
                 String mbPuenteLive4Link = mbPuenteLive4.toString();
                 mbPuenteLive4Link = mbPuenteLive4Link.replace("\"", "");
 
-                JsonPrimitive mbPuenteLive5 = jsonObj.get("mbPuenteLive5").getAsJsonPrimitive();
+                JsonPrimitive mbPuenteLive5 = jsonObj.get("mbPuenteLive3").getAsJsonPrimitive();
                 String mbPuenteLive5Link = mbPuenteLive5.toString();
                 mbPuenteLive5Link = mbPuenteLive5Link.replace("\"", "");
 
@@ -126,7 +126,9 @@ public class CamerasFragment extends Fragment {
 
                 for (int i = 0; i < webViews.size(); i++) {
 
-                    setYoutubeWebViews( webViews.get(i), Links.get(i));
+                    setYoutubeWebViews(webViews.get(i), Links.get(i));
+
+                    System.out.println("Links: " + Links.get(i));
                 }
 
             } catch (IOException e) {
@@ -150,7 +152,7 @@ public class CamerasFragment extends Fragment {
             try {
                 WebView.loadUrl(Links);
             } catch (Exception e) {
-                Log.e(TAG, "setZaragozaNorteYT: ", e);
+                Log.e(TAG, "setCamera: ", e);
             }
         });
 

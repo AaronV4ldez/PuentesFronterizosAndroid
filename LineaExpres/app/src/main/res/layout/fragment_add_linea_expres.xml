@@ -94,9 +94,8 @@
                     style="@style/buttons"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/backgroundnewtheme"
                     android:fontFamily="@font/montserrat_bold"
+                    android:layout_margin="5dp"
                     android:text="Continuar"
                     android:textSize="@dimen/globalFontSize" />
 

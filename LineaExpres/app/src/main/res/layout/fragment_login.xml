@@ -120,25 +120,22 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Login_LoginBtn"
             style="@style/login_btns"
+            android:textSize="@dimen/globalFontSize"
             android:layout_width="240dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/backgroundnewtheme"
             android:text="@string/Login_LoginBtn"
-            android:textSize="@dimen/globalFontSize"
-            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/RegisterBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/RegisterBtn"
-            style="@style/login_btns"
             android:layout_width="240dp"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/backgroundnewtheme"
-            android:text="Registrarse"
-            android:textSize="@dimen/globalFontSize"
+            style="@style/login_btns"
             android:textStyle="bold"
+            android:textSize="@dimen/globalFontSize"
+            android:layout_marginBottom="32dp"
+            android:text="Registrarse"
             app:layout_constraintBottom_toTopOf="@+id/Login_ForgotPasswordBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

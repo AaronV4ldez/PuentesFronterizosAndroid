@@ -80,14 +80,13 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/NextStepChangePass"
                 style="@style/login_btns"
+                android:textSize="@dimen/globalFontSize"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/backgroundnewtheme"
                 android:text="Continuar"
-                android:textSize="@dimen/globalFontSize"
-                app:layout_constraintBottom_toTopOf="@+id/response"
+               app:layout_constraintBottom_toTopOf="@+id/response"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 

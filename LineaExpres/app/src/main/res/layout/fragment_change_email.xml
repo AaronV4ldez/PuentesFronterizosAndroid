@@ -78,14 +78,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/ConfirmChangeEmailBtn"
-                style="@style/login_btns"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/backgroundnewtheme"
-                android:text="Confirmar"
-                android:textSize="@dimen/globalFontSize"
+                style="@style/login_btns"
                 android:textStyle="bold"
+                android:textSize="@dimen/globalFontSize"
+                android:layout_marginBottom="16dp"
+                android:text="Confirmar"
                 app:layout_constraintBottom_toTopOf="@+id/msgShow"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

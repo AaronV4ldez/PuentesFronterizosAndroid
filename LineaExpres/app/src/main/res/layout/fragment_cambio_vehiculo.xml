@@ -14,28 +14,26 @@
         >
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            style="@style/global_rounded"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/boxPaddingTramites"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            style="@style/global_rounded"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
             <TextView
                 android:id="@+id/req_inscription_title"
-                style="@style/pelcahomemasinformacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:text="@string/VehicleTitle"
-                android:textAlignment="center"
                 android:textColor="@color/white"
+                android:textAlignment="center"
+                style="@style/pelcahomemasinformacion"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -44,12 +42,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:padding="3dp"
                 android:text="Datos del vehículo"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="@dimen/globalFontSubs"
                 android:textStyle="bold"
+                android:padding="3dp"
                 app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -59,20 +57,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:padding="3dp"
                 android:text="Marca"
                 android:textColor="@color/black"
                 android:textSize="@dimen/globalFontSize"
                 android:textStyle="bold"
+                android:padding="3dp"
                 app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/BrandNewVehicleInput"
-                style="@style/inputText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/inputText"
                 android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:inputType="text"
@@ -85,20 +83,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:padding="3dp"
                 android:text="Modelo"
                 android:textColor="@color/black"
                 android:textSize="@dimen/globalFontSize"
                 android:textStyle="bold"
+                android:padding="3dp"
                 app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/ModelNewVehicleInput"
-                style="@style/inputText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/inputText"
                 android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:inputType="text"
@@ -111,20 +109,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:padding="3dp"
                 android:text="Color"
                 android:textColor="@color/black"
                 android:textSize="@dimen/globalFontSize"
                 android:textStyle="bold"
+                android:padding="3dp"
                 app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/ColorNewVehicleInput"
-                style="@style/inputText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/inputText"
                 android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:inputType="text"
@@ -137,20 +135,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:padding="3dp"
                 android:text="Año"
                 android:textColor="@color/black"
                 android:textSize="@dimen/globalFontSize"
                 android:textStyle="bold"
+                android:padding="3dp"
                 app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/YearNewVehicleInput"
-                style="@style/inputText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/inputText"
                 android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:inputType="text"
@@ -163,20 +161,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:padding="3dp"
                 android:text="Placas"
                 android:textColor="@color/black"
                 android:textSize="@dimen/globalFontSize"
                 android:textStyle="bold"
+                android:padding="3dp"
                 app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/PlatesNewVehicleInput"
-                style="@style/inputText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/inputText"
                 android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:inputType="text"
@@ -189,13 +187,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_bold"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
                 android:text="Seleccione el origen de su vehículo nuevo"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="@dimen/globalFontSubs"
                 android:textStyle="bold"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
                 app:layout_constraintBottom_toTopOf="@+id/noSentriInput"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -203,43 +201,41 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
+                android:layout_marginTop="5dp"
+                >
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnNewVehiculeOriginNational"
-                    style="@style/buttons2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="-10dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Nacional"
-                    android:textSize="@dimen/globalFontSize" />
-
+                    style="@style/buttons2"
+                    android:textSize="@dimen/globalFontSize"
+                    android:layout_marginRight="-10dp"
+                    android:text="Nacional" />
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnNewVehiculeOriginUSA"
-                    style="@style/buttons2"
                     android:layout_width="0dp"
+                    style="@style/buttons2"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-10dp"
                     android:layout_weight="1"
+                    android:layout_marginLeft="-10dp"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="USA"
-                    android:textSize="@dimen/globalFontSize" />
+                    android:textSize="@dimen/globalFontSize"
+                    android:text="USA" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/BtnUploadCirculationCard"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadCirculationCard"
                 android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadCirculationCard"
+                style="@style/buttons"
                 app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -249,20 +245,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/BtnUploadInsurancePolicy"
-                style="@style/buttons"
+                android:id="@+id/btnUploadNewSentriOrRenewal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadInsurancePolicy"
                 android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadNewSentriOrRenowal"
+                style="@style/buttons"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IMGNewSentriOrRenewal"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                android:layout_marginBottom="3dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnUploadInsurancePolicy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                style="@style/buttons"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadInsurancePolicy"
                 app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -272,21 +292,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                />
 
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/BtnUploadInsurancePolicySecond"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Poliza Hoja 2 (si aplica)"
+                style="@style/buttons"
                 android:textSize="@dimen/globalFontSize"
+                android:text="Poliza Hoja 2 (si aplica)"
                 app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -296,20 +316,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/BtnUploadUSAApproval"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadUSAApproval"
+                style="@style/buttons"
                 android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadUSAApproval"
                 app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -319,20 +339,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/BtnUploadPowerAttorney"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadPowerAttorney"
+                style="@style/buttons"
                 android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadPowerAttorney"
                 app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -342,31 +362,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                />
 
             <TextView
                 android:id="@+id/LineamientosLblTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/montserrat_bold"
                 android:text="LINEAMIENTOS PARA EL USO DE LA LÍNEA EXPRÉS"
-                android:textAlignment="center"
-                android:textColor="@color/black"
                 app:layout_constraintBottom_toTopOf="@+id/LineamientosText"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/LineamientosText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:fontFamily="@font/merriweather_regular"
-                android:text="@string/LineamientosInscripcion1"
                 android:textColor="@color/black"
+                android:layout_marginBottom="8dp"
+                android:text="@string/LineamientosInscripcion1"
                 app:layout_constraintBottom_toTopOf="@+id/ProtestoLoNecesariolbl"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -375,14 +396,14 @@
                 android:id="@+id/ProtestoLoNecesariolbl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/montserrat_bold"
                 android:text="Protesto lo necesario."
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/signature_text"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat_bold"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -392,23 +413,23 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="0dp"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="Firme en la pantalla"
-                android:textAlignment="center"
-                android:textColor="@color/black"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/SignContainer"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintBottom_toTopOf="@+id/SignContainer"
+                android:text="Firme en la pantalla"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black" />
 
             <RelativeLayout
                 android:id="@+id/SignContainer"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_marginBottom="8dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/sendFormBtn">
+                app:layout_constraintBottom_toTopOf="@+id/sendFormBtn"
+                android:layout_height="500dp">
 
                 <RelativeLayout
                     android:id="@+id/signature_pad_container"
@@ -437,47 +458,48 @@
 
                     <com.github.gcacace.signaturepad.views.SignaturePad
                         android:id="@+id/signature_pad"
-                        style="@style/rounded_containers"
+                        android:saveEnabled="false"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:saveEnabled="false"
+                        style="@style/rounded_containers"
 
                         />
                 </RelativeLayout>
 
                 <LinearLayout
                     android:id="@+id/buttons_container"
+                    android:paddingTop="16dp"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
                     android:orientation="horizontal"
-                    android:paddingTop="16dp">
+                    android:layout_alignParentBottom="true">
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/clear_button"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:enabled="true"
-                        android:text="Borrar Firma" />
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
+                        android:text="Borrar Firma"
+                        android:enabled="true" />
                 </LinearLayout>
 
             </RelativeLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sendFormBtn"
-                style="@style/firmarBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="32dp"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="Aceptar / Enviar"
                 android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
+                style="@style/firmarBtn"
+                android:text="Aceptar / Enviar"
                 app:layout_constraintBottom_toBottomOf="parent"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

@@ -225,12 +225,16 @@ public class CambioVehiculoFragment extends Fragment {
         EditText YearNewVehicule = binding.YearNewVehicleInput;
         EditText PlatesNewVehicule = binding.PlatesNewVehicleInput;
 
+        Button btnUploadNewSentriOrRenewal = binding.btnUploadNewSentriOrRenewal;
+        ImageView IMGNewSentriOrRenewal = binding.IMGNewSentriOrRenewal;
+
         Button BtnOriginNational = binding.btnNewVehiculeOriginNational;
         Button BtnOriginUSA = binding.btnNewVehiculeOriginUSA;
 
         //Circulation Card ---
         Button BtnUploadCirculationCard = binding.BtnUploadCirculationCard;
         ImageView IMGCirculationCard = binding.IMGCirculationCard;
+
         //Insurance Policy ---
         Button BtnUploadInsurancePolicy = binding.BtnUploadInsurancePolicy;
         ImageView IMGInsurancePolicy = binding.IMGInsurancePolicy;
@@ -252,6 +256,12 @@ public class CambioVehiculoFragment extends Fragment {
         YearNewVehicule.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
         //Btn Click Listener
+
+        btnUploadNewSentriOrRenewal.setOnClickListener(v -> {
+            currentImageView = IMGNewSentriOrRenewal;
+            takePicture("Photo_Sentri", "Solicitud_Inscripcion_PhotoSentri");
+            IMGNewSentriOrRenewal.setVisibility(View.VISIBLE);
+        });
 
         BtnUploadCirculationCard.setOnClickListener(v -> {
             currentImageView = IMGCirculationCard;

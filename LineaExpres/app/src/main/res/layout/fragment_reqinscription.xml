@@ -75,14 +75,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadSentriPhotoBtn"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
+                android:textSize="@dimen/globalFontSize"
                 android:text="@string/BtnUploadSentri"
-                android:textSize="@dimen/globalFontSize" />
+                style="@style/buttons" />
 
             <ImageView
                 android:id="@+id/SentriPhotoImageView"
@@ -113,16 +112,17 @@
                 android:inputType="date|number"/>
 
 
+
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadOfficialIDPhotoBtn"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadOfficialID"
-                android:textSize="@dimen/globalFontSize" />
+                style="@style/buttons"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadOfficialID" />
 
             <ImageView
                 android:id="@+id/IdOficialPhotoImageView"
@@ -133,14 +133,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadOfficialReverseIDPhotoBtn"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadOfficialIDReverse"
-                android:textSize="@dimen/globalFontSize" />
+                android:textSize="@dimen/globalFontSize"
+                style="@style/buttons"
+                android:text="@string/BtnUploadOfficialIDReverse" />
 
             <ImageView
                 android:id="@+id/IdOficialReversePhotoImageView"
@@ -548,14 +547,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadCirculationCardPhotoBtn"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadCirculationCard"
-                android:textSize="@dimen/globalFontSize" />
+                style="@style/buttons"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadCirculationCard" />
 
             <ImageView
                 android:id="@+id/TarjetaCirculacionPhotoImageView"
@@ -566,14 +564,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadInsurancePolicyBtn"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadInsurancePolicy"
-                android:textSize="@dimen/globalFontSize" />
+                style="@style/buttons"
+                android:textSize="@dimen/globalFontSize"
+                android:text="@string/BtnUploadInsurancePolicy" />
 
             <ImageView
                 android:id="@+id/PolizaSeguroPhotoImageView"
@@ -584,14 +581,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadInsurancePolicyBtnSecond"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Hoja 2 Poliza Seguro (Si aplica)"
-                android:textSize="@dimen/globalFontSize" />
+                style="@style/buttons"
+                android:textSize="@dimen/globalFontSize"
+                android:text="Hoja 2 Poliza Seguro (Si aplica)" />
 
             <ImageView
                 android:id="@+id/PolizaSeguroPhotoImageViewSecond"
@@ -602,14 +598,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadUSAApprovalBtn"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadUSAApproval"
-                android:textSize="@dimen/globalFontSize" />
+                android:textSize="@dimen/globalFontSize"
+                style="@style/buttons"
+                android:text="@string/BtnUploadUSAApproval" />
 
             <ImageView
                 android:id="@+id/AprovacionUSAPhotoImageView"
@@ -620,14 +615,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadPowerAttorney"
-                style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/BtnUploadPowerAttorney"
-                android:textSize="@dimen/globalFontSize" />
+                android:textSize="@dimen/globalFontSize"
+                style="@style/buttons"
+                android:text="@string/BtnUploadPowerAttorney" />
 
             <ImageView
                 android:id="@+id/CartaPoderPhotoImageView"
@@ -908,27 +902,25 @@
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/clear_button"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:backgroundTint="#57348B"
-                        android:enabled="true"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
                         android:text="Borrar Firma"
-                        android:textColor="#FFFFFF" />
+                        android:enabled="true" />
                 </LinearLayout>
 
             </RelativeLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sendFormBtn"
-                style="@style/firmarBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="32dp"
-                android:background="@drawable/backgroundnewtheme"
+                android:textColor="@color/white"
                 android:fontFamily="@font/montserrat_bold"
+                style="@style/firmarBtn"
                 android:text="Aceptar / Enviar"
-                android:textColor="@color/white" />
+                 />
 
 
 
