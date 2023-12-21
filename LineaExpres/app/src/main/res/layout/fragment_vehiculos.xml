@@ -39,11 +39,11 @@
                 style="@style/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/backgroundnewtheme"
                 android:fontFamily="@font/montserrat_bold"
                 android:padding="25dp"
-                android:text="Solicitud para agregar vehículo"
 
-                />
+                android:text="Solicitud para agregar vehículo" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/sliderViewPager"

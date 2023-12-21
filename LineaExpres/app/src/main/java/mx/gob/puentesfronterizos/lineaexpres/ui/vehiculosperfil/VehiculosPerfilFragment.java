@@ -3,6 +3,9 @@ package mx.gob.puentesfronterizos.lineaexpres.ui.vehiculosperfil;
 
 import static mx.gob.puentesfronterizos.lineaexpres.ui.login.LoginFragment.convertStreamToString;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -18,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -47,10 +51,14 @@ import java.util.concurrent.atomic.AtomicReference;
 import mx.gob.puentesfronterizos.lineaexpres.MainActivity;
 import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentVehiculosPerfilBinding;
+import mx.gob.puentesfronterizos.lineaexpres.databinding.RecargaVehiculosPlantillaBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.UserLog;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
+
 public class VehiculosPerfilFragment extends Fragment {
+
+    ConstraintLayout MainBorraTagLayout;
 
     ScrollView scrollView;
     LinearLayout linearLayout;
@@ -61,6 +69,7 @@ public class VehiculosPerfilFragment extends Fragment {
     String User;
     String Token;
     UserLog userLog;
+
 
     LayoutInflater loaderInflater;
     View popupView;
@@ -85,6 +94,9 @@ public class VehiculosPerfilFragment extends Fragment {
         userData = userLog.GetUserData();
         User = userData.get(0);
         Token = userData.get(1);
+
+
+
 
         scrollView = binding.ScrollContainer;
         linearLayout = binding.LinearLayoutContainer;
@@ -184,6 +196,10 @@ public class VehiculosPerfilFragment extends Fragment {
                                 TextView saldoText = (TextView) plantillaView.findViewById(R.id.saldoText);
                                 Button recarga = (Button) plantillaView.findViewById(R.id.btnRecarga);
                                 Button misCruces = (Button) plantillaView.findViewById(R.id.btnMisCruces);
+                                Button misCruces2 = (Button) plantillaView.findViewById(R.id.btnMisCruces2);
+                                Button CancelarBorrarTAG = (Button) plantillaView.findViewById(R.id.btnCancelarBorrarTAG);
+                                Button AceptarCancelarTAG = (Button) plantillaView.findViewById(R.id.btnAceptarCancelarTAG);
+
 
                                 String[] splitArray = vehiculos.get(i).split("∑");
                                 String vehType = splitArray[0];
@@ -211,6 +227,57 @@ public class VehiculosPerfilFragment extends Fragment {
                                     }
                                 }
 
+                               /* misCruces2.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        // Obtén el contexto de la actividad actual
+                                        Context context = getContext();
+
+                                        // Crea el AlertDialog.Builder
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                                        // Establece el mensaje del diálogo
+                                        builder.setMessage("Seguro que quieres elminar el tag: " + Tag);
+
+                                        // Añade un botón "Aceptar" al diálogo
+                                        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                // Puedes realizar alguna acción si es necesario al hacer clic en "Aceptar"
+                                            }
+                                        });
+
+                                        // Añade un botón "Cancelar" al diálogo
+                                        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                // Puedes realizar alguna acción si es necesario al hacer clic en "Cancelar"
+                                                dialog.cancel(); // Esto cancela el diálogo
+                                            }
+                                        });
+
+                                        // Muestra el diálogo
+                                        builder.create().show();
+                                    }
+                                });*/
+                                //Button misCruces2 = (Button) plantillaView.findViewById(R.id.btnMisCruces2);
+
+                                //Borrar TAG
+                               ConstraintLayout MainBorraTagLayout = (ConstraintLayout) plantillaView.findViewById(R.id.MainBorraTagLayout);
+
+
+                                misCruces2.setOnClickListener(v -> {
+                                    MainBorraTagLayout.setVisibility(View.VISIBLE);
+                                });
+
+                                CancelarBorrarTAG.setOnClickListener(v -> {
+                                    MainBorraTagLayout.setVisibility(View.GONE);
+                                });
+
+                                AceptarCancelarTAG.setOnClickListener(v -> {
+                                    postDeleteTag();
+                                });
+                                //Fin Borrar Tag
                                 recarga.setTag(Placa);
                                 if (ctl_id.equals("null")) {
                                     misCruces.setVisibility(View.GONE);
@@ -350,6 +417,8 @@ public class VehiculosPerfilFragment extends Fragment {
         return root;
     }
 
+
+
     public CompletableFuture<String> verifyTag(String Tag) {
         CompletableFuture<String> future = new CompletableFuture<>();
         CompletableFuture.supplyAsync(() -> {
@@ -401,7 +470,96 @@ public class VehiculosPerfilFragment extends Fragment {
         return future;
     }
 
+    /*public void postDeleteTag(String Tag){
+        new Thread(() -> {
+            try {
+                InputStream inputStream;
+                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/tags/exists/" + Tag;
+                URL url = new URL(accountActivation_url);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
+                conn.setRequestProperty("Content-Type", "text");
+                conn.setRequestProperty("Accept","application/json");
+                conn.setRequestProperty("Authorization", "Bearer " + Token);
+                conn.setRequestMethod("DELETE");
+
+                int Status = conn.getResponseCode();
+
+                Log.i(TAG, "httpPostRequest: status = " + conn.getResponseCode());
+                Log.i(TAG, "httpPostRequest: msg = " + conn.getResponseMessage());
+
+                if (Status != 200) {
+                    inputStream = new BufferedInputStream(conn.getErrorStream());
+                }else {
+                    inputStream = new BufferedInputStream(conn.getInputStream());
+                }
+                String ResponseData = convertStreamToString(inputStream);
+                System.out.println("Este es el responseData de delete account " + ResponseData);
+
+                JSONObject Result = new JSONObject(ResponseData);
+                String message = (String) Result.get("message");
+
+                if (message.contains("Usuario eliminado exitosamente.") || message.contains("La petición la realizó un usuario no válido.")) {
+                    requireActivity().runOnUiThread(() -> {
+                        MainActivity.nav_req(R.id.navigation_logout);
+                    });
+                }
+                requireActivity().runOnUiThread(() -> {
+                    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+                });
+
+                System.out.println(message);
+
+
+
+                conn.disconnect();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+
+        }).start();
+    }*/
+
+//eliminar tag api
+    public void postDeleteTag(String Tag) {
+
+        new Thread(() -> {
+            try {
+                InputStream inputStream;
+                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/tags/exists/" + Tag;
+
+                URL url = new URL(accountActivation_url);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setRequestProperty("Content-Type", "text");
+                conn.setRequestProperty("Accept", "application/json");
+                conn.setRequestProperty("Authorization", "Bearer " + Token);
+                conn.setRequestMethod("DELETE");
+
+                int Status = conn.getResponseCode();
+
+                Log.i(TAG, "httpPostRequest: status = " + conn.getResponseCode());
+                Log.i(TAG, "httpPostRequest: msg = " + conn.getResponseMessage());
+
+                if (Status != 200) {
+                    inputStream = new BufferedInputStream(conn.getErrorStream());
+                } else {
+                    inputStream = new BufferedInputStream(conn.getInputStream());
+                }
+                String ResponseData = convertStreamToString(inputStream);
+                System.out.println("Este es el responseData de Register Fragment " + ResponseData);
+
+                JSONObject Result = new JSONObject(ResponseData);
+                conn.disconnect();
+
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
+
+        }).start();
+    }
 
     @Override
     public void onDestroyView() {
