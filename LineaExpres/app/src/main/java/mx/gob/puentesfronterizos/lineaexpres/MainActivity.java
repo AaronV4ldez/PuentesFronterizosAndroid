@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton img = findViewById(R.id.goToHome);
 
         Glide.with(this)
-                .load("https://lineaexpress.desarrollosenlanube.net/wp-content/uploads/2022/07/Cabezal714x119_Color.png")
+                .load("https://noticias.fpfch.gob.mx/wp-content/uploads/2022/07/Cabezal714x119_Color.png")
                 .into(img);
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#121212")));
 
@@ -321,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(() -> {
             URL url = null;
             try {
-                url = new URL("http://lineaexpressapp.desarrollosenlanube.net/bwt.json");
+                url = new URL("https://apis.fpfch.gob.mx/bwt.json");
 
                 URLConnection request = url.openConnection();
                 request.connect();
@@ -479,7 +479,7 @@ public class MainActivity extends AppCompatActivity {
         updateData DownloadData = new updateData(MainActivity.this); //Open local db connection
         new Thread(() -> {
             //Downloading last 10 notes
-            String jsonURL = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/posts?per_page=10&categories=18&_embed";
+            String jsonURL = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/posts?per_page=10&categories=18&_embed";
             URL url;
             try {
                 url = new URL(jsonURL);
@@ -508,7 +508,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             // Downloading "Servicios"
-            String Servicios = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/posts?categories=15&_embed";
+            String Servicios = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/posts?categories=15&_embed";
             URL urlServicios;
             try {
                 urlServicios = new URL(Servicios);
@@ -541,7 +541,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // Downloading "Servicios"
-            String Lineamientos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1305?_embed";
+            String Lineamientos = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1305?_embed";
             URL urlLineamientos;
             try {
                 urlLineamientos = new URL(Lineamientos);
@@ -560,7 +560,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "WhoWeAre"
-            String QuienesSomos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/647?_embed";
+            String QuienesSomos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/647?_embedwp-json/wp/v2/pages/647?_embed";
             URL urlQuienesSomos;
             try {
                 urlQuienesSomos = new URL(QuienesSomos);
@@ -580,7 +580,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "Terminos y condiciones"
-            String TerminosYCondiciones = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1309?_embed";
+            String TerminosYCondiciones = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1309?_embed";
             URL urlTerminosYCondiciones;
             try {
                 urlTerminosYCondiciones = new URL(TerminosYCondiciones);
@@ -602,7 +602,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             //Downloading Objetivo
-            String Objetivo = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/662?_embed";
+            String Objetivo = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/662?_embed";
             URL url_Objetivo;
             try {
                 url_Objetivo = new URL(Objetivo);
@@ -623,7 +623,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading Mision
-            String Mision = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/724?_embed";
+            String Mision = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/724?_embed";
             URL url_Mision;
             try {
                 url_Mision = new URL(Mision);
@@ -643,7 +643,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading Vision
-            String Vision = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/730?_embed";
+            String Vision = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/730?_embed";
             URL url_Vision;
             try {
                 url_Vision = new URL(Vision);
@@ -663,7 +663,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "Privacy"
-            String Privacy = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/3?_embed";
+            String Privacy = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/3?_embed";
             URL urlPrivacy;
             try {
                 urlPrivacy = new URL(Privacy);
@@ -684,7 +684,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "CurrentRates"
-            String CurrentRates = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1119?_embed";
+            String CurrentRates = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1119?_embed";
             URL urlCurrentRates;
             try {
                 urlCurrentRates = new URL(CurrentRates);

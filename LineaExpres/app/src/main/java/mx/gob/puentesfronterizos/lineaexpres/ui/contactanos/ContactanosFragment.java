@@ -104,7 +104,7 @@ public class ContactanosFragment extends Fragment {
 
                 InputStream inputStream;
 
-                URL url = new URL("https://lineaexpressapp.desarrollosenlanube.net/api/v1/contact");
+                URL url = new URL("https://apis.fpfch.gob.mx/api/v1/contact");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");

@@ -50,7 +50,7 @@ public class SendPassChangeFragment extends Fragment {
     TextView response;
     Button NextStepChangePass;
 
-    String burl = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/user/resetpass";
+    String burl = "https://apis.fpfch.gob.mx/api/v1/user/resetpass";
     private FragmentSendpasschangeBinding binding;
     @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(@NonNull LayoutInflater inflater,

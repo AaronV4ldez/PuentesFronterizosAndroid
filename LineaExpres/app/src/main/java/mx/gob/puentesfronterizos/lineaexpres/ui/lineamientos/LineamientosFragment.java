@@ -39,7 +39,7 @@ public class LineamientosFragment extends Fragment {
         TextView layoutBody = binding.Body;
 
         new Thread(() -> {
-            String Lineamientos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1305?_embed";
+            String Lineamientos = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1305?_embed";
             URL urlLineamientos;
             try {
                 urlLineamientos = new URL(Lineamientos);

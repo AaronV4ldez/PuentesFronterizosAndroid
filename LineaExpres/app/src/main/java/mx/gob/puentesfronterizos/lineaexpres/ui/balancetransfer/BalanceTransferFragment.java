@@ -582,7 +582,7 @@ public class BalanceTransferFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/procs/p04";
+                String url_process = "https://apis.fpfch.gob.mx/api/v1/procs/p04";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -809,7 +809,7 @@ public class BalanceTransferFragment extends Fragment {
 
                 Request request = new Request.Builder()
                         .header("Authorization", "Bearer " + Token)
-                        .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                        .url("https://apis.fpfch.gob.mx/api/v1/files")
                         .post(requestBody)
                         .build();
 

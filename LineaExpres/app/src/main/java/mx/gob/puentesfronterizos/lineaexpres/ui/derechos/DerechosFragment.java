@@ -50,7 +50,7 @@ public class DerechosFragment extends Fragment {
 
         new Thread(() -> {
 
-                String Servicios = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1445?_embed";
+                String Servicios = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1445?_embed";
                 URL urlServicios;
             try {
                 urlServicios = new URL(Servicios);

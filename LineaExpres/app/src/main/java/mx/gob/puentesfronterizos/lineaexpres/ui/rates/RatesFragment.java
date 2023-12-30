@@ -41,7 +41,7 @@ public class RatesFragment extends Fragment {
         WebView layoutBody = binding.Body;
 
         new Thread(() -> {
-            String CurrentRates = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1119?_embed";
+            String CurrentRates = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1119?_embed";
             URL urlCurrentRates;
             try {
                 urlCurrentRates = new URL(CurrentRates);

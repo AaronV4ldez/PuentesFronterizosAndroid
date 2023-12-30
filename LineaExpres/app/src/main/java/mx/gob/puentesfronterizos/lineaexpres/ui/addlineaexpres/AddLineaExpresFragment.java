@@ -118,7 +118,7 @@ public class AddLineaExpresFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/le/user/"+sentri+"/"+User+"";
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/le/user/"+sentri+"/"+User+"";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -185,7 +185,7 @@ public class AddLineaExpresFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/user/sentri";
+                String url_process = "https://apis.fpfch.gob.mx/api/v1/user/sentri";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();

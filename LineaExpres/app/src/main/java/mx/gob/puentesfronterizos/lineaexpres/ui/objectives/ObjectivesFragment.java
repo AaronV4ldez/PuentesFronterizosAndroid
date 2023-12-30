@@ -43,7 +43,7 @@ public class ObjectivesFragment extends Fragment {
 
 
         new Thread(() -> {
-            String Objetivo = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/662?_embed";
+            String Objetivo = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/662?_embed";
             URL url_Objetivo;
             try {
                 url_Objetivo = new URL(Objetivo);

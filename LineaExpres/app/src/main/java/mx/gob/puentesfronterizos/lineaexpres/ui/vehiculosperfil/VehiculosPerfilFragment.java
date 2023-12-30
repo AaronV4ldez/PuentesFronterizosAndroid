@@ -127,7 +127,7 @@ public class VehiculosPerfilFragment extends Fragment {
                         openDb.cleanVehiculos();
 
                         InputStream inputStream;
-                        String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/vehicles";
+                        String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/vehicles";
 
                         URL url = new URL(accountActivation_url);
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -275,7 +275,7 @@ public class VehiculosPerfilFragment extends Fragment {
                                 });
 
                                 AceptarCancelarTAG.setOnClickListener(v -> {
-                                    postDeleteTag();
+                                    postDeleteTag(Tag);
                                 });
                                 //Fin Borrar Tag
                                 recarga.setTag(Placa);
@@ -424,7 +424,7 @@ public class VehiculosPerfilFragment extends Fragment {
         CompletableFuture.supplyAsync(() -> {
             try {
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/tags/exists/" + Tag;
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/tags/exists/" + Tag;
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -474,7 +474,7 @@ public class VehiculosPerfilFragment extends Fragment {
         new Thread(() -> {
             try {
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/tags/exists/" + Tag;
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/tags/exists/" + Tag;
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
@@ -528,7 +528,7 @@ public class VehiculosPerfilFragment extends Fragment {
         new Thread(() -> {
             try {
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/tags/exists/" + Tag;
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/tags/exists/" + Tag;
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();

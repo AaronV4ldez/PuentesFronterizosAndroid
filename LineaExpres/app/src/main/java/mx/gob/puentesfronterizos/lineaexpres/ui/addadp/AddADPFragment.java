@@ -126,7 +126,7 @@ public class AddADPFragment extends Fragment implements View.OnClickListener {
             try {
 
                 InputStream inputStream;
-                String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/vehicles";
+                String url_process = "https://apis.fpfch.gob.mx/api/v1/vehicles";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -198,7 +198,7 @@ public class AddADPFragment extends Fragment implements View.OnClickListener {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/tags/exists/" + Tag;
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/tags/exists/" + Tag;
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();

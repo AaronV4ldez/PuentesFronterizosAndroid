@@ -41,7 +41,7 @@ public class PrivacyFragment extends Fragment {
         TextView layoutBody = binding.Body;
 
         new Thread(() -> {
-            String Privacy = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/3?_embed";
+            String Privacy = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/3?_embed";
             URL urlPrivacy;
             try {
                 urlPrivacy = new URL(Privacy);

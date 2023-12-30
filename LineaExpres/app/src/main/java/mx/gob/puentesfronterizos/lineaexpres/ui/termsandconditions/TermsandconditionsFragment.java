@@ -45,7 +45,7 @@ public class TermsandconditionsFragment extends Fragment {
         layoutTitle = binding.Title;
 
         new Thread(() -> {
-            String TerminosYCondiciones = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1309?_embed";
+            String TerminosYCondiciones = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1309?_embed";
             URL urlTerminosYCondiciones;
             try {
                 urlTerminosYCondiciones = new URL(TerminosYCondiciones);

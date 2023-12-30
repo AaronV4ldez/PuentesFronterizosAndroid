@@ -41,7 +41,7 @@ public class MisionFragment extends Fragment {
 
 
         new Thread(() -> {
-            String Mision = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/724?_embed";
+            String Mision = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/724?_embed";
             URL url_Mision;
             try {
                 url_Mision = new URL(Mision);

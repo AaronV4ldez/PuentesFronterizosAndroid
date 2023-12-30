@@ -170,7 +170,7 @@ public class BanortestFragment extends Fragment {
           //String Nombre = "";
           //String Nombre = "";
 
-            RespWebView.loadUrl("https://lineaexpressapp.desarrollosenlanube.net/pagosmovil/#/"+num_tag+"/"+MontoSeleccionado+"/"+TIPOP);
+            RespWebView.loadUrl("https://apis.fpfch.gob.mx/pagosmovil/#/"+num_tag+"/"+MontoSeleccionado+"/"+TIPOP);
 
             RespWebView.setWebViewClient(new WebViewClient() {
                 @Override

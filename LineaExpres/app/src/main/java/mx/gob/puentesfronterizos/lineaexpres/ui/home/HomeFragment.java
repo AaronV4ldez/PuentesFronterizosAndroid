@@ -253,7 +253,7 @@ public class HomeFragment extends Fragment {
 
             URL url;
             try {
-                url = new URL("https://lineaexpressapp.desarrollosenlanube.net/api/v1/clima");
+                url = new URL("https://apis.fpfch.gob.mx/api/v1/clima");
                 URLConnection requestWeather = url.openConnection();
                 requestWeather.connect();
                 JsonArray jsonArray = JsonParser.parseReader(new InputStreamReader((InputStream) requestWeather.getContent())).getAsJsonArray();
@@ -336,7 +336,7 @@ public class HomeFragment extends Fragment {
         webSettings.setUseWideViewPort(true);
 
         new Thread(() -> {
-            String jsonURL = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/config/mobile";
+            String jsonURL = "https://apis.fpfch.gob.mx/api/v1/config/mobile";
             URL url;
             try {
                 url = new URL(jsonURL);
@@ -365,7 +365,7 @@ public class HomeFragment extends Fragment {
         imageAd = (ImageView) binding.adCarousel;
 
         new Thread(() -> {
-            String jsonURL = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/config/mobile";
+            String jsonURL = "https://apis.fpfch.gob.mx/api/v1/config/mobile";
             URL url;
             try {
 

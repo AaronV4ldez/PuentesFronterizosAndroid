@@ -228,7 +228,7 @@ public class ProfileFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/procs";
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/procs";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -310,7 +310,7 @@ public class ProfileFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/user/saveid";
+                String url_process = "https://apis.fpfch.gob.mx/api/v1/user/saveid";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -356,7 +356,7 @@ public class ProfileFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/files?id_proc="+id_proc+"&id_proc_type="+id_proc_type+"";
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/files?id_proc="+id_proc+"&id_proc_type="+id_proc_type+"";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -424,7 +424,7 @@ public class ProfileFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/vehicles";
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/vehicles";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -496,7 +496,7 @@ public class ProfileFragment extends Fragment {
         new Thread(() -> {
             try {
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/user";
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/user";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();

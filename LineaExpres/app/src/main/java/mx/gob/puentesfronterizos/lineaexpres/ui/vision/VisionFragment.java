@@ -40,7 +40,7 @@ public class VisionFragment extends Fragment {
         TextView layoutBody = binding.Body;
 
         new Thread(() -> {
-            String Vision = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/730?_embed";
+            String Vision = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/730?_embed";
             URL url_Vision;
             try {
                 url_Vision = new URL(Vision);
