@@ -7,6 +7,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -32,10 +34,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -155,7 +159,6 @@ public class VehiculosPerfilFragment extends Fragment {
 
                         for (int i = 0; i < Result.length(); i++) {
                             JSONObject Tramites = (JSONObject) Result.get(i);
-
                             int tipoVeh = (int) Tramites.get("tipo");
                             String Marca = (String) Tramites.get("marca");
                             String Linea = (String) Tramites.get("linea");
@@ -170,13 +173,33 @@ public class VehiculosPerfilFragment extends Fragment {
                             String ctl_stall_id = Tramites.optString("ctl_stall_id", "undefined");
                             String ctl_user_id = Tramites.optString("ctl_user_id", "undefined");
                             String ctl_id = Tramites.optString("ctl_id", "undefined");
+                            String id = Tramites.optString("id");
 
                             //if (tipoVeh != 1) {
                             //    continue;
                             //}
 
-                            openDb.insertVehicles(new String(String.valueOf(tipoVeh)), Marca, Linea, tag, imgurl, new String(String.valueOf(ctl_contract_type)), clt_expiration_date, saldo, placa, color, anio, ctl_stall_id, ctl_user_id, ctl_id);
+
+                            openDb.insertVehicles(new String(String.valueOf(tipoVeh)),
+                                    Marca,
+                                    Linea,
+                                    tag,
+                                    imgurl,
+                                    new String(String.valueOf(ctl_contract_type)),
+                                    clt_expiration_date,
+                                    saldo,
+                                    placa,
+                                    color,
+                                    anio,
+                                    ctl_stall_id,
+                                    ctl_user_id,
+                                    ctl_id,
+                                    id
+
+                            );
+
                         }
+
                         conn.disconnect();
                     } catch (IOException | JSONException e) {
                         e.printStackTrace();
@@ -202,6 +225,13 @@ public class VehiculosPerfilFragment extends Fragment {
 
 
                                 String[] splitArray = vehiculos.get(i).split("∑");
+                                /*
+                                Verificar los datos que se insertan en la tabla de la base de datos
+                                for  (String ValueId: splitArray
+                                     ) {
+                                    Log.d("Result", ValueId);
+
+                                }*/
                                 String vehType = splitArray[0];
                                 String Marca = splitArray[1];
                                 String Linea = splitArray[2];
@@ -213,6 +243,8 @@ public class VehiculosPerfilFragment extends Fragment {
                                 String Placa = splitArray[8];
                                 String ctl_user_id = splitArray[12];
                                 String ctl_id = splitArray[13];
+                                String id = splitArray[14];
+
 
                                 //if (vehType.equals("1")) {
                                 //    hasLineaVeh++;
@@ -227,40 +259,6 @@ public class VehiculosPerfilFragment extends Fragment {
                                     }
                                 }
 
-                               /* misCruces2.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        // Obtén el contexto de la actividad actual
-                                        Context context = getContext();
-
-                                        // Crea el AlertDialog.Builder
-                                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-
-                                        // Establece el mensaje del diálogo
-                                        builder.setMessage("Seguro que quieres elminar el tag: " + Tag);
-
-                                        // Añade un botón "Aceptar" al diálogo
-                                        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                // Puedes realizar alguna acción si es necesario al hacer clic en "Aceptar"
-                                            }
-                                        });
-
-                                        // Añade un botón "Cancelar" al diálogo
-                                        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                // Puedes realizar alguna acción si es necesario al hacer clic en "Cancelar"
-                                                dialog.cancel(); // Esto cancela el diálogo
-                                            }
-                                        });
-
-                                        // Muestra el diálogo
-                                        builder.create().show();
-                                    }
-                                });*/
-                                //Button misCruces2 = (Button) plantillaView.findViewById(R.id.btnMisCruces2);
 
                                 //Borrar TAG
                                ConstraintLayout MainBorraTagLayout = (ConstraintLayout) plantillaView.findViewById(R.id.MainBorraTagLayout);
@@ -268,6 +266,21 @@ public class VehiculosPerfilFragment extends Fragment {
 
                                 misCruces2.setOnClickListener(v -> {
                                     MainBorraTagLayout.setVisibility(View.VISIBLE);
+                                    /*Verificar el tag y el id
+                                    Context context = getContext();
+
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                                    // Establece el mensaje del diálogo
+                                    builder.setMessage("El id es " + id + " el tag es " + Tag);
+                                    // Añade un botón "Aceptar" al diálogo
+                                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                        }
+
+                                    });
+                                    builder.create().show();*/
                                 });
 
                                 CancelarBorrarTAG.setOnClickListener(v -> {
@@ -275,7 +288,9 @@ public class VehiculosPerfilFragment extends Fragment {
                                 });
 
                                 AceptarCancelarTAG.setOnClickListener(v -> {
-                                    postDeleteTag(Tag);
+
+                                    postDeleteTag(id);
+                                    MainBorraTagLayout.setVisibility(View.GONE);
                                 });
                                 //Fin Borrar Tag
                                 recarga.setTag(Placa);
@@ -470,65 +485,12 @@ public class VehiculosPerfilFragment extends Fragment {
         return future;
     }
 
-    /*public void postDeleteTag(String Tag){
+
+    public void postDeleteTag(String id) {
         new Thread(() -> {
             try {
                 InputStream inputStream;
-                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/tags/exists/" + Tag;
-                URL url = new URL(accountActivation_url);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-                conn.setRequestProperty("Content-Type", "text");
-                conn.setRequestProperty("Accept","application/json");
-                conn.setRequestProperty("Authorization", "Bearer " + Token);
-                conn.setRequestMethod("DELETE");
-
-                int Status = conn.getResponseCode();
-
-                Log.i(TAG, "httpPostRequest: status = " + conn.getResponseCode());
-                Log.i(TAG, "httpPostRequest: msg = " + conn.getResponseMessage());
-
-                if (Status != 200) {
-                    inputStream = new BufferedInputStream(conn.getErrorStream());
-                }else {
-                    inputStream = new BufferedInputStream(conn.getInputStream());
-                }
-                String ResponseData = convertStreamToString(inputStream);
-                System.out.println("Este es el responseData de delete account " + ResponseData);
-
-                JSONObject Result = new JSONObject(ResponseData);
-                String message = (String) Result.get("message");
-
-                if (message.contains("Usuario eliminado exitosamente.") || message.contains("La petición la realizó un usuario no válido.")) {
-                    requireActivity().runOnUiThread(() -> {
-                        MainActivity.nav_req(R.id.navigation_logout);
-                    });
-                }
-                requireActivity().runOnUiThread(() -> {
-                    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
-                });
-
-                System.out.println(message);
-
-
-
-                conn.disconnect();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                throw new RuntimeException(e);
-            }
-
-        }).start();
-    }*/
-
-//eliminar tag api
-    public void postDeleteTag(String Tag) {
-
-        new Thread(() -> {
-            try {
-                InputStream inputStream;
-                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/tags/exists/" + Tag;
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/vehicles/" + id;
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -538,28 +500,57 @@ public class VehiculosPerfilFragment extends Fragment {
                 conn.setRequestProperty("Authorization", "Bearer " + Token);
                 conn.setRequestMethod("DELETE");
 
-                int Status = conn.getResponseCode();
+                int status = conn.getResponseCode();
 
-                Log.i(TAG, "httpPostRequest: status = " + conn.getResponseCode());
+                Log.i(TAG, "httpPostRequest: status = " + status);
                 Log.i(TAG, "httpPostRequest: msg = " + conn.getResponseMessage());
+                Log.d(TAG, "URL de la solicitud: " + accountActivation_url);
 
-                if (Status != 200) {
+
+                if (status != HttpURLConnection.HTTP_OK) {
                     inputStream = new BufferedInputStream(conn.getErrorStream());
+
                 } else {
                     inputStream = new BufferedInputStream(conn.getInputStream());
                 }
-                String ResponseData = convertStreamToString(inputStream);
-                System.out.println("Este es el responseData de Register Fragment " + ResponseData);
 
-                JSONObject Result = new JSONObject(ResponseData);
+                String responseData = convertStreamToString(inputStream);
+                Log.d(TAG, "Este es el responseData de Register Fragment " + responseData);
+
+                // Manejo de la respuesta si es necesario
+                // ...
+                getActivity().runOnUiThread(() -> {
+                    // Código para mostrar el diálogo aquí
+                    // ...
+                    // Posible Verificación
+                    Context context = getContext();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                    // Establece el mensaje del diálogo
+                    builder.setMessage("El tag se ha eliminado correctamente!");
+
+                    // Añade un botón "Aceptar" al diálogo
+                    builder.setPositiveButton("Aceptar", (dialog, which) -> {
+                        MainActivity.nav_req(R.id.navigation_vehiculos_perfil);
+                    });
+
+                    builder.create().show();
+
+
+                });
                 conn.disconnect();
 
-            } catch (IOException | JSONException e) {
+                // Acceso a la interfaz de usuario para mostrar el diálogo
+
+
+            } catch (IOException e) {
                 e.printStackTrace();
+                // Manejo de errores de conexión a Internet aquí
             }
 
         }).start();
     }
+
 
     @Override
     public void onDestroyView() {

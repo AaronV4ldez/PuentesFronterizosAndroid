@@ -368,7 +368,7 @@ public class updateData extends dbHelper {
         }
     }
 
-    public void insertVehicles(String tipoVeh, String Marca, String Linea, String Tag, String imgUrl, String ctl_contract_type, String clt_expiration_date, String Saldo, String Placa, String Color, String Anio, String ctl_stall_id, String ctl_user_id, String ctl_id) {
+    public void insertVehicles(String tipoVeh, String Marca, String Linea, String Tag, String imgUrl, String ctl_contract_type, String clt_expiration_date, String Saldo, String Placa, String Color, String Anio, String ctl_stall_id, String ctl_user_id, String ctl_id, String id) {
         try {
             dbHelper bHelper = new dbHelper(context);
             SQLiteDatabase db = bHelper.getWritableDatabase();
@@ -387,6 +387,7 @@ public class updateData extends dbHelper {
             values.put("ctl_stall_id", ctl_stall_id);
             values.put("ctl_user_id", ctl_user_id);
             values.put("ctl_id", ctl_id);
+            values.put("id", id);
             db.insert(Vehiculos, null, values);
             db.close();
         }catch (RuntimeException e){
@@ -400,7 +401,7 @@ public class updateData extends dbHelper {
         SQLiteDatabase db = bHelper.getWritableDatabase();
         try {
             //Cursor getRes = db.rawQuery("SELECT tipoVeh, Marca, Linea, Tag, imgUrl, ctl_contract_type, clt_expiration_date, Saldo, Placa, Color, Anio, ctl_stall_id, ctl_user_id, ctl_id FROM " + Vehiculos + " WHERE tipoVeh != 0 AND Tag LIKE '%EPAS%' OR tipoVeh != 0 AND Tag LIKE '%FPFC%' ORDER BY tipoVeh DESC ", null);
-            Cursor getRes = db.rawQuery("SELECT tipoVeh, Marca, Linea, Tag, imgUrl, ctl_contract_type, clt_expiration_date, Saldo, Placa, Color, Anio, ctl_stall_id, ctl_user_id, ctl_id FROM " + Vehiculos + " WHERE tipoVeh != 0 ORDER BY tipoVeh DESC ", null); //Temporalmente
+            Cursor getRes = db.rawQuery("SELECT tipoVeh, Marca, Linea, Tag, imgUrl, ctl_contract_type, clt_expiration_date, Saldo, Placa, Color, Anio, ctl_stall_id, ctl_user_id, ctl_id, id FROM " + Vehiculos + " WHERE tipoVeh != 0 ORDER BY tipoVeh DESC ", null); //Temporalmente
             while(getRes.moveToNext()) {
                 String tipoVeh = getRes.getString(0);
                 String Marca = getRes.getString(1);
@@ -416,8 +417,9 @@ public class updateData extends dbHelper {
                 String ctl_stall_id = getRes.getString(11);
                 String ctl_user_id = getRes.getString(12);
                 String ctl_id = getRes.getString(13);
+                String id = getRes.getString(14);
 
-                String strRes = tipoVeh + "∑" + Marca + "∑" + Linea + "∑" + Tag + "∑" + imgUrl + "∑" + ctl_contract_type + "∑" + clt_expiration_date + "∑" + Saldo + "∑" + Placa + "∑" + Color + "∑" + Anio + "∑" + ctl_stall_id + "∑" + ctl_user_id + "∑" + ctl_id;
+                String strRes = tipoVeh + "∑" + Marca + "∑" + Linea + "∑" + Tag + "∑" + imgUrl + "∑" + ctl_contract_type + "∑" + clt_expiration_date + "∑" + Saldo + "∑" + Placa + "∑" + Color + "∑" + Anio + "∑" + ctl_stall_id + "∑" + ctl_user_id + "∑" + ctl_id + "∑" + id + "∑" ;
                 result.add(strRes);
             }getRes.close();
             return result;
@@ -432,7 +434,7 @@ public class updateData extends dbHelper {
         dbHelper bHelper = new dbHelper(context);
         SQLiteDatabase db = bHelper.getWritableDatabase();
         try {
-            Cursor getRes = db.rawQuery("SELECT tipoVeh, Marca, Linea, Tag, imgUrl, ctl_contract_type, clt_expiration_date, Saldo, Placa, Color, Anio, ctl_stall_id, ctl_user_id, ctl_id  FROM " + Vehiculos + " ORDER BY tipoVeh DESC " ,null);
+            Cursor getRes = db.rawQuery("SELECT tipoVeh, Marca, Linea, Tag, imgUrl, ctl_contract_type, clt_expiration_date, Saldo, Placa, Color, Anio, ctl_stall_id, ctl_user_id, ctl_id, id  FROM " + Vehiculos + " ORDER BY tipoVeh DESC " ,null);
             while(getRes.moveToNext()) {
                 String tipoVeh = getRes.getString(0);
                 String Marca = getRes.getString(1);
@@ -448,8 +450,9 @@ public class updateData extends dbHelper {
                 String ctl_stall_id = getRes.getString(11);
                 String ctl_user_id = getRes.getString(12);
                 String ctl_id = getRes.getString(13);
+                String id = getRes.getString(14);
 
-                String strRes = tipoVeh + "∑" + Marca + "∑" + Linea + "∑" + Tag + "∑" + imgUrl + "∑" + ctl_contract_type + "∑" + clt_expiration_date + "∑" + Saldo + "∑" + Placa + "∑" + Color + "∑" + Anio + "∑" + ctl_stall_id + "∑" + ctl_user_id + "∑" + ctl_id;
+                String strRes = tipoVeh + "∑" + Marca + "∑" + Linea + "∑" + Tag + "∑" + imgUrl + "∑" + ctl_contract_type + "∑" + clt_expiration_date + "∑" + Saldo + "∑" + Placa + "∑" + Color + "∑" + Anio + "∑" + ctl_stall_id + "∑" + ctl_user_id + "∑" + ctl_id + "∑" + id;
                 result.add(strRes);
             }getRes.close();
             return result;

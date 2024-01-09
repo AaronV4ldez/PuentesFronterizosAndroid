@@ -560,7 +560,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "WhoWeAre"
-            String QuienesSomos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/647?_embedwp-json/wp/v2/pages/647?_embed";
+            String QuienesSomos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/647?_embed";
             URL urlQuienesSomos;
             try {
                 urlQuienesSomos = new URL(QuienesSomos);

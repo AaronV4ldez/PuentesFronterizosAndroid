@@ -3,11 +3,7 @@ package mx.gob.puentesfronterizos.lineaexpres.ui.vehiculos;
 
 import static mx.gob.puentesfronterizos.lineaexpres.ui.login.LoginFragment.convertStreamToString;
 
-import android.content.ComponentCallbacks2;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -40,7 +36,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Timer;
-import java.util.TimerTask;
 
 import mx.gob.puentesfronterizos.lineaexpres.MainActivity;
 import mx.gob.puentesfronterizos.lineaexpres.R;
@@ -205,8 +200,6 @@ public class VehiculosFragment extends Fragment {
                     for (int i = 0; i < Result.length(); i++) {
                         JSONObject Tramites = (JSONObject) Result.get(i);
 
-
-
                         int tipoVeh = (int) Tramites.get("tipo");
                         String Marca = (String) Tramites.get("marca");
                         String Linea = (String) Tramites.get("linea");
@@ -221,11 +214,27 @@ public class VehiculosFragment extends Fragment {
                         String ctl_stall_id = Tramites.optString("ctl_stall_id", "undefined");
                         String ctl_user_id = Tramites.optString("ctl_user_id", "undefined");
                         String ctl_id = Tramites.optString("ctl_id", "undefined");
+                        String id = Tramites.optString("id");
                         System.out.println("Estos son los tag de Linea Expres: " + tag);
                         if (tipoVeh == 1) {
                             BtnSolicitudInscripcion.setText("Trámite para agregar un vehículo");
                             BtnSolicitudInscripcion.setTag("");
-                            UpdateData.insertVehicles(new String(String.valueOf(tipoVeh)), Marca, Linea, tag, imgurl, new String(String.valueOf(ctl_contract_type)), clt_expiration_date, saldo, placa, color, anio, ctl_stall_id, ctl_user_id, ctl_id);
+                            UpdateData.insertVehicles(new String(String.valueOf(tipoVeh)),
+                                    Marca,
+                                    Linea,
+                                    tag,
+                                    imgurl,
+                                    new String(String.valueOf(ctl_contract_type)),
+                                    clt_expiration_date,
+                                    saldo,
+                                    placa,
+                                    color,
+                                    anio,
+                                    ctl_stall_id,
+                                    ctl_user_id,
+                                    ctl_id,
+                                    id
+                                    );
                         }
 
                     }
