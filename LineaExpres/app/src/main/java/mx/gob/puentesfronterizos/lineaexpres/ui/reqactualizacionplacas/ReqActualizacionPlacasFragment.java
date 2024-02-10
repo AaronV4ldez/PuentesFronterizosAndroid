@@ -285,7 +285,7 @@ public class ReqActualizacionPlacasFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String url_process = "https://apis.fpfch.gob.mx/api/v1/procs/p03";
+                String url_process = getResources().getString(R.string.apiURL) + "api/v1/procs/p03";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -562,7 +562,7 @@ public class ReqActualizacionPlacasFragment extends Fragment {
                                         .build();
                                 Request request = new Request.Builder()
                                         .header("Authorization", "Bearer " + Token)
-                                        .url("https://apis.fpfch.gob.mx/api/v1/files")
+                                        .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                         .post(requestBody)
                                         .build();
                                 Response response = client.newCall(request).execute();
@@ -593,7 +593,7 @@ public class ReqActualizacionPlacasFragment extends Fragment {
 
                                     Request request = new Request.Builder()
                                             .header("Authorization", "Bearer " + Token)
-                                            .url("https://apis.fpfch.gob.mx/api/v1/files")
+                                            .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                             .post(requestBody)
                                             .build();
                                     Response response = client.newCall(request).execute();
@@ -662,7 +662,7 @@ public class ReqActualizacionPlacasFragment extends Fragment {
 
                         Request request = new Request.Builder()
                                 .header("Authorization", "Bearer " + Token)
-                                .url("https://apis.fpfch.gob.mx/api/v1/files")
+                                .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                 .post(requestBody)
                                 .build();
 

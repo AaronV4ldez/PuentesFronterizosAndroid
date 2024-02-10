@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentLineamientosBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
@@ -39,7 +40,7 @@ public class LineamientosFragment extends Fragment {
         TextView layoutBody = binding.Body;
 
         new Thread(() -> {
-            String Lineamientos = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1305?_embed";
+            String Lineamientos = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1305?_embed";
             URL urlLineamientos;
             try {
                 urlLineamientos = new URL(Lineamientos);

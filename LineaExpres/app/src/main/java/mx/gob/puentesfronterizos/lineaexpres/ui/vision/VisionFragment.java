@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentVisionBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
@@ -40,7 +41,7 @@ public class VisionFragment extends Fragment {
         TextView layoutBody = binding.Body;
 
         new Thread(() -> {
-            String Vision = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/730?_embed";
+            String Vision = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/730?_embed";
             URL url_Vision;
             try {
                 url_Vision = new URL(Vision);

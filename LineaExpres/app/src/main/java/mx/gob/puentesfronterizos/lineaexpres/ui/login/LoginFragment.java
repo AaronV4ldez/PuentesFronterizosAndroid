@@ -60,6 +60,7 @@ public class LoginFragment extends Fragment {
     TextView passwordEmptyTView;
     //EditText Sentri;
     TextView sentriEmptyTView;
+    //String loginUrl = getResources().getString(R.string.apiURL) + "https://apis.fpfch.gob.mx/api/v1/session/login";
     String loginUrl = "https://apis.fpfch.gob.mx/api/v1/session/login";
 
     UserLog userLog;

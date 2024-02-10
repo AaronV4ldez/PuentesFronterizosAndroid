@@ -1088,7 +1088,7 @@ public class ReqInscriptionFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String url_process = "https://apis.fpfch.gob.mx/api/v1/procs/p01";
+                String url_process = getResources().getString(R.string.apiURL) + "api/v1/procs/p01";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -1443,7 +1443,7 @@ public class ReqInscriptionFragment extends Fragment {
                                         .build();
                                 Request request = new Request.Builder()
                                         .header("Authorization", "Bearer " + Token)
-                                        .url("https://apis.fpfch.gob.mx/api/v1/files")
+                                        .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                         .post(requestBody)
                                         .build();
                                 Response response = client.newCall(request).execute();
@@ -1474,7 +1474,7 @@ public class ReqInscriptionFragment extends Fragment {
 
                                     Request request = new Request.Builder()
                                             .header("Authorization", "Bearer " + Token)
-                                            .url("https://apis.fpfch.gob.mx/api/v1/files")
+                                            .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                             .post(requestBody)
                                             .build();
                                     Response response = client.newCall(request).execute();
@@ -1543,7 +1543,7 @@ public class ReqInscriptionFragment extends Fragment {
 
                         Request request = new Request.Builder()
                                 .header("Authorization", "Bearer " + Token)
-                                .url("https://apis.fpfch.gob.mx/api/v1/files")
+                                .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                 .post(requestBody)
                                 .build();
 
@@ -1570,7 +1570,7 @@ public class ReqInscriptionFragment extends Fragment {
         public void run() {
             try {
                 InputStream inputStream;
-                String url_process = "https://apis.fpfch.gob.mx/api/v1/procs";
+                String url_process = getResources().getString(R.string.apiURL) + "api/v1/procs";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -1835,7 +1835,7 @@ public class ReqInscriptionFragment extends Fragment {
 
     public void getPrices(){
         new Thread(() -> {
-            String jsonURL = "https://apis.fpfch.gob.mx/api/v1/config/mobile";
+            String jsonURL = getResources().getString(R.string.apiURL) + "api/v1/config/mobile";
             URL url;
             try {
                 url = new URL(jsonURL);

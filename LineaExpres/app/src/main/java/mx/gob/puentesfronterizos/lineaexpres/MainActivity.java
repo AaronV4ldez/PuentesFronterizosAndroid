@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton img = findViewById(R.id.goToHome);
 
         Glide.with(this)
-                .load("https://noticias.fpfch.gob.mx/wp-content/uploads/2022/07/Cabezal714x119_Color.png")
+                .load(getResources().getString(R.string.noticiasURL) + "wp-content/uploads/2022/07/Cabezal714x119_Color.png")
                 .into(img);
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#121212")));
 
@@ -475,11 +475,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startDownload() {
-        System.out.println("Aplicación resumida, estamos recargando todo again");
         updateData DownloadData = new updateData(MainActivity.this); //Open local db connection
         new Thread(() -> {
             //Downloading last 10 notes
-            String jsonURL = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/posts?per_page=10&categories=18&_embed";
+            String jsonURL = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/posts?per_page=10&categories=18&_embed";
             URL url;
             try {
                 url = new URL(jsonURL);
@@ -508,7 +507,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             // Downloading "Servicios"
-            String Servicios = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/posts?categories=15&_embed";
+            String Servicios = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/posts?categories=15&_embed";
             URL urlServicios;
             try {
                 urlServicios = new URL(Servicios);
@@ -541,7 +540,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // Downloading "Servicios"
-            String Lineamientos = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1305?_embed";
+            String Lineamientos = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1305?_embed";
             URL urlLineamientos;
             try {
                 urlLineamientos = new URL(Lineamientos);
@@ -560,7 +559,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "WhoWeAre"
-            String QuienesSomos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/647?_embed";
+            String QuienesSomos = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1710?_embed";
             URL urlQuienesSomos;
             try {
                 urlQuienesSomos = new URL(QuienesSomos);
@@ -580,7 +579,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "Terminos y condiciones"
-            String TerminosYCondiciones = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1309?_embed";
+            String TerminosYCondiciones = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1309?_embed";
             URL urlTerminosYCondiciones;
             try {
                 urlTerminosYCondiciones = new URL(TerminosYCondiciones);
@@ -602,7 +601,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             //Downloading Objetivo
-            String Objetivo = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/662?_embed";
+            String Objetivo = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/662?_embed";
             URL url_Objetivo;
             try {
                 url_Objetivo = new URL(Objetivo);
@@ -623,7 +622,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading Mision
-            String Mision = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/724?_embed";
+            String Mision = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/724?_embed";
             URL url_Mision;
             try {
                 url_Mision = new URL(Mision);
@@ -643,7 +642,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading Vision
-            String Vision = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/730?_embed";
+            String Vision = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/730?_embed";
             URL url_Vision;
             try {
                 url_Vision = new URL(Vision);
@@ -663,7 +662,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "Privacy"
-            String Privacy = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/3?_embed";
+            String Privacy = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/3?_embed";
             URL urlPrivacy;
             try {
                 urlPrivacy = new URL(Privacy);
@@ -684,7 +683,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "CurrentRates"
-            String CurrentRates = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1119?_embed";
+            String CurrentRates = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1119?_embed";
             URL urlCurrentRates;
             try {
                 urlCurrentRates = new URL(CurrentRates);

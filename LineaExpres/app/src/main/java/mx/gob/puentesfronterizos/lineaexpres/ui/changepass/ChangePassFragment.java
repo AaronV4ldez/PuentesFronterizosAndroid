@@ -111,9 +111,7 @@ public class ChangePassFragment extends Fragment {
                     Toast.makeText(requireContext(), "Confirme su contraseña por favor.", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                TempPass.setText("");
-                NewPass.setText("");
-                ConfirmNewPass.setText("");
+
 
                 ChangePass(TempPassText, NewPassText, Token);
 
@@ -132,7 +130,7 @@ public class ChangePassFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/user/changepass";
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/user/changepass";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -205,7 +203,7 @@ public class ChangePassFragment extends Fragment {
 
                 if (Status == 200){
                     requireActivity().runOnUiThread(() -> {
-                        // MainActivity.nav_req(R.id.navigation_home);
+                        MainActivity.nav_req(R.id.navigation_home);
                     });
                 }
 

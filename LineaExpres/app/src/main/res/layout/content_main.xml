@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_cart_m"
-        app:backgroundTint="#57348B"
+        app:backgroundTint="@android:color/holo_blue_bright"
         app:layout_anchor="@id/bottomAppBar"
         app:maxImageSize="35dp" />
 

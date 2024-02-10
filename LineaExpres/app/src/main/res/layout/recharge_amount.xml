@@ -49,11 +49,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ConfirmAmountBtn"
+        style="@style/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="340dp"
+        android:background="@drawable/backgroundnewtheme"
         android:text="Continuar"
-        style="@style/buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

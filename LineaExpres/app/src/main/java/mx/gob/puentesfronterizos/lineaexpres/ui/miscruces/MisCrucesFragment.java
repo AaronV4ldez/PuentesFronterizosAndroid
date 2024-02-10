@@ -132,7 +132,7 @@ public class MisCrucesFragment extends Fragment {
             public void run() {
                 try {
                     InputStream inputStream;
-                    String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/le/crossings/"+ctl_user_id+"/"+ctl_id+"";
+                    String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/le/crossings/"+ctl_user_id+"/"+ctl_id+"";
 
                     URL url = new URL(accountActivation_url);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();

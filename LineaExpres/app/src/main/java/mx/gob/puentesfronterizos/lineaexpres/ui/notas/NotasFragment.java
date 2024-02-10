@@ -191,7 +191,7 @@ public class NotasFragment extends Fragment {
 
     public void setNotesAds(){
         new Thread(() -> {
-            String jsonURL = "https://apis.fpfch.gob.mx/api/v1/config/mobile";
+            String jsonURL = getResources().getString(R.string.apiURL) + "api/v1/config/mobile";
             URL url;
             try {
                 url = new URL(jsonURL);

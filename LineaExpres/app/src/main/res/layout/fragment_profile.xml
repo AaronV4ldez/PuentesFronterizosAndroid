@@ -81,16 +81,17 @@
                 app:layout_constraintBottom_toTopOf="@+id/ButtonTramites"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/ButtonTramites"
                 style="@style/login_btns"
-                android:textSize="@dimen/globalFontSize"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="16dp"
                 android:text="@string/BtnTramitesProfile"
+                android:textSize="@dimen/globalFontSize"
+                android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/hr2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -99,13 +100,12 @@
                 android:id="@+id/hr2"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginBottom="14dp"
                 android:background="@color/black"
                 android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/citasTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginBottom="14dp"
-                />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/citasTitle"
@@ -129,6 +129,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/newcolorbluegraded"
                 android:text="@string/BtnCitasProfile"
                 android:textSize="@dimen/globalFontSize"
                 android:visibility="gone"
@@ -140,13 +141,12 @@
                 android:id="@+id/hr4"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginBottom="14dp"
                 android:background="@color/black"
                 android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/currentCitaChangeTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginBottom="14dp"
-                />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/currentCitaChangeTitle"
@@ -170,6 +170,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/newcolorbluegraded"
                 android:text="@string/BtnCitasProfile"
                 android:textSize="@dimen/globalFontSize"
                 android:visibility="gone"
@@ -181,13 +182,12 @@
                 android:id="@+id/hr3"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginBottom="14dp"
                 android:background="@color/black"
                 android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/LineaLayoutContainer"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginBottom="14dp"
-                />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <LinearLayout
                 android:id="@+id/LineaLayoutContainer"
@@ -204,51 +204,52 @@
                     style="@style/buttons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:visibility="visible"
-                    android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/newcolorbluegraded"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Telepeaje"
-                    android:textSize="@dimen/globalFontSize" />
+                    android:textSize="@dimen/globalFontSize"
+                    android:visibility="visible" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnADP"
                     style="@style/buttons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/newcolorbluegraded"
-                    android:visibility="visible"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Acceso Digital Peatonal"
-                    android:textSize="@dimen/globalFontSize" />
+                    android:textSize="@dimen/globalFontSize"
+                    android:visibility="visible" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnLineaExpres"
                     style="@style/buttons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:visibility="gone"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/newcolorbluegraded"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Línea Exprés"
-                    android:textSize="@dimen/globalFontSize" />
+                    android:textSize="@dimen/globalFontSize"
+                    android:visibility="gone" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnBorrarCuenta"
                     style="@style/buttons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/newcolorbluegraded"
-                    android:visibility="visible"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Borrar cuenta"
-                    android:textSize="@dimen/globalFontSize" />
+                    android:textSize="@dimen/globalFontSize"
+                    android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -271,11 +272,12 @@
                     style="@style/buttons"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:visibility="gone"
                     android:layout_margin="5dp"
+                    android:background="@drawable/backgroundnewtheme"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="¡Registrate aquí!"
-                    android:textSize="@dimen/globalFontSize" />
+                    android:textSize="@dimen/globalFontSize"
+                    android:visibility="gone" />
 
                 <!-- <androidx.appcompat.widget.AppCompatButton
                      android:id="@+id/btnProfileCars"
@@ -424,7 +426,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="#57348B"
+                    android:background="@drawable/newpurlpebtn"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="Cancelar"
                     android:textSize="@dimen/globalFontSize"
@@ -437,7 +439,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="#196EB6"
+                    android:background="@drawable/container_round_pleca_mas_informacion"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="De acuerdo"
                     android:textSize="@dimen/globalFontSize"

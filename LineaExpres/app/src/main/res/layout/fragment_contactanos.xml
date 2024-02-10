@@ -136,16 +136,16 @@
                 android:scrollbars="vertical"
                 android:hint="" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/sendFormBtn"
-                style="@style/buttons"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:fontFamily="@font/montserrat_bold"
-                android:layout_margin="5dp"
-                android:background="@drawable/backgroundnewtheme"
-                android:text="Enviar"
-                android:textSize="@dimen/globalFontSize" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sendFormBtn"
+            style="@style/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/backgroundnewtheme"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Enviar"
+            android:textSize="@dimen/globalFontSize" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

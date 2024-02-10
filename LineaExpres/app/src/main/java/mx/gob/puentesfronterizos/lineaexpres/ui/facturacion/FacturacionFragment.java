@@ -105,7 +105,7 @@ public class FacturacionFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String url_process = "https://apis.fpfch.gob.mx/api/v1/user/fac";
+                String url_process = getResources().getString(R.string.apiURL) + "api/v1/user/fac";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();

@@ -74,10 +74,10 @@
                     style="@style/buttons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/newcolorbluegraded"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Línea Exprés"
                     android:textSize="@dimen/globalFontSize" />
 
@@ -86,11 +86,10 @@
                     style="@style/buttons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/montserrat_bold"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/newcolorbluegraded"
-
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Telepeaje"
                     android:textSize="@dimen/globalFontSize" />
 

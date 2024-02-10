@@ -3,7 +3,11 @@ package mx.gob.puentesfronterizos.lineaexpres.ui.vehiculos;
 
 import static mx.gob.puentesfronterizos.lineaexpres.ui.login.LoginFragment.convertStreamToString;
 
+import android.content.ComponentCallbacks2;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -36,6 +40,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Timer;
+import java.util.TimerTask;
 
 import mx.gob.puentesfronterizos.lineaexpres.MainActivity;
 import mx.gob.puentesfronterizos.lineaexpres.R;
@@ -141,7 +146,7 @@ public class VehiculosFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/vehicles";
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/vehicles";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -200,6 +205,8 @@ public class VehiculosFragment extends Fragment {
                     for (int i = 0; i < Result.length(); i++) {
                         JSONObject Tramites = (JSONObject) Result.get(i);
 
+
+
                         int tipoVeh = (int) Tramites.get("tipo");
                         String Marca = (String) Tramites.get("marca");
                         String Linea = (String) Tramites.get("linea");
@@ -234,7 +241,7 @@ public class VehiculosFragment extends Fragment {
                                     ctl_user_id,
                                     ctl_id,
                                     id
-                                    );
+                            );
                         }
 
                     }

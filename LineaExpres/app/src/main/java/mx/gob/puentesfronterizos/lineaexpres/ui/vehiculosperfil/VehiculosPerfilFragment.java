@@ -59,7 +59,6 @@ import mx.gob.puentesfronterizos.lineaexpres.databinding.RecargaVehiculosPlantil
 import mx.gob.puentesfronterizos.lineaexpres.localDB.UserLog;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
-
 public class VehiculosPerfilFragment extends Fragment {
 
     ConstraintLayout MainBorraTagLayout;
@@ -73,7 +72,6 @@ public class VehiculosPerfilFragment extends Fragment {
     String User;
     String Token;
     UserLog userLog;
-
 
     LayoutInflater loaderInflater;
     View popupView;
@@ -131,7 +129,7 @@ public class VehiculosPerfilFragment extends Fragment {
                         openDb.cleanVehiculos();
 
                         InputStream inputStream;
-                        String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/vehicles";
+                        String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/vehicles";
 
                         URL url = new URL(accountActivation_url);
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -225,13 +223,13 @@ public class VehiculosPerfilFragment extends Fragment {
 
 
                                 String[] splitArray = vehiculos.get(i).split("∑");
-                                /*
-                                Verificar los datos que se insertan en la tabla de la base de datos
+
+                                //Verificar los datos que se insertan en la tabla de la base de datos
                                 for  (String ValueId: splitArray
                                      ) {
                                     Log.d("Result", ValueId);
 
-                                }*/
+                                }
                                 String vehType = splitArray[0];
                                 String Marca = splitArray[1];
                                 String Linea = splitArray[2];
@@ -244,7 +242,6 @@ public class VehiculosPerfilFragment extends Fragment {
                                 String ctl_user_id = splitArray[12];
                                 String ctl_id = splitArray[13];
                                 String id = splitArray[14];
-
 
                                 //if (vehType.equals("1")) {
                                 //    hasLineaVeh++;
@@ -261,7 +258,7 @@ public class VehiculosPerfilFragment extends Fragment {
 
 
                                 //Borrar TAG
-                               ConstraintLayout MainBorraTagLayout = (ConstraintLayout) plantillaView.findViewById(R.id.MainBorraTagLayout);
+                                ConstraintLayout MainBorraTagLayout = (ConstraintLayout) plantillaView.findViewById(R.id.MainBorraTagLayout);
 
 
                                 misCruces2.setOnClickListener(v -> {
@@ -432,14 +429,12 @@ public class VehiculosPerfilFragment extends Fragment {
         return root;
     }
 
-
-
     public CompletableFuture<String> verifyTag(String Tag) {
         CompletableFuture<String> future = new CompletableFuture<>();
         CompletableFuture.supplyAsync(() -> {
             try {
                 InputStream inputStream;
-                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/tags/exists/" + Tag;
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/tags/exists/" + Tag;
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();

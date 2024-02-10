@@ -23,6 +23,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
+import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentTermsandconditionsBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.UserLog;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
@@ -45,7 +46,7 @@ public class TermsandconditionsFragment extends Fragment {
         layoutTitle = binding.Title;
 
         new Thread(() -> {
-            String TerminosYCondiciones = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1309?_embed";
+            String TerminosYCondiciones = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1309?_embed";
             URL urlTerminosYCondiciones;
             try {
                 urlTerminosYCondiciones = new URL(TerminosYCondiciones);

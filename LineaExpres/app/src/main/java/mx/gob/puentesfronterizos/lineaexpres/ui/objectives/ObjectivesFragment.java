@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentObjectivesBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
@@ -43,7 +44,7 @@ public class ObjectivesFragment extends Fragment {
 
 
         new Thread(() -> {
-            String Objetivo = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/662?_embed";
+            String Objetivo = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/662?_embed";
             URL url_Objetivo;
             try {
                 url_Objetivo = new URL(Objetivo);

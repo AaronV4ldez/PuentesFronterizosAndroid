@@ -74,13 +74,14 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/takePhoto"
+                style="@style/login_btns"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="@style/login_btns"
-                android:textStyle="bold"
-                android:textSize="@dimen/globalFontSize"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/newcolorbluegraded"
                 android:text="Seleccionar documento"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/imagePrev"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -98,13 +99,14 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/ConfirmAndUpload"
+                style="@style/login_btns"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="@style/login_btns"
-                android:textStyle="bold"
-                android:textSize="@dimen/globalFontSize"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/newcolorbluegraded"
                 android:text="Enviar a revisión"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/SignContainer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -165,11 +167,13 @@
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/clear_button"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_margin="5dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@color/NewPurple"
+                        android:enabled="true"
                         android:text="Borrar Firma"
-                        android:enabled="true" />
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
             </RelativeLayout>
@@ -177,13 +181,14 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/SendSign"
+                style="@style/login_btns"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="@style/login_btns"
-                android:textStyle="bold"
-                android:textSize="@dimen/globalFontSize"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/backgroundnewtheme"
                 android:text="Enviar firma"
+                android:textSize="@dimen/globalFontSize"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

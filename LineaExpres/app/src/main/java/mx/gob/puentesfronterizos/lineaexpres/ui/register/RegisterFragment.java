@@ -68,8 +68,11 @@ public class RegisterFragment extends Fragment {
     UserLog userLog;
     Spinner numberLabel;
 
-    String u = "https://apis.fpfch.gob.mx/api/v1/user/signup";
-    String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/user/validate";
+    String u =  "https://apis.fpfch.gob.mx/api/v1/user/signup";
+    //String u =  requireContext().getResources().getString(R.string.apiURL) + "api/v1/user/signup";
+
+    String accountActivation_url =  "https://apis.fpfch.gob.mx/api/v1/user/validate";
+    //String accountActivation_url =  requireContext().getResources().getString(R.string.apiURL) + "api/v1/user/validate";
 
     String Email = "";
     String PhoneNumber = "";
@@ -88,7 +91,6 @@ public class RegisterFragment extends Fragment {
         if (UserLoggedConfirmation.get(0) != null) {
             MainActivity.nav_req(R.id.navigation_home);
         }
-
 
 
         //Binding layout
@@ -350,6 +352,7 @@ public class RegisterFragment extends Fragment {
                 InputStream inputStream;
 
                 URL url = new URL("https://apis.fpfch.gob.mx/api/v1/user/validate");
+                //URL url = new URL(getResources().getString(R.string.apiURL) + "api/v1/user/validate");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
@@ -420,6 +423,7 @@ public class RegisterFragment extends Fragment {
                 InputStream inputStream;
 
                 URL url = new URL("https://apis.fpfch.gob.mx/api/v1/user/newvcode");
+                //URL url = new URL(getResources().getString(R.string.apiURL) + "api/v1/user/newvcode");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");

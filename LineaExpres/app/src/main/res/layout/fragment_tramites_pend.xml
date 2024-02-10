@@ -88,25 +88,25 @@
                 android:orientation="vertical"
                 android:visibility="gone"
                 />
+
             <TextView
                 android:id="@+id/balanceTransferContainerTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Solicitud transferencia de saldo"
-                android:textSize="18sp"
-                android:textAlignment="center"
-                android:fontFamily="@font/montserrat_bold"
-                android:textColor="@color/black"
-                android:visibility="gone"
                 android:layout_marginBottom="16dp"
-                />
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Solicitud transferencia de saldo"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
             <LinearLayout
                 android:id="@+id/balanceTransferContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
             <TextView
                 android:id="@+id/bajaVehTagContainerTitle"
                 android:layout_width="match_parent"

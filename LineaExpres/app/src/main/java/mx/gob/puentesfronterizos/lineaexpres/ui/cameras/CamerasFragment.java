@@ -1,5 +1,7 @@
 package mx.gob.puentesfronterizos.lineaexpres.ui.cameras;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -49,39 +51,42 @@ public class CamerasFragment extends Fragment {
 
     ArrayList<String> Links = new ArrayList<>();
     ArrayList<WebView> webViews = new ArrayList<>();
+    WebView webview;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         CamerasViewModel CamerasViewModel = new ViewModelProvider(this).get(CamerasViewModel.class);
         binding = FragmentCamerasBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        webview = binding.WebViewCameras;
+        //ZaragozaNorteYT = binding.ZaragozaNorteYT;
+        //ZaragozaSurYT = binding.ZaragozaSurYT;
+        //PasoDelNorteNorteYT = binding.PasoDelNorteNorteYT;
+        //PasoDelNorteSurYT = binding.PasoDelNorteSurYT;
+        //LerdoNorteYT = binding.LerdoNorteYT;
+        //LerdoSurYT = binding.LerdoSurYT;
+        //LerdoFilaYT = binding.LerdoFilaYT;
 
-        ZaragozaNorteYT = binding.ZaragozaNorteYT;;
-        ZaragozaSurYT = binding.ZaragozaSurYT;
-        PasoDelNorteNorteYT = binding.PasoDelNorteNorteYT;
-        PasoDelNorteSurYT = binding.PasoDelNorteSurYT;
-        LerdoNorteYT = binding.LerdoNorteYT;
-        LerdoSurYT = binding.LerdoSurYT;
-        LerdoFilaYT = binding.LerdoFilaYT;
+        //webViews = new ArrayList<>();
+        //webViews.add(ZaragozaNorteYT);
+        //webViews.add(ZaragozaSurYT);
+        //webViews.add(PasoDelNorteNorteYT);
+        //webViews.add(PasoDelNorteSurYT);
+        //webViews.add(LerdoNorteYT);
+        //webViews.add(LerdoSurYT);
+        //webViews.add(LerdoFilaYT);
 
-        webViews = new ArrayList<>();
-        webViews.add(ZaragozaNorteYT);
-        webViews.add(ZaragozaSurYT);
-        webViews.add(PasoDelNorteNorteYT);
-        webViews.add(PasoDelNorteSurYT);
-        webViews.add(LerdoNorteYT);
-        webViews.add(LerdoSurYT);
-        webViews.add(LerdoFilaYT);
+        webView();
 
-
-
-        getYoutubeEmbeded();
+        //getYoutubeEmbeded();
 
         return root;
     }
 
+
+
     private void getYoutubeEmbeded() {
         new Thread(() -> {
-            String jsonURL = "https://apis.fpfch.gob.mx/api/v1/config/mobile";
+            String jsonURL = getResources().getString(R.string.apiURL) + "api/v1/config/mobile";
             URL url;
             try {
                 url = new URL(jsonURL);
@@ -158,7 +163,31 @@ public class CamerasFragment extends Fragment {
 
     }
 
+    private void webView(){
+        //Habilitar JavaScript (Videos youtube)
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setLoadWithOverviewMode(true);
 
+        //Handling Page Navigation
+        webview.setWebViewClient(new MyWebViewClient());
+
+        //Load a URL on WebView
+        webview.loadUrl("https://panelweb.fpfch.gob.mx/puentes/");
+    }
+
+    private class MyWebViewClient extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            if (Uri.parse(url).getHost().equals("panelweb.fpfch.gob.mx")) { //Force to open the url in WEBVIEW
+                return false;
+            }
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+            return true;
+        }
+    }
 
 
     @Override

@@ -328,13 +328,14 @@
            >
 
             <TextView
+                style="@style/global_rounded_plecas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Más información:"
-                style="@style/global_rounded_plecas"
-                android:padding="8dp"
                 android:layout_margin="10dp"
+                android:background="@drawable/newcolorbluegraded"
                 android:fontFamily="@font/montserrat_bold"
+                android:padding="8dp"
+                android:text="Más información:"
                 android:textColor="@color/white"
                 android:textSize="@dimen/globalFontSize"
                 app:layout_constraintBottom_toTopOf="@+id/Nota1_body"

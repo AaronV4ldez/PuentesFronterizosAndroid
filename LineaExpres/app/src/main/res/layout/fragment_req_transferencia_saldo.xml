@@ -350,26 +350,29 @@
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/clear_button"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_margin="5dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@color/NewPurple"
+                        android:enabled="true"
                         android:text="Borrar Firma"
-                        android:enabled="true" />
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
             </RelativeLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/sendFormBtn"
+                style="@style/firmarBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="32dp"
-                android:textColor="@color/white"
+                android:background="@drawable/backgroundnewtheme"
                 android:fontFamily="@font/montserrat_bold"
-                style="@style/firmarBtn"
                 android:text="Aceptar / Enviar"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/white"
 
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 

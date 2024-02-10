@@ -170,7 +170,7 @@ public class BanortestFragment extends Fragment {
           //String Nombre = "";
           //String Nombre = "";
 
-            RespWebView.loadUrl("https://apis.fpfch.gob.mx/pagosmovil/#/"+num_tag+"/"+MontoSeleccionado+"/"+TIPOP);
+            RespWebView.loadUrl(getResources().getString(R.string.apiURL) + "pagosmovil/#/"+num_tag+"/"+MontoSeleccionado+"/"+TIPOP);
 
             RespWebView.setWebViewClient(new WebViewClient() {
                 @Override

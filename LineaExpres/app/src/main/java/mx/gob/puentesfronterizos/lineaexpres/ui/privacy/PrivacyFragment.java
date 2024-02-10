@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentPrivacyBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
@@ -41,7 +42,7 @@ public class PrivacyFragment extends Fragment {
         TextView layoutBody = binding.Body;
 
         new Thread(() -> {
-            String Privacy = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/3?_embed";
+            String Privacy = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/3?_embed";
             URL urlPrivacy;
             try {
                 urlPrivacy = new URL(Privacy);

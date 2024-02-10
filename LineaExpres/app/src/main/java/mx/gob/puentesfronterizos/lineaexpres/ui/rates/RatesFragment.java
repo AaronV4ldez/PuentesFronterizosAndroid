@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentRatesBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
@@ -41,7 +42,7 @@ public class RatesFragment extends Fragment {
         WebView layoutBody = binding.Body;
 
         new Thread(() -> {
-            String CurrentRates = "https://noticias.fpfch.gob.mx/wp-json/wp/v2/pages/1119?_embed";
+            String CurrentRates = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1119?_embed";
             URL urlCurrentRates;
             try {
                 urlCurrentRates = new URL(CurrentRates);

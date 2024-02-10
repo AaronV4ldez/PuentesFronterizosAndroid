@@ -79,6 +79,7 @@
                 style="@style/login_btns"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:background="@drawable/backgroundnewtheme"
                 android:text="Enviar solicitud"
                 android:textSize="@dimen/globalFontSize"
                 android:textStyle="bold"
