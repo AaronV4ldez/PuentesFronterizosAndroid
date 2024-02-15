@@ -76,6 +76,7 @@ public class RegisterFragment extends Fragment {
 
     String Email = "";
     String PhoneNumber = "";
+    String Password = "";
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -97,8 +98,8 @@ public class RegisterFragment extends Fragment {
         ETFullName = binding.ETFullName;
         InputEmail = binding.Email;
         Number = binding.Number;
-        //passwordTyped = binding.Password;
-        //passwordReTyped = binding.PasswordReType;
+        passwordTyped = binding.passwordTyped;
+        passwordReTyped = binding.passwordReTyped;
         InputCode = binding.EnterCode;
         //Binding Button
         confirmRegister = binding.RegisterUser;
@@ -121,8 +122,8 @@ public class RegisterFragment extends Fragment {
             String EmailString = InputEmail.getText().toString();
             String NumberString = Number.getText().toString();
             String NumberLada = numberLabel.getSelectedItem().toString();
-           //String PasswordString = passwordTyped.getText().toString();
-           //String RePasswordString = passwordReTyped.getText().toString();
+            String PasswordString = passwordTyped.getText().toString();
+            String RePasswordString = passwordReTyped.getText().toString();
 
             if (NumberLada.equals("MEX")) {
                 lada = "+52";
@@ -143,15 +144,28 @@ public class RegisterFragment extends Fragment {
                 Toast.makeText(requireContext(), "Todos los campos deben ser rellenados.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            //if (!PasswordString.equals(RePasswordString)) {
-            //    Toast.makeText(requireContext(), "Las contraseñas deben ser iguales", Toast.LENGTH_SHORT).show();
-            //}
+            if (PasswordString.length() < 8) {
+                Toast.makeText(requireContext(), "La contraseña debe tener al menos 8 caracteres.", Toast.LENGTH_SHORT).show();
 
-            Email = EmailString;
-            PhoneNumber = NumberString;
-            doRegister(FullNameString, EmailString, NumberString, lada);
+            } else if (!PasswordString.equals(RePasswordString)) {
+               Toast.makeText(requireContext(), "Las contraseñas deben ser iguales", Toast.LENGTH_SHORT).show();
+                Log.d("Registro", Email);
+                Log.d("Registro2", NumberString);
+                Log.d("Registro3", PasswordString);
+            }else {
+                Email = EmailString;
+                PhoneNumber = NumberString;
+                Password = PasswordString;
+                doRegister(FullNameString, EmailString, NumberString, lada, PasswordString);
 
-            //hashingPassword(passwordReTyped.getText().toString());
+                //hashingPassword(passwordReTyped.getText().toString());
+                Log.d("Registro", EmailString);
+                Log.d("Registro2", NumberString);
+                Log.d("Registro3", PasswordString);
+
+            }
+
+
         });
 
         ConfirmCode.setOnClickListener(v -> {
@@ -209,7 +223,7 @@ public class RegisterFragment extends Fragment {
         return root;
     }
 
-    public void doRegister(String FullName, String Email, String Phone, String lada) {
+    public void doRegister(String FullName, String Email, String Phone, String lada, String Password) {
         new Thread(() -> {
             String messageRes = "";
             String smsRes = "";
@@ -230,7 +244,8 @@ public class RegisterFragment extends Fragment {
                 jsonParam.put("email", Email);
                 jsonParam.put("phone", Phone);
                 jsonParam.put("cc", lada);
-                //jsonParam.put("password", Password);
+                jsonParam.put("password", Password);
+                Log.d("Test password", Password);
 
                 Log.i(TAG, "httpPostRequest: " + jsonParam);
 
@@ -294,8 +309,8 @@ public class RegisterFragment extends Fragment {
                         Number.setEnabled(false);
 
 
-                        //passwordTyped.setVisibility(View.GONE);
-                        //passwordReTyped.setVisibility(View.GONE);
+                        passwordTyped.setVisibility(View.GONE);
+                        passwordReTyped.setVisibility(View.GONE);
                         confirmRegister.setVisibility(View.GONE);
                         numberLabel.setVisibility(View.GONE);
 
@@ -327,8 +342,8 @@ public class RegisterFragment extends Fragment {
                             Number.setVisibility(View.GONE);
                             Number.setFocusable(false);
                             Number.setEnabled(false);
-                            //passwordTyped.setVisibility(View.GONE);
-                            //passwordReTyped.setVisibility(View.GONE);
+                            passwordTyped.setVisibility(View.GONE);
+                            passwordReTyped.setVisibility(View.GONE);
                             confirmRegister.setVisibility(View.GONE);
 
 
@@ -404,7 +419,8 @@ public class RegisterFragment extends Fragment {
                 if (messageRes.equals("Cuenta verificada exitosamente.") || messageRes.contains("Cuenta ya ha sido previamente verificada.")) {
                     requireActivity().runOnUiThread(() -> {
                     MainActivity.nav_req(R.id.navigation_login);
-                        Toast.makeText(requireContext(), "Inicia sesión para continuar", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(requireContext(), "Inicia sesión para continuar", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireContext(), "Verifica tu correo para poder ingresar", Toast.LENGTH_SHORT).show();
                     });
                 }
 

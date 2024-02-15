@@ -45,7 +45,8 @@ import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentForgotpassBindi
 
 public class ForgotpassFragment extends Fragment {
     private static final String TAG = "ForgotPassword";
-    String burl = getResources().getString(R.string.apiURL) + "api/v1/user/resetpass";
+    String burl =  "https://apis.fpfch.gob.mx/api/v1/user/resetpass";
+    //String burl = getResources().getString(R.string.apiURL) + "api/v1/user/resetpass";
     TextView mailLabel;
     private FragmentForgotpassBinding binding;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

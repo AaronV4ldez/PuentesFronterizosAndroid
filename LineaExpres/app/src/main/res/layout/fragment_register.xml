@@ -69,6 +69,32 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
 
+                        <EditText
+                            android:id="@+id/passwordTyped"
+                            style="@style/inputText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:ems="10"
+                            android:hint="Contraseña"
+                            android:inputType="text|textPassword"
+                            app:layout_constraintBottom_toTopOf="@+id/blabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <EditText
+                            android:id="@+id/passwordReTyped"
+                            style="@style/inputText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:ems="10"
+                            android:hint="Confirme la Contraseña"
+                            android:inputType="text|textPassword"
+                            app:layout_constraintBottom_toTopOf="@+id/blabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
                         <TextView
                             android:id="@+id/blabel"
                             android:layout_width="match_parent"
