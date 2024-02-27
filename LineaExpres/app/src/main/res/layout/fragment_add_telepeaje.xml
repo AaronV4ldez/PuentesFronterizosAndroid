@@ -80,15 +80,18 @@
 
                 <EditText
                     android:id="@+id/tagValue"
+                    style="@style/inputText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/inputText"
                     android:layout_marginBottom="8dp"
                     android:ems="10"
+                    android:hint="Captura o Escanea tu TAG"
                     android:inputType="text"
                     app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:maxLength="13"
+                    />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/scanTAG"

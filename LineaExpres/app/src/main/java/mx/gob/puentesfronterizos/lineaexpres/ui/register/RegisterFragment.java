@@ -284,40 +284,7 @@ public class RegisterFragment extends Fragment {
                     throw e;
                 }
 
-                if (messageRes.equals("Usuario ya existe.")) {
-                    requireActivity().runOnUiThread(() -> {
-                        if (lada.equals("+1")) {
-                            MainActivity.nav_req(R.id.navigation_account_verified);
-                            return;
-                        }
-                        System.out.println("El usuario que estás tratando de registrar, ya existe");
-                        InputCode.setVisibility(View.VISIBLE);
-                        ConfirmCode.setVisibility(View.VISIBLE);
-                        smsLabel.setVisibility(View.VISIBLE);
-                        lblCode.setVisibility(View.VISIBLE);
-                        btnSendCode.setVisibility(View.VISIBLE);
-                        btnWrongNumber.setVisibility(View.VISIBLE);
 
-
-                        InputEmail.setEnabled(false);
-                        InputEmail.setFocusable(false);
-
-
-                        //Visibilty GONE after press register
-                        ETFullName.setVisibility(View.GONE);
-                        Number.setFocusable(false);
-                        Number.setEnabled(false);
-
-
-                        passwordTyped.setVisibility(View.GONE);
-                        passwordReTyped.setVisibility(View.GONE);
-                        confirmRegister.setVisibility(View.GONE);
-                        numberLabel.setVisibility(View.GONE);
-
-                    });
-
-                    return;
-                }
                 if (messageRes.equals("Usuario registrado exitosamente.")) {
 
 
@@ -349,6 +316,40 @@ public class RegisterFragment extends Fragment {
 
 
                         });
+                    return;
+                }
+                if (!messageRes.equals("Usuario ya existe.")) {
+                    requireActivity().runOnUiThread(() -> {
+                        if (lada.equals("+1")) {
+                            MainActivity.nav_req(R.id.navigation_account_verified);
+                            return;
+                        }
+                        System.out.println("El usuario que estás tratando de registrar, ya existe");
+                        InputCode.setVisibility(View.VISIBLE);
+                        ConfirmCode.setVisibility(View.VISIBLE);
+                        smsLabel.setVisibility(View.VISIBLE);
+                        lblCode.setVisibility(View.VISIBLE);
+                        btnSendCode.setVisibility(View.VISIBLE);
+                        btnWrongNumber.setVisibility(View.VISIBLE);
+
+
+                        InputEmail.setEnabled(false);
+                        InputEmail.setFocusable(false);
+
+
+                        //Visibilty GONE after press register
+                        ETFullName.setVisibility(View.GONE);
+                        Number.setFocusable(false);
+                        Number.setEnabled(false);
+
+
+                        passwordTyped.setVisibility(View.GONE);
+                        passwordReTyped.setVisibility(View.GONE);
+                        confirmRegister.setVisibility(View.GONE);
+                        numberLabel.setVisibility(View.GONE);
+
+                    });
+
                     return;
                 }
 

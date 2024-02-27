@@ -265,7 +265,9 @@ public class RechargeFragment extends Fragment {
 
     public void getPrices(){
         new Thread(() -> {
-            String jsonURL = getResources().getString(R.string.apiURL) + "api/v1/config/mobile";
+            //cambio 24 02 24
+            //String jsonURL = getResources().getString(R.string.apiURL) + "api/v1/config/mobile";
+            String jsonURL =  "https://apis.fpfch.gob.mx/api/v1/config/mobile";
             URL url;
             try {
                 url = new URL(jsonURL);

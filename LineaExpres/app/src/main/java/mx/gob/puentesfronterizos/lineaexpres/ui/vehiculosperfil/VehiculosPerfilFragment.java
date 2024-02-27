@@ -129,7 +129,9 @@ public class VehiculosPerfilFragment extends Fragment {
                         openDb.cleanVehiculos();
 
                         InputStream inputStream;
-                        String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/vehicles";
+                        //cambio 20 02 24
+                        //String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/vehicles";
+                        String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/vehicles";
 
                         URL url = new URL(accountActivation_url);
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -183,7 +185,8 @@ public class VehiculosPerfilFragment extends Fragment {
                                     Linea,
                                     tag,
                                     imgurl,
-                                    new String(String.valueOf(ctl_contract_type)),
+                                    //new String(String.valueOf(ctl_contract_type)),
+                                    new String(ctl_contract_type),
                                     clt_expiration_date,
                                     saldo,
                                     placa,
@@ -309,6 +312,7 @@ public class VehiculosPerfilFragment extends Fragment {
                                     String fecha = clt_expiration_date;
                                     //String fecha = "2023-08-16";
                                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                    misCruces2.setVisibility(View.GONE);
 
 
                                     if (!clt_expiration_date.contains("undefined")) {
@@ -500,6 +504,7 @@ public class VehiculosPerfilFragment extends Fragment {
                 Log.i(TAG, "httpPostRequest: status = " + status);
                 Log.i(TAG, "httpPostRequest: msg = " + conn.getResponseMessage());
                 Log.d(TAG, "URL de la solicitud: " + accountActivation_url);
+                Log.d("link de eliminacion",accountActivation_url);
 
 
                 if (status != HttpURLConnection.HTTP_OK) {
