@@ -248,6 +248,7 @@ public class RegisterFragment extends Fragment {
                 Log.d("Test password", Password);
 
                 Log.i(TAG, "httpPostRequest: " + jsonParam);
+                Log.d("numero", lada  + Phone );
 
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
                 os.writeBytes(jsonParam.toString());
@@ -290,7 +291,7 @@ public class RegisterFragment extends Fragment {
 
 
                         requireActivity().runOnUiThread(() -> {
-                            if (lada.equals("+1")) {
+                            if (lada.equals("")) {
                                 MainActivity.nav_req(R.id.navigation_account_verified);
                                 return;
                             }
@@ -320,7 +321,7 @@ public class RegisterFragment extends Fragment {
                 }
                 if (!messageRes.equals("Usuario ya existe.")) {
                     requireActivity().runOnUiThread(() -> {
-                        if (lada.equals("+1")) {
+                        if (lada.equals("")) {
                             MainActivity.nav_req(R.id.navigation_account_verified);
                             return;
                         }
