@@ -1,6 +1,11 @@
 package mx.gob.puentesfronterizos.lineaexpres;
 
 
+import static java.security.AccessController.getContext;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,6 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.content.Context;
+import android.content.DialogInterface;
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -172,6 +180,18 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+       Context context = this;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Version de prueba de la app Puentes Fronterizos 260324");
+        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+
+        });
+        builder.create().show();
+
         //Floatin Action Button
         String WhtieColor = "#ffffff";
         FloatingActionButton a = findViewById(R.id.fab_button);

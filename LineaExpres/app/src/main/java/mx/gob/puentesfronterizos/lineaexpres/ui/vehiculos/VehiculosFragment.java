@@ -63,6 +63,7 @@ public class VehiculosFragment extends Fragment {
     String Token;
     UserLog userLog;
     updateData UpdateData;
+    updateData openDb;
 
     Button BtnSolicitudInscripcion;
 
@@ -223,6 +224,8 @@ public class VehiculosFragment extends Fragment {
                         String ctl_id = Tramites.optString("ctl_id", "undefined");
                         String id = Tramites.optString("id");
                         System.out.println("Estos son los tag de Linea Expres: " + tag);
+                        Log.d("resultados", String.valueOf(tipoVeh));
+
                         if (tipoVeh == 1) {
                             BtnSolicitudInscripcion.setText("Trámite para agregar un vehículo");
                             BtnSolicitudInscripcion.setTag("");
@@ -243,7 +246,7 @@ public class VehiculosFragment extends Fragment {
                                     id
                             );
                         }
-
+    
                     }
 
                     requireActivity().runOnUiThread(() -> {

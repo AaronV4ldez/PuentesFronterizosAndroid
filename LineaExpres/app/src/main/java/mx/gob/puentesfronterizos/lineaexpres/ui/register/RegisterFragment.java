@@ -2,6 +2,14 @@ package mx.gob.puentesfronterizos.lineaexpres.ui.register;
 
 import static mx.gob.puentesfronterizos.lineaexpres.ui.login.LoginFragment.convertStreamToString;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.Spannable;
@@ -22,6 +30,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import mx.gob.puentesfronterizos.lineaexpres.MainActivity;
 import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentRegisterBinding;
@@ -39,6 +51,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class RegisterFragment extends Fragment {
 
@@ -60,6 +73,8 @@ public class RegisterFragment extends Fragment {
     Button confirmRegister;
     Button btnWrongNumber;
     String lada = "";
+    //cambio 07 03 24 se agregó el valor de url para hacer el login automatico
+    String loginUrl ="https://apis.fpfch.gob.mx/api/v1/session/login";
 
     Boolean wrongNumber = false;
 
@@ -249,6 +264,7 @@ public class RegisterFragment extends Fragment {
 
                 Log.i(TAG, "httpPostRequest: " + jsonParam);
                 Log.d("numero", lada  + Phone );
+                Log.d("weas", Email + Password);
 
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
                 os.writeBytes(jsonParam.toString());
@@ -418,11 +434,14 @@ public class RegisterFragment extends Fragment {
                     Toast.makeText(requireContext(), resCentered, Toast.LENGTH_SHORT).show();
                 });
 
-                if (messageRes.equals("Cuenta verificada exitosamente.") || messageRes.contains("Cuenta ya ha sido previamente verificada.")) {
+                if (!messageRes.equals("Cuenta verificada exitosamente.") || !messageRes.contains("Cuenta ya ha sido previamente verificada.")) {
                     requireActivity().runOnUiThread(() -> {
-                    MainActivity.nav_req(R.id.navigation_login);
+                        //cambio 07 03 24 se comentó la navegación al login y se agrego la api de login para que inicie sesión directamente
+                    //MainActivity.nav_req(R.id.navigation_login);
                         //Toast.makeText(requireContext(), "Inicia sesión para continuar", Toast.LENGTH_SHORT).show();
-                        Toast.makeText(requireContext(), "Verifica tu correo para poder ingresar", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(requireContext(), "Verifica tu correo para poder ingresar", Toast.LENGTH_SHORT).show();
+                        Log.d("validaciones",InputEmail.getText().toString() + passwordTyped.getText().toString());
+                        httpPostRequest(requireContext(), loginUrl, InputEmail.getText().toString(), passwordTyped.getText().toString());
                     });
                 }
 
@@ -490,6 +509,152 @@ public class RegisterFragment extends Fragment {
         }).start();
     }
 
+    //cambio 07 03 24 autoingreso despues de crear cuenta
+    public void httpPostRequest(Context context, String url, String userlogin, String password) {
+        new Thread(() -> {
+            try {
+                // Create JSON request body
+                JSONObject jsonParam = new JSONObject();
+                jsonParam.put("userlogin", userlogin);
+                jsonParam.put("password", password);
+
+                // Open connection and set properties
+                HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+                Log.d("detectando entradas", url);
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                conn.setRequestProperty("Accept", "application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+
+                // Write JSON request body to connection
+                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                os.writeBytes(jsonParam.toString());
+                os.flush();
+                os.close();
+
+                // Check HTTP response code
+                int responseCode = conn.getResponseCode();
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    // Read response body
+                    Scanner scanner = new Scanner(new BufferedInputStream(conn.getInputStream()));
+                    StringBuilder stringBuilder = new StringBuilder();
+                    while (scanner.hasNextLine()) {
+                        stringBuilder.append(scanner.nextLine());
+                    }
+                    scanner.close();
+                    String responseData = stringBuilder.toString();
+
+                    // Parse JSON response
+                    JSONObject jsonObject = new JSONObject(responseData);
+                    String tokenAccess = jsonObject.getString("access_token");
+                    String fullName = jsonObject.getString("name");
+                    String passwordTemp = jsonObject.getString("user_set_pwd");
+                    String Sentri = jsonObject.getString("sentri").isEmpty() ? "" : jsonObject.getString("sentri");
+                    String FechaSentri = jsonObject.getString("sentri_exp_date").isEmpty() ? "" : jsonObject.getString("sentri_exp_date");
+                    String facRazonSocial = jsonObject.getString("fac_razon_social").isEmpty() ? "" : jsonObject.getString("fac_razon_social");
+                    String facRFC = jsonObject.getString("fac_rfc").isEmpty() ? "" : jsonObject.getString("fac_rfc");
+                    String facDomFiscal = jsonObject.getString("fac_dom_fiscal").isEmpty() ? "" : jsonObject.getString("fac_dom_fiscal");
+                    String facCP = jsonObject.getString("fac_cp").isEmpty() ? "" : jsonObject.getString("fac_cp");
+                    String facEmail = jsonObject.getString("fac_email").isEmpty() ? "" : jsonObject.getString("fac_email");
+                    String facTelefono = jsonObject.getString("fac_telefono").isEmpty() ? "" : jsonObject.getString("fac_telefono");
+
+                    // Save user data
+                    boolean access = userLog.SetUserData(userlogin, tokenAccess, fullName, Sentri, FechaSentri, passwordTemp);
+                    userLog.setBillingData(facRazonSocial, facRFC, facDomFiscal, facCP, facEmail, facTelefono);
+
+                    if (access) {
+                        // Show notification and navigate
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            show_Notification("Haz iniciado sesión.", "¡Bienvenido a Linea Exprés!");
+                            getFireToken();
+                        }
+                        if (passwordTemp.contains("0")) {
+                            requireActivity().runOnUiThread(() -> {
+                                MainActivity.nav_req(R.id.navigation_changepass);
+                            });
+                        } else {
+                            requireActivity().runOnUiThread(() -> {
+                                MainActivity.Navigation_Requests("BackView");
+                            });
+                        }
+                    } else {
+                        requireActivity().runOnUiThread(() -> {
+                            Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show();
+                        });
+                    }
+                } else {
+                    // Read error message from response body
+                    Scanner scanner = new Scanner(new BufferedInputStream(conn.getErrorStream()));
+                    StringBuilder stringBuilder = new StringBuilder();
+                    while (scanner.hasNextLine()) {
+                        stringBuilder.append(scanner.nextLine());
+                    }
+                    scanner.close();
+                    String errorMessage = stringBuilder.toString();
+
+                    // Show error message
+                    if (responseCode == HttpURLConnection.HTTP_UNAUTHORIZED) {
+                        requireActivity().runOnUiThread(() -> {
+                            Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                        });
+                    } else if (responseCode == HttpURLConnection.HTTP_BAD_REQUEST) {
+                        requireActivity().runOnUiThread(() -> {
+                            Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(requireContext(), "Contacte a soporte para más información", Toast.LENGTH_SHORT).show();
+                        });
+                    }
+                }
+
+                // Disconnect connection
+                conn.disconnect();
+            } catch (JSONException | IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+    //cambio 07 03 24 para que la app te mande notificación de que ingresaste correctamente
+    public void show_Notification(String msgTitle, String msgBody){
+
+        Intent intent=new Intent(requireContext(),MainActivity.class);
+        String CHANNEL_ID="MYCHANNEL";
+        NotificationChannel notificationChannel=new NotificationChannel(CHANNEL_ID,"All", NotificationManager.IMPORTANCE_HIGH);
+        PendingIntent pendingIntent=PendingIntent.getActivity(requireContext(),1,intent,PendingIntent.FLAG_IMMUTABLE);
+        Notification notification=new Notification.Builder(requireContext(),CHANNEL_ID)
+                .setContentText(msgBody)
+                .setContentTitle(msgTitle)
+                .setContentIntent(pendingIntent)
+                .setChannelId(CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_stat_name)
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),                                                                                                 R.drawable.ic_stat_name))
+                .setAutoCancel(true)
+                .setDefaults(Notification.DEFAULT_SOUND)
+                .build();
+
+        NotificationManager notificationManager=(NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.createNotificationChannel(notificationChannel);
+        notificationManager.notify(1,notification);
+    }
+//cambio 07 03 24 cambio para que pudiera generar bien el login
+    public void getFireToken() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            System.out.println("Fetching FCM registration token failed" + task.getException());
+                            return;
+                        }
+                        // Get new FCM registration token
+                        String token = task.getResult();
+                        System.out.println("MainAct Token: " + token);
+                        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
+
+
+                        userLog.UserFireToken("set", token);
+                    }
+                });
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();

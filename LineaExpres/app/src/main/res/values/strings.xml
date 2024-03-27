@@ -1,5 +1,7 @@
 <resources>
+    <!-- enlace oficial de apis<string name="apiURL">https://apis.fpfch.gob.mx/</string>>-->
     <string name="apiURL">https://apis.fpfch.gob.mx/</string>>
+    <!--enlace oficial noticias<string name="noticiasURL">https://noticias.fpfch.gob.mx/</string>>-->
     <string name="noticiasURL">https://noticias.fpfch.gob.mx/</string>>
     <string name="app_name">PuentesFront</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -69,7 +71,6 @@
     <!-- Formatos -->
 
 
-
     <string name="Fragment_Inscription_Title">Solicitud de inscripción Linea Exprés</string>
     <string name="Fragment_Bridges_Title">Solicitud Cambio de Puente</string>
 
@@ -134,7 +135,6 @@
     <string name="FourThousandBalance">$4,000.00</string>
 
 
-
     <string name="LineamientosInscripcion1">El Fideicomiso de Puentes Fronterizos de Chihuahua, con domicilio en calle Río Usumacinta,número 102, colonia Waterfill Rio Bravo, código postal 32553, página de internetwww.puentesfronterizos.gob.mx y número de contacto (656) 682-1003, será el responsable deltratamiento de los datos personales que nos proporcione, los cuales serán protegidos conforme a lo dispuesto en la Ley de Protección de Datos Personales del Estado de Chihuahua y sus lineamientos.Los datos personales que recabamos de usted son los siguientes:• Nombre y apellidos de la persona titular del SENTRI o Global Entry.• Nombre y apellidos de la persona titular del vehículo a registrar, o en caso de tratarsede una persona moral, denominación o razón social y nombre del representante legal.• Domicilio• Teléfono• Correo Electrónico• Firma• Número de SENTRI o Global Entry.• RFC• Tarjeta de circulación o registro vehicular• Número de placa o matricula vehicular• Número de identificación de póliza de seguro vehicular.• Datos del vehículo: Marca, año, modelo y color.Así mismo, se realiza la digitalización y conservación de los siguientes documentos medianteescaneo:• Credencial de identificación SENTRI o Global Entry.• Tarjeta de Circulación o Documento de Registro Vehicular.• Póliza de Seguro.• En el caso de personas físicas documento de Identificación del solicitante.• En el caso de las personas morales el documento que acredita las facultades con lasque cuenta el representante legal.• Formato de solicitud de trámite.Adicionalmente en los casos que el trámite se realiza con un vehículo bajo el esquema dearrendamiento se recopila la denominación o razón social del arrendador y se realiza ladigitalización y conservación mediante escaneo del contrato de arrendamiento del vehículo.No se recaban datos personales sensibles.Finalidad del Tratamiento de Datos Personales.Los datos personales que nos entregue serán recopilados y almacenados en el registro deusuarios de servicios de Línea Exprés en una base de datos digital y física lo que servirá paraelaborar un expediente histórico de usuario, el cual tendrá las siguientes finalidades:• Verificación de identidad y cotejo de información para realizar la inscripción, el cambiode vehículo o cambio de TAG cuando así se solicite, dar trámite a la solicitud detransferencia de saldo y en su caso efectuar la baja de TAG.• Comprobación de transacciones en el sistema de comercio electrónico.• Remisión de los datos de facturación al encargado de validar la información con la basede datos del Servicio de Administración Tributaria (SAT) para la emisión de facturas.• Envío de correos electrónicos con fines de comunicación entre los usuarios y elFideicomiso de Puentes Fronterizos de Chihuahua.• Elaboración de estadísticas de control para mejoras en el servicio.Los datos personales recabados pueden ser tratados por el Fideicomiso de Puentes Fronterizosde Chihuahua, a través de la Coordinación de Línea Exprés, el Departamento de Sistemas y/ola Dirección de Operaciones, quienes utilizarán la información referida para los fines antesseñalados, estableciendo y manteniendo las medidas de seguridad de carácter administrativo,físico y técnico para la protección de los mismos, que permitan protegerlos contra daño, pérdida, alteración, destrucción o su uso, acceso o tratamiento no autorizado, así como garantizar su confidencialidad, integridad y disponibilidad.Los datos personales serán bloqueados cuando hayan dejado de ser necesarios para elcumplimiento de las finalidades previstas en el presente aviso de privacidad y suprimidos unavez que cumplan su periodo de conservación.Fundamento legal para el tratamiento de los datos personales.El Fideicomiso de Puentes Fronterizos de Chihuahua No. 2243 tratará los datos personales yaseñalados, con fundamento en las condiciones novena, décima, décima tercera y anexos 6, 6-C, 7, 8 y 10 del Título de Concesión otorgado por la Secretaría de Infraestructura,Comunicaciones y Transportes en fecha 10 de diciembre del 2015, y lo dispuesto en la Ley deProtección de Datos Personales del Estado de Chihuahua.Transferencia de Datos.Los datos personales no serán transferidos, salvo que se actualice alguna de las excepcionesprevistas en los artículos 85 fracción VII, 94, 98 y 100 de la Ley de Protección de DatosPersonales del Estado de Chihuahua, en cuyos casos no es necesario el consentimiento deltitular de los datos personales.Mecanismos, medios y procedimientos para ejercer derechos de acceso, rectificación,cancelación y oposición (ARCO) al tratamiento de datos personales.Usted podrá ejercer sus derechos de acceso, rectificación, cancelación u oposición (ARCO) dedatos personales directamente en nuestra Unidad de Transparencia ubicada en calle RíoUsumacinta, número 102, tercer piso, en la colonia Waterfill Río Bravo, código postal 32553, en Ciudad Juárez Chihuahua México; con número telefónico (656) 257-5809 ext. 1020 y correoelectrónico: transparencia@puentesfronterizos.gob.mx; o si lo prefiere, ingresando una solicitud de ejercicio de derechos ARCO por medio de la Plataforma Nacional de Transparencia en: www.plataformadetransparencia.org.mx.Cambios en el aviso de privacidad.En caso de que exista algún cambio en este aviso de privacidad, lo haremos de su conocimientoa través de nuestro sitio electrónico: www.puentesfronterizos.gob.mx; o bien, por el correoelectrónico que usted proporcione.</string>
     <string name="LineamientosCortos">El que suscribe, bajo protesta de decir verdad, manifiesto que son ciertos todos los datos asentados con anterioridad en el presente documento; reconozco que en caso de existir inconsistencias y/o falsedad en cuanto a los mismos, la autorización como usuario al sistema Línea Exprés y el tag correspondiente serán cancelados de pleno derecho y consecuentemente se me impedirá el uso de todos los carriles con este servicio bajo administración del Fideicomiso de Puentes Fronterizos de Chihuahua.</string>
 
@@ -156,7 +156,6 @@
 
     <string name="VehicleChihOld">Chih</string>
     <string name="VehicleTXOld">TX</string>
-
 
 
     <string name="VehicleNewCar">Vehículo Nuevo</string>
@@ -198,6 +197,8 @@
 
     <!--Cambiar contraseña-->
     <string name="pass_confirm_text">Una vez hagas click en \"Continuar\" recibirás un email donde podrás realizar el cambio de tu contraseña.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

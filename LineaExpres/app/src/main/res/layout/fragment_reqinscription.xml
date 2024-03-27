@@ -128,8 +128,7 @@
                 android:id="@+id/IdOficialPhotoImageView"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:visibility="gone"
-                />
+                android:visibility="visible" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadOfficialReverseIDPhotoBtn"
@@ -146,7 +145,7 @@
                 android:id="@+id/IdOficialReversePhotoImageView"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:visibility="gone"/>
+                android:visibility="visible" />
 
 
             <TextView

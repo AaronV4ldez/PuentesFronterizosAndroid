@@ -1007,7 +1007,9 @@ public class ReqInscriptionFragment extends Fragment {
         });
         uploadOfficialReverseIDPhotoBtn.setOnClickListener(v -> {
             currentImageView = IdOficialReversePhotoImageView;
-            takePicture("Photo_idOficialReverse", "Solicitud_Inscripcion_PhotoidOficialReverse");
+            takePicture("Photo_idOficialReverse", "" +
+                    "" +
+                    "");
             IdOficialReversePhotoImageView.setVisibility(View.VISIBLE);
         });
         uploadCirculationCardPhotoBtn.setOnClickListener(v -> {

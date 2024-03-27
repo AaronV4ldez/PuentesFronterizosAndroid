@@ -48,6 +48,10 @@
         <item android:id="@+id/navigation_contactanos"
             android:title="Contáctanos" />
 
+        <item
+            android:id="@+id/navigation_acercade"
+            android:title="Acerca De" />
+
     </group>
 
     <group >

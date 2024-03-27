@@ -3,7 +3,8 @@
 <item>
     <shape android:layout_width="match_parent">
         <corners android:radius="10dp" />
-        <solid android:color="#57348B" />
+        <solid android:color="#999999" />
+        <!-- <solid android:color="#57348B" /> -->
     </shape>
 </item>
 </selector>

@@ -208,7 +208,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/newcolorbluegraded"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Telepeaje"
+                    android:text="REGISTRA TU TAG DE TELEPEAJE"
                     android:textSize="@dimen/globalFontSize"
                     android:visibility="visible" />
 
@@ -221,7 +221,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/newcolorbluegraded"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Acceso Digital Peatonal"
+                    android:text="Registra tu tarjeta de Acceso Digital Peatonal"
                     android:textSize="@dimen/globalFontSize"
                     android:visibility="visible" />
 
@@ -234,7 +234,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/newcolorbluegraded"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Línea Exprés"
+                    android:text="Registra tus vehiculos de Línea Exprés"
                     android:textSize="@dimen/globalFontSize"
                     android:visibility="gone" />
 

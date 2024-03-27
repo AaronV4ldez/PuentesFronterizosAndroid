@@ -153,6 +153,7 @@ public class LoginFragment extends Fragment {
 
                 // Open connection and set properties
                 HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+                Log.d("detectando entradas", url);
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
                 conn.setRequestProperty("Accept", "application/json");
