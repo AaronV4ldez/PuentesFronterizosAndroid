@@ -181,7 +181,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       Context context = this;
+        // aviso para las versiones de prueba
+       /*Context context = this;
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("Version de prueba de la app Puentes Fronterizos 260324");
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
@@ -190,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-        builder.create().show();
+        builder.create().show(); */
 
         //Floatin Action Button
         String WhtieColor = "#ffffff";
