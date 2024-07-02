@@ -45,19 +45,115 @@
         android:id="@+id/vehiclePrevBalance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
         android:fontFamily="@font/merriweather_regular"
-        android:text="Cargando..."/>
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/vehicleCurrentBalance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
         android:fontFamily="@font/merriweather_regular"
-        android:text="Cargando..."/>
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/operadorSiglas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/plazaClave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/plazaNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/plazaDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/transitoTipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/carrilNumero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tipoPuente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tarifaMonto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/vehiculoClase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/vehiculoTipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tagNumero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/merriweather_regular"
+        android:text="Cargando..."
+        android:textColor="@color/black"
+        android:visibility="gone" />
 
 
 </LinearLayout>

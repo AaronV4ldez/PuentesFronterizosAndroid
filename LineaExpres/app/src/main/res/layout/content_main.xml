@@ -59,9 +59,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_cart_m"
+<<<<<<< Updated upstream
         app:backgroundTint="@color/FloatingButtonNavBarColor"
         app:maxImageSize="35dp"
         app:layout_anchor="@id/bottomAppBar" />
+=======
+        app:backgroundTint="@color/NewPurple"
+        app:layout_anchor="@id/bottomAppBar"
+        app:maxImageSize="35dp" />
+>>>>>>> Stashed changes
 
 
 

@@ -37,6 +37,12 @@
         tools:layout="@layout/fragment_privacy" />
 
     <fragment
+        android:id="@+id/navigation_privacy_le"
+        android:name="mx.gob.puentesfronterizos.lineaexpres.ui.privacy_le"
+        android:label="Aviso de Privacidad de Linea Express"
+        tools:layout="@layout/fragment_privacy_le" />
+
+    <fragment
         android:id="@+id/navigation_derechos"
         android:name="mx.gob.puentesfronterizos.lineaexpres.ui.derechos.DerechosFragment"
         android:label="Derechos y Obligaciones4"

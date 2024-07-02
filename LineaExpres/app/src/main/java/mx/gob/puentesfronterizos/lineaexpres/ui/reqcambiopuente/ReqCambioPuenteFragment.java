@@ -380,6 +380,8 @@ public class ReqCambioPuenteFragment extends Fragment {
             }
         });
         btnMixto.setOnClickListener(v -> {
+            TarifasShow.setVisibility(View.GONE);
+            NameShow.setVisibility(View.GONE);
             if (Nacionalidad == "") {
                 return;
             }

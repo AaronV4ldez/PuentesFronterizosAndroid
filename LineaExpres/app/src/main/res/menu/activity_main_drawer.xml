@@ -41,6 +41,9 @@
          <item
              android:id="@+id/navigation_privacy"
              android:title="@string/menu_privacy" />
+        <item
+            android:id="@+id/navigation_privacy_le"
+            android:title="Aviso de Privacidad de Linea Express" />
 
          <item android:id="@+id/navigation_CurrentRates"
              android:title="@string/tax" />
@@ -55,5 +58,11 @@
             android:id="@+id/navigation_logout"
             android:visible="true"
             android:title="Cerrar sesión" />
+    </group>
+    <group >
+        <item
+            android:fontFamily="@font/merriweather_regular"
+            android:title="Versión 4.5"
+            android:visible="true" />
     </group>
 </menu>

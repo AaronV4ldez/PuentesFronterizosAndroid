@@ -37,8 +37,8 @@ public class PrivacyFragment extends Fragment {
         binding = FragmentPrivacyBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        TextView layoutTitle = binding.Title;
-        TextView layoutBody = binding.Body;
+        //TextView layoutTitle = binding.Title;
+        //TextView layoutBody = binding.Body;
 
         new Thread(() -> {
             String Privacy = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/3?_embed";
@@ -56,8 +56,8 @@ public class PrivacyFragment extends Fragment {
                 String BodyText_Privacy = BodyContent_Privacy.get("rendered").getAsString(); // getting BodyText
 
                 requireActivity().runOnUiThread(() -> {
-                    layoutTitle.setText(titleArrayTitle_Privacy);
-                    layoutBody.setText(Html.fromHtml(BodyText_Privacy));
+                    //layoutTitle.setText(titleArrayTitle_Privacy);
+                    //layoutBody.setText(Html.fromHtml(BodyText_Privacy));
                 });
 
             } catch (IOException e) {

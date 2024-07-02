@@ -141,6 +141,8 @@ public class ReqActualizacionPlacasFragment extends Fragment {
     Uri photoSix = null;
     Uri photoSeven = null;
     Uri photoEighth = null;
+    Button uploadCirculationCardPhotoBtn5;
+    ImageView tarjetaCirculacionPhotoImageView5;
 
 
 
@@ -216,11 +218,20 @@ public class ReqActualizacionPlacasFragment extends Fragment {
 
         Button btnSendForm = binding.sendFormBtn;
 
+        tarjetaCirculacionPhotoImageView5 = binding.tarjetaCirculacionPhotoImageView5;
+        uploadCirculationCardPhotoBtn5 = binding.uploadCirculationCardPhotoBtn5;
+
         SignaturePad mSignaturePad = binding.signaturePad;
         Button clearSignatureBtn = binding.clearButton;
 
         clearSignatureBtn.setOnClickListener(v -> {
             mSignaturePad.clearView();
+        });
+
+        uploadCirculationCardPhotoBtn5.setOnClickListener(v -> {
+            currentImageView = tarjetaCirculacionPhotoImageView5;
+            takePicture("Photo_tarjetaCirculacion", "Solicitud_Inscripcion_PhototarjetaCirculacion");
+            tarjetaCirculacionPhotoImageView5.setVisibility(View.VISIBLE);
         });
 
         final int[] Firma = {0};

@@ -3,6 +3,10 @@
     <item>
         <shape android:layout_width="match_parent">
             <corners android:radius="10dp" />
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
             <solid android:color="@color/light_blue" />
         </shape>
     </item>

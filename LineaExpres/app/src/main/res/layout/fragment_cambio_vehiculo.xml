@@ -275,6 +275,30 @@
                 />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUploadNewSentriOrRenewal3"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Subir reverso del nuevo sentri o comprobante de renovacion (si aplica)"
+                android:textSize="@dimen/globalFontSize"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IMGNewSentriOrRenewal3"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginBottom="3dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/BtnUploadInsurancePolicy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -366,6 +390,57 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
                 />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadOfficialIDPhotoBtn2"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadOfficialID"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/idOficialPhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadOfficialReverseIDPhotoBtn4"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/BtnUploadOfficialIDReverse"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/idOficialReversePhotoImageView2"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadOfficialReverseIDPhotoBtn3"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Identificación del propietario del vehiculo"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/idOficialReversePhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/LineamientosLblTitle"

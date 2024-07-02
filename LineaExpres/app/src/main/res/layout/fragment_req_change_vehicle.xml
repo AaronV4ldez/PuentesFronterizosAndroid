@@ -84,8 +84,30 @@
                 android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                app:layout_constraintBottom_toTopOf="@+id/uploadSentriPhotoBtn5"
                 />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadSentriPhotoBtn5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Subir fotografia del reverso de su Sentri"
+                android:textSize="@dimen/globalFontSize"
+                app:layout_constraintBottom_toTopOf="@+id/SentriPhotoImageView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/SentriPhotoImageView3"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/expirationDateSentriLbl"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
 
             <TextView
                 android:id="@+id/expirationDateSentriLbl"
@@ -235,6 +257,28 @@
 
             <ImageView
                 android:id="@+id/IdOficialReversePhotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/uploadOfficialReverseIDPhotoBtn2"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadOfficialReverseIDPhotoBtn2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Identificación del propietario del Vehiculo"
+                android:textSize="@dimen/globalFontSize"
+                app:layout_constraintBottom_toTopOf="@+id/IdOficialReversePhotoImageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/IdOficialReversePhotoImageView2"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:visibility="gone"

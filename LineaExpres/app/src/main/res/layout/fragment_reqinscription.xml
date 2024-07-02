@@ -87,8 +87,24 @@
                 android:id="@+id/SentriPhotoImageView"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadSentriPhotoBtn2"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Subir Fotografia del reverso del SENTRI"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/SentriPhotoImageView2"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/expirationDateSentriLbl"
@@ -128,8 +144,12 @@
                 android:id="@+id/IdOficialPhotoImageView"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
+<<<<<<< Updated upstream
                 android:visibility="gone"
                 />
+=======
+                android:visibility="gone" />
+>>>>>>> Stashed changes
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadOfficialReverseIDPhotoBtn"
@@ -145,8 +165,29 @@
                 android:id="@+id/IdOficialReversePhotoImageView"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
+<<<<<<< Updated upstream
                 android:visibility="gone"/>
+=======
+                android:visibility="gone" />
+>>>>>>> Stashed changes
 
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/uploadOfficialReverseIDPhotoBtn2"
+                style="@style/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/newcolorbluegraded"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Identificación del propietario del vehiculo"
+                android:textSize="@dimen/globalFontSize" />
+
+            <ImageView
+                android:id="@+id/IdOficialReversePhotoImageView2"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/addressTitle"
@@ -714,19 +755,20 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:textSize="@dimen/globalFontSize"
                     android:text="Lerdo" />
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnMixto"
-                    android:layout_width="0dp"
                     style="@style/buttons2"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginLeft="-10dp"
-                    android:lines="1"
-                    android:singleLine="true"
+                    android:layout_weight="1"
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat_bold"
-                    android:textSize="@dimen/globalFontSize"
-                    android:text="Mixto (Zaragoza - Lerdo)" />
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:text="Mixto"
+                    android:textSize="@dimen/globalFontSize" />
             </LinearLayout>
 
             <TextView

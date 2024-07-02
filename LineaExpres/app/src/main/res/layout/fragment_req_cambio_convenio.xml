@@ -131,7 +131,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/montserrat_bold"
                     android:textSize="@dimen/globalFontSize"
-                    android:text="Mixto (Zaragoza - Lerdo)" />
+                    android:text="Mixto" />
             </LinearLayout>
 
             <TextView

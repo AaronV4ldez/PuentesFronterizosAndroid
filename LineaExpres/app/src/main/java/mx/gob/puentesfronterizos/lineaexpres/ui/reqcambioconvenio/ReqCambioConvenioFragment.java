@@ -6,6 +6,7 @@ import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
+import static android.view.View.GONE;
 
 import static mx.gob.puentesfronterizos.lineaexpres.ui.login.LoginFragment.convertStreamToString;
 
@@ -251,19 +252,19 @@ public class ReqCambioConvenioFragment extends Fragment {
 
         if (ctl_contract_type != null || ctl_contract_type != "") {
             if (ctl_contract_type.equals("C")) {
-                SaldoTitle.setVisibility(View.GONE);
-                saldoSegment.setVisibility(View.GONE);
-                btnZaragoza.setVisibility(View.GONE);
+                SaldoTitle.setVisibility(GONE);
+                saldoSegment.setVisibility(GONE);
+                btnZaragoza.setVisibility(GONE);
                 tipoConvenioInformativo = "Saldo";
 
             }
             if (ctl_contract_type.equals("M")) {
-                btnLerdo.setVisibility(View.GONE);
+                btnLerdo.setVisibility(GONE);
                 tipoConvenioInformativo = "Anualidad Mixto";
             }
             if (ctl_contract_type.equals("V")) {
-                btnLerdo.setVisibility(View.GONE);
-                btnZaragoza.setVisibility(View.GONE);
+                btnLerdo.setVisibility(GONE);
+                btnZaragoza.setVisibility(GONE);
                 if (ctl_stall_id != null || ctl_stall_id != "") {
                     if (ctl_stall_id.equals("104")) {
                         tipoConvenioInformativo = "Anualidad Vigencia";
@@ -359,6 +360,9 @@ public class ReqCambioConvenioFragment extends Fragment {
             }
         });
         btnMixto.setOnClickListener(v -> {
+            TarifasShow.setVisibility(GONE);
+            NameShow.setVisibility(GONE);
+
             if (Nacionalidad == "") {
                 return;
             }
@@ -371,14 +375,18 @@ public class ReqCambioConvenioFragment extends Fragment {
             if (Nacionalidad.equals("Mexico")) {
                 Convenio = anual_mixto_mx;
                 ConvenioAnualidad = anual_mixto_mx;
-                TarifasShow.setText(anual_mixto_mx);
-                NameShow.setText("Mixto (Zaragoza - Lerdo)");
+                TarifasShow.setVisibility(GONE);
+                NameShow.setVisibility(GONE);
+                //TarifasShow.setText(anual_mixto_mx);
+                //NameShow.setText("Mixto (Zaragoza - Lerdo)");
             }
             if (Nacionalidad.equals("USA")) {
                 Convenio = anual_mixto_us;
                 ConvenioAnualidad = anual_mixto_us;
-                TarifasShow.setText(anual_mixto_us);
-                NameShow.setText("Mixto (Zaragoza - Lerdo)");
+                TarifasShow.setVisibility(GONE);
+                NameShow.setVisibility(GONE);
+                //TarifasShow.setText(anual_mixto_us);
+                //NameShow.setText("Mixto (Zaragoza - Lerdo)");
             }
 
 
@@ -477,13 +485,17 @@ public class ReqCambioConvenioFragment extends Fragment {
                 Convenio = anual_mixto_mx;
                 ConvenioAnualidad = anual_mixto_mx;
                 TarifasShow.setText(anual_mixto_mx);
-                NameShow.setText("Mixto (Zaragoza - Lerdo)");
+                NameShow.setText("Mixto");
+                TarifasShow.setVisibility(GONE);
+                NameShow.setVisibility(GONE);
             }
             if (Nacionalidad.equals("USA")) {
                 Convenio = anual_mixto_us;
                 ConvenioAnualidad = anual_mixto_us;
                 TarifasShow.setText(anual_mixto_us);
-                NameShow.setText("Mixto (Zaragoza - Lerdo)");
+                NameShow.setText("Mixto");
+                TarifasShow.setVisibility(GONE);
+                NameShow.setVisibility(GONE);
             }
 
 

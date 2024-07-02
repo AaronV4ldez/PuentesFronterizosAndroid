@@ -2,8 +2,12 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape>
+<<<<<<< Updated upstream
             <gradient
                 android:startColor="#018EC2"
+=======
+               <gradient android:startColor="#018EC2"
+>>>>>>> Stashed changes
                 android:endColor="#223769"
                 android:angle="0" />
             <corners android:radius="10dp" />

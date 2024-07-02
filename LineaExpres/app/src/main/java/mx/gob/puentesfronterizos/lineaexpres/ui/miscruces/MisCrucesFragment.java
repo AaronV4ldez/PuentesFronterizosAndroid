@@ -27,6 +27,7 @@ import com.bumptech.glide.Glide;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -67,6 +68,7 @@ public class MisCrucesFragment extends Fragment {
     ArrayList<String> userData;
     String User;
     String Token;
+    String puenteTipo2;
 
     LayoutInflater loaderInflater;
     View popupView;
@@ -75,6 +77,7 @@ public class MisCrucesFragment extends Fragment {
     int height;
     PopupWindow popupWindow;
 
+    private String tag;
     private FragmentMisCrucesBinding binding;
     private String TAG = "MisCruces";
 
@@ -82,6 +85,13 @@ public class MisCrucesFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         MisCrucesViewModel callUsFragment =
                 new ViewModelProvider(this).get(MisCrucesViewModel.class);
+
+        if (getArguments() != null) {
+            String tag = getArguments().getString("tag");
+            Log.d("Tag recibido: ", tag);
+            // Haz lo que necesites con el Tag recibido
+            num_tag= tag;
+        }
 
         binding = FragmentMisCrucesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -101,7 +111,7 @@ public class MisCrucesFragment extends Fragment {
             if (splitArray[8].equals(CarSelected)) {
                 vehMarca = splitArray[1];
                 vehModelo = splitArray[2];
-                num_tag = splitArray[3];
+                //num_tag = splitArray[3];
                 ctl_contract_type = splitArray[5];
                 vehPlacas = splitArray[8];
                 vehColor = splitArray[9];
@@ -132,7 +142,14 @@ public class MisCrucesFragment extends Fragment {
             public void run() {
                 try {
                     InputStream inputStream;
+<<<<<<< Updated upstream
                     String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/le/crossings/"+ctl_user_id+"/"+ctl_id+"";
+=======
+                    //cambio 24 02 24
+                    //String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/le/crossings/"+ctl_user_id+"/"+ctl_id+"";
+                    //String accountActivation_url =  "https://apis.fpfch.gob.mx/api/v1/le/crossings/"+ctl_user_id+"/"+ctl_id+"";
+                    String accountActivation_url =  "https://apis.fpfch.gob.mx/api/v1/le/crossingsnew/" + num_tag + "";
+>>>>>>> Stashed changes
 
                     URL url = new URL(accountActivation_url);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -141,6 +158,7 @@ public class MisCrucesFragment extends Fragment {
                     conn.setRequestProperty("Accept","application/json");
                     conn.setRequestProperty("Authorization", "Bearer " + Token);
                     conn.setRequestMethod("GET");
+                    Log.d("mandao",accountActivation_url);
 
                     int Status = conn.getResponseCode();
 
@@ -156,6 +174,7 @@ public class MisCrucesFragment extends Fragment {
                     System.out.println("Este es el responseData de Register Fragment " + ResponseData);
                     JSONArray Result = new JSONArray(ResponseData);
                     System.out.println("Este es el Result de Register Fragment " + Result);
+                    Log.d("Resultao", String.valueOf(Result));
 
                     if (Result.length() == 0) {
                         requireActivity().runOnUiThread(() -> {
@@ -167,9 +186,23 @@ public class MisCrucesFragment extends Fragment {
 
                     for (int i = 0; i < Result.length(); i++) {
                         JSONObject Cruces = (JSONObject) Result.get(i);
-                        String crossing_date = (String) Cruces.getString("crossing_date");
-                        String prev_balance = (String) Cruces.getString("previous_crossings");
-                        String current_balance = (String) Cruces.getString("current_crossings");
+                        //String crossing_date = (String) Cruces.getString("crossing_date");
+                        String crossing_date = (String) Cruces.getString("fechaHoraCruce");
+                        //String prev_balance = (String) Cruces.getString("previous_crossings");
+                        String prev_balance = (String) Cruces.getString("idOperador");
+                        //String current_balance = (String) Cruces.getString("current_crossings");
+                        String current_balance = (String) Cruces.getString("nombreOperador");
+                        String siglasOperador = (String) Cruces.getString("siglasOperador");
+                        String clavePlaza = (String) Cruces.getString("clavePlaza");
+                        String nombrePlaza = (String) Cruces.getString("nombrePlaza");
+                        String descripcionPlaza = (String) Cruces.getString("descripcionPlaza");
+                        String tipoTransito = (String) Cruces.getString("tipoTransito");
+                        String numeroCarril = (String) Cruces.getString("numeroCarril");
+                        String montoTarifa = (String) Cruces.getString("montoTarifa");
+                        String claseVehiculo = (String) Cruces.getString("claseVehiculo");
+                        String tipoVehiculo = (String) Cruces.getString("tipoVehiculo");
+                        String numeroTag = (String) Cruces.getString("numeroTag");
+                        String puenteTipo = (String) Cruces.getString("numeroCarril");
 
                         String[] parts = crossing_date.split("T");
 
@@ -180,11 +213,21 @@ public class MisCrucesFragment extends Fragment {
                         symbols.setDecimalSeparator('.');
                         symbols.setGroupingSeparator(',');
 
+                        if (puenteTipo.startsWith("10")){
+                            puenteTipo2 = "Paso del Norte";
+                        }else if (puenteTipo.startsWith("20")) {
+                            puenteTipo2 = "Lerdo";
+                        } else if (puenteTipo.startsWith("30")) {
+                            puenteTipo2 = "Zaragoza";
+                        } else if (puenteTipo.startsWith("40")) {
+                            puenteTipo2 = "Guadalupe";
+                        }
+
                         DecimalFormat df = new DecimalFormat("#,##0.00", symbols);
-                        double prev_Balance = Double.parseDouble(prev_balance);
-                        double current_Calance = Double.parseDouble(current_balance);
-                        prev_balance = df.format(prev_Balance);
-                        current_balance = df.format(current_Calance);
+                        //double prev_Balance = Double.parseDouble(prev_balance);
+                        //double current_Calance = Double.parseDouble(current_balance);
+                        //prev_balance = df.format(prev_Balance);
+                        //current_balance = df.format(current_Calance);
 
                         String finalPrev_balance = prev_balance;
                         String finalCurrent_balance = current_balance;
@@ -195,14 +238,39 @@ public class MisCrucesFragment extends Fragment {
                             TextView vehicleData = (TextView) plantillaView.findViewById(R.id.vehicleData);
                             TextView vehiclePrevBalance = (TextView) plantillaView.findViewById(R.id.vehiclePrevBalance);
                             TextView vehicleCurrentBalance = (TextView) plantillaView.findViewById(R.id.vehicleCurrentBalance);
+                            TextView operadorSiglas = (TextView) plantillaView.findViewById(R.id.operadorSiglas);
+                            TextView plazaClave = (TextView) plantillaView.findViewById(R.id.plazaClave);
+                            TextView plazaNombre = (TextView) plantillaView.findViewById(R.id.plazaNombre);
+                            TextView plazaDescripcion = (TextView) plantillaView.findViewById(R.id.plazaDescripcion);
+                            TextView transitoTipo = (TextView) plantillaView.findViewById(R.id.transitoTipo);
+                            TextView carrilNumero = (TextView) plantillaView.findViewById(R.id.carrilNumero);
+                            TextView tarifaMonto = (TextView) plantillaView.findViewById(R.id.tarifaMonto);
+                            TextView vehiculoClase = (TextView) plantillaView.findViewById(R.id.vehiculoClase);
+                            TextView vehiculoTipo = (TextView) plantillaView.findViewById(R.id.vehiculoTipo);
+                            TextView tagNumero = (TextView) plantillaView.findViewById(R.id.tagNumero);
+                            TextView tipoPuente = (TextView) plantillaView.findViewById(R.id.tipoPuente);
 
 
 
                             dateCrossing.setText(Date);
                             hourCrossing.setText(Hour);
                             vehicleData.setText(vehMarca + " " + vehModelo + " " + vehAnio);
-                            vehiclePrevBalance.setText("Saldo antes del cruce: $" + finalPrev_balance);
-                            vehicleCurrentBalance.setText("Saldo después del cruce: $" + finalCurrent_balance);
+                            vehiclePrevBalance.setText("id del Operador: " + finalPrev_balance);
+                            vehicleCurrentBalance.setText("nombre del Operador: " + finalCurrent_balance);
+                            operadorSiglas.setText("siglas del Operador: " + siglasOperador);
+                            plazaClave.setText("Clave de la plaza: " + clavePlaza);
+                            plazaNombre.setText("Nombre de plaza: " + nombrePlaza);
+                            plazaDescripcion.setText("Descripción de plaza: " + descripcionPlaza);
+                            transitoTipo.setText("Tipo de transito " + tipoTransito );
+                            carrilNumero.setText("Numero de carril: " + numeroCarril);
+                            tarifaMonto.setText("Monto de Tarifa: $" + montoTarifa + " MXN");
+                            vehiculoClase.setText("Clase de Vehiculo: " + claseVehiculo);
+                            vehiculoTipo.setText("Tipo de vehiculo: " + tipoVehiculo);
+                            tagNumero.setText("El tag es: " + numeroTag);
+                            tipoPuente.setText("Puente: " + puenteTipo2);
+
+
+
 
 
                             linearLayout.addView(plantillaView);

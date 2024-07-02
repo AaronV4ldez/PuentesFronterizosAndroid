@@ -172,6 +172,24 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+<<<<<<< Updated upstream
+=======
+
+        // aviso para las versiones de prueba
+        /*
+       Context context = this;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Version de prueba de la app Puentes Fronterizos 170624");
+        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+
+        });
+        builder.create().show();
+        */
+
+>>>>>>> Stashed changes
         //Floatin Action Button
         String WhtieColor = "#ffffff";
         FloatingActionButton a = findViewById(R.id.fab_button);

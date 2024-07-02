@@ -20,6 +20,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 
@@ -173,6 +175,7 @@ public class VehiculosPerfilFragment extends Fragment {
                     requireActivity().runOnUiThread(() -> {
                         vehiculos = openDb.getProfileVehicles();
                         if (vehiculos.size() != 0) {
+                            int ekisde = 0;
                             for (int i = 0; i < vehiculos.size(); i++) {
                                 View plantillaView = inflater.inflate(R.layout.recarga_vehiculos_plantilla, linearLayout, false);
 
@@ -186,6 +189,18 @@ public class VehiculosPerfilFragment extends Fragment {
                                 Button misCruces = (Button) plantillaView.findViewById(R.id.btnMisCruces);
 
                                 String[] splitArray = vehiculos.get(i).split("∑");
+<<<<<<< Updated upstream
+=======
+                                ekisde = ekisde +1;
+                                //Verificar los datos que se insertan en la tabla de la base de datos
+                                Log.d("id", String.valueOf(ekisde) );
+                                for  (String ValueId: splitArray
+                                     ) {
+                                    Log.d("Result", ValueId);
+
+                                }
+
+>>>>>>> Stashed changes
                                 String vehType = splitArray[0];
                                 String Marca = splitArray[1];
                                 String Linea = splitArray[2];
@@ -211,16 +226,59 @@ public class VehiculosPerfilFragment extends Fragment {
                                     }
                                 }
 
+<<<<<<< Updated upstream
+=======
+
+                                //Borrar TAG
+                                ConstraintLayout MainBorraTagLayout = (ConstraintLayout) plantillaView.findViewById(R.id.MainBorraTagLayout);
+
+
+                                misCruces2.setOnClickListener(v -> {
+                                    MainBorraTagLayout.setVisibility(View.VISIBLE);
+
+                                });
+
+                                CancelarBorrarTAG.setOnClickListener(v -> {
+                                    MainBorraTagLayout.setVisibility(View.GONE);
+                                });
+
+                                AceptarCancelarTAG.setOnClickListener(v -> {
+
+                                    postDeleteTag(id);
+                                    MainBorraTagLayout.setVisibility(View.GONE);
+                                });
+                                //Fin Borrar Tag
+>>>>>>> Stashed changes
                                 recarga.setTag(Placa);
                                 if (ctl_id.equals("null")) {
-                                    misCruces.setVisibility(View.GONE);
+                                    //misCruces.setVisibility(View.GONE);
                                 }
 
                                 misCruces.setTag(Placa);
-                                misCruces.setOnClickListener((View v) -> {
+                                /*misCruces.setOnClickListener((View v) -> {
                                     openDb.updateCarSelected(misCruces.getTag().toString());
+                                    Log.d("Tag de cruces: ", Tag);
                                     MainActivity.nav_req(R.id.navigation_mis_cruces);
+                                });*/
+                                misCruces.setOnClickListener((View v) -> {
+                                    // Obtén el valor del Tag
+                                    String tag = Tag;
+
+                                    // Actualiza el coche seleccionado
+                                    openDb.updateCarSelected(misCruces.getTag().toString());
+
+                                    // Imprime el valor del Tag en el log
+                                    Log.d("Tag de cruces: ", tag);
+
+                                    // Crea un Bundle para pasar el argumento
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("tag", tag);
+
+                                    // Usa NavController para navegar y pasar el Bundle
+                                    NavController navController = Navigation.findNavController(v);
+                                    navController.navigate(R.id.navigation_mis_cruces, bundle);
                                 });
+
 
                                 if (vehType.equals("0")) {
                                     type.setText("Telepeaje");

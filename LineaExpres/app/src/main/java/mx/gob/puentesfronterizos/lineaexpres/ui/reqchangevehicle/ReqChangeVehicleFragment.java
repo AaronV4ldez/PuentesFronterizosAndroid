@@ -105,8 +105,10 @@ public class ReqChangeVehicleFragment extends Fragment {
     EditText FactCelInput;
 
     ImageView SentriPhotoImageView;
+    ImageView SentriPhotoImageView3;
     ImageView IdOficialPhotoImageView;
     ImageView IdOficialReversePhotoImageView;
+    ImageView IdOficialReversePhotoImageView2;
     ImageView TarjetaCirculacionPhotoImageView;
     ImageView PolizaSeguroPhotoImageView;
     ImageView AprovacionUSAPhotoImageView;
@@ -115,8 +117,10 @@ public class ReqChangeVehicleFragment extends Fragment {
 
     //Layout Photo Declarations
     Button uploadSentriPhotoBtn;
+    Button uploadSentriPhotoBtn5;
     Button uploadOfficialIDPhotoBtn;
     Button uploadOfficialReverseIDPhotoBtn;
+    Button uploadOfficialReverseIDPhotoBtn2;
     Button uploadCirculationCardPhotoBtn;
     Button uploadInsurancePolicyBtn;
     Button uploadUSAApprovalBtn;
@@ -213,16 +217,20 @@ public class ReqChangeVehicleFragment extends Fragment {
         OldOtherPlates = binding.OldOtherPlates;
 
         uploadSentriPhotoBtn = binding.uploadSentriPhotoBtn;
+        uploadSentriPhotoBtn5 = binding.uploadSentriPhotoBtn5;
         uploadOfficialIDPhotoBtn = binding.uploadOfficialIDPhotoBtn;
         uploadOfficialReverseIDPhotoBtn = binding.uploadOfficialReverseIDPhotoBtn;
+        uploadOfficialReverseIDPhotoBtn2 = binding.uploadOfficialReverseIDPhotoBtn2;
         uploadCirculationCardPhotoBtn = binding.uploadCirculationCardPhotoBtn;
         uploadInsurancePolicyBtn = binding.uploadInsurancePolicyBtn;
         uploadUSAApprovalBtn = binding.uploadUSAApprovalBtn;
         uploadPowerAttorney = binding.uploadPowerAttorney;
 
         SentriPhotoImageView = binding.SentriPhotoImageView;
+        SentriPhotoImageView3 = binding.SentriPhotoImageView3;
         IdOficialPhotoImageView = binding.IdOficialPhotoImageView;
         IdOficialReversePhotoImageView = binding.IdOficialReversePhotoImageView;
+        IdOficialReversePhotoImageView2 = binding.IdOficialReversePhotoImageView2;
         TarjetaCirculacionPhotoImageView = binding.TarjetaCirculacionPhotoImageView;
         PolizaSeguroPhotoImageView = binding.PolizaSeguroPhotoImageView;
         AprovacionUSAPhotoImageView = binding.AprovacionUSAPhotoImageView;
@@ -243,6 +251,7 @@ public class ReqChangeVehicleFragment extends Fragment {
         popupInflater = (LayoutInflater) requireActivity().getSystemService(requireActivity().LAYOUT_INFLATER_SERVICE);
         popup_View = popupInflater.inflate(R.layout.popup_top, null);
         popup_view = binding.uploadSentriPhotoBtn.getRootView();
+        popup_view = binding.uploadSentriPhotoBtn5.getRootView();
         popup_width = LinearLayout.LayoutParams.WRAP_CONTENT;
         popup_height = LinearLayout.LayoutParams.WRAP_CONTENT;
         popup_Window = new PopupWindow(popup_View, popup_width, popup_height, false);
@@ -253,6 +262,7 @@ public class ReqChangeVehicleFragment extends Fragment {
         loaderInflater = (LayoutInflater) requireActivity().getSystemService(requireActivity().LAYOUT_INFLATER_SERVICE);
         popupView = loaderInflater.inflate(R.layout.loader, null);
         view = binding.uploadSentriPhotoBtn.getRootView();
+        view = binding.uploadSentriPhotoBtn5.getRootView();
         width = LinearLayout.LayoutParams.MATCH_PARENT;
         height = LinearLayout.LayoutParams.MATCH_PARENT;
         popupWindow = new PopupWindow(popupView, width, height, false);
@@ -357,12 +367,22 @@ public class ReqChangeVehicleFragment extends Fragment {
             takePicture("Photo_Sentri", "Solicitud_Inscripcion_PhotoSentri");
             SentriPhotoImageView.setVisibility(View.VISIBLE);
         });
+        uploadSentriPhotoBtn5.setOnClickListener(v -> {
+            currentImageView = SentriPhotoImageView3;
+            takePicture("Photo_Sentri2", "Solicitud_Inscripcion_PhotoSentriReverso");
+            SentriPhotoImageView3.setVisibility(View.VISIBLE);
+        });
         uploadOfficialIDPhotoBtn.setOnClickListener(v -> {
             currentImageView = IdOficialPhotoImageView;
             takePicture("Photo_idOficial", "Solicitud_Inscripcion_PhotoidOficial");
             IdOficialPhotoImageView.setVisibility(View.VISIBLE);
         });
         uploadOfficialReverseIDPhotoBtn.setOnClickListener(v -> {
+            currentImageView = IdOficialReversePhotoImageView2;
+            takePicture("Photo_idOficialReverse", "Solicitud_Inscripcion_PhotoidOficialReverse");
+            IdOficialReversePhotoImageView2.setVisibility(View.VISIBLE);
+        });
+        uploadOfficialReverseIDPhotoBtn2.setOnClickListener(v -> {
             currentImageView = IdOficialReversePhotoImageView;
             takePicture("Photo_idOficialReverse", "Solicitud_Inscripcion_PhotoidOficialReverse");
             IdOficialReversePhotoImageView.setVisibility(View.VISIBLE);
@@ -425,6 +445,13 @@ public class ReqChangeVehicleFragment extends Fragment {
                 handler.postDelayed(() -> popup_Window.dismiss(), counter);
                 return;
             }
+            if (SentriPhotoImageView3.getDrawable() == null) {
+                popup_Head.setText("Fotografía SENTRI");
+                popup_Body.setText("Se requiere de una fotografía de reverso de su SENTRI");
+                popup_Window.showAtLocation(popup_view, Gravity.TOP|Gravity.END, 0, 0);
+                handler.postDelayed(() -> popup_Window.dismiss(), counter);
+                return;
+            }
             if (SentriPhotoImageView.getDrawable() == null) {
                 popup_Head.setText("Fotografía SENTRI");
                 popup_Body.setText("Se requiere de una fotografía de SENTRI");
@@ -450,6 +477,13 @@ public class ReqChangeVehicleFragment extends Fragment {
             if (IdOficialReversePhotoImageView.getDrawable() == null) {
                 popup_Head.setText("ID Oficial (Reverso)");
                 popup_Body.setText("Se requiere una fotografía de su ÏD (Reverso)");
+                popup_Window.showAtLocation(popup_view, Gravity.TOP|Gravity.END, 0, 0);
+                handler.postDelayed(() -> popup_Window.dismiss(), counter);
+                return;
+            }
+            if (IdOficialReversePhotoImageView2.getDrawable() == null) {
+                popup_Head.setText("ID Oficial (Reverso)");
+                popup_Body.setText("Se requiere una fotografía de su identificación");
                 popup_Window.showAtLocation(popup_view, Gravity.TOP|Gravity.END, 0, 0);
                 handler.postDelayed(() -> popup_Window.dismiss(), counter);
                 return;

@@ -6,6 +6,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.Manifest.permission.READ_MEDIA_IMAGES;
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
+import static android.view.View.GONE;
 import static mx.gob.puentesfronterizos.lineaexpres.ui.login.LoginFragment.convertStreamToString;
 
 import android.annotation.SuppressLint;
@@ -141,8 +142,10 @@ public class ReqInscriptionFragment extends Fragment {
     EditText AnualidadOSaldo;
 
     ImageView SentriPhotoImageView;
+    ImageView SentriPhotoImageView2;
     ImageView IdOficialPhotoImageView;
     ImageView IdOficialReversePhotoImageView;
+    ImageView IdOficialReversePhotoImageView2;
     ImageView TarjetaCirculacionPhotoImageView;
     ImageView PolizaSeguroPhotoImageView;
     ImageView PolizaSeguroPhotoImageViewSecond;
@@ -157,8 +160,10 @@ public class ReqInscriptionFragment extends Fragment {
     //Layout Photo Declarations
 
     Button uploadSentriPhotoBtn;
+    Button uploadSentriPhotoBtn2;
     Button uploadOfficialIDPhotoBtn;
     Button uploadOfficialReverseIDPhotoBtn;
+    Button uploadOfficialReverseIDPhotoBtn2;
     Button uploadCirculationCardPhotoBtn;
     Button uploadInsurancePolicyBtn;
     Button uploadInsurancePolicyBtnSecond;
@@ -257,6 +262,8 @@ public class ReqInscriptionFragment extends Fragment {
     Uri photoSix = null;
     Uri photoSeven = null;
     Uri photoEighth = null;
+    Uri photoNine = null;
+    Uri photoTen = null;
 
 
     private Camera camera;
@@ -318,8 +325,10 @@ public class ReqInscriptionFragment extends Fragment {
         btnSelSaldo = binding.btnSelSaldo;
 
         uploadSentriPhotoBtn = binding.uploadSentriPhotoBtn;
+        uploadSentriPhotoBtn2 = binding.uploadSentriPhotoBtn2;
         uploadOfficialIDPhotoBtn = binding.uploadOfficialIDPhotoBtn;
         uploadOfficialReverseIDPhotoBtn = binding.uploadOfficialReverseIDPhotoBtn;
+        uploadOfficialReverseIDPhotoBtn2 = binding.uploadOfficialReverseIDPhotoBtn2;
         uploadCirculationCardPhotoBtn = binding.uploadCirculationCardPhotoBtn;
         uploadInsurancePolicyBtn = binding.uploadInsurancePolicyBtn;
         uploadInsurancePolicyBtnSecond = binding.uploadInsurancePolicyBtnSecond;
@@ -327,8 +336,10 @@ public class ReqInscriptionFragment extends Fragment {
         uploadPowerAttorney = binding.uploadPowerAttorney;
 
         SentriPhotoImageView = binding.SentriPhotoImageView;
+        SentriPhotoImageView2 = binding.SentriPhotoImageView2;
         IdOficialPhotoImageView = binding.IdOficialPhotoImageView;
         IdOficialReversePhotoImageView = binding.IdOficialReversePhotoImageView;
+        IdOficialReversePhotoImageView2 = binding.IdOficialReversePhotoImageView2;
         TarjetaCirculacionPhotoImageView = binding.TarjetaCirculacionPhotoImageView;
         PolizaSeguroPhotoImageView = binding.PolizaSeguroPhotoImageView;
         PolizaSeguroPhotoImageViewSecond = binding.PolizaSeguroPhotoImageViewSecond;
@@ -398,13 +409,13 @@ public class ReqInscriptionFragment extends Fragment {
             Pleca.setText("Solicitud de Inscripción a Línea Exprés");
         }else {
             Pleca.setText("Registro de vehículo");
-            noSentriInput.setVisibility(View.GONE);
-            expirationDateSentriInput.setVisibility(View.GONE);
-            expirationDateSentriLbl.setVisibility(View.GONE);
-            noSentriLbl.setVisibility(View.GONE);
+            noSentriInput.setVisibility(GONE);
+            expirationDateSentriInput.setVisibility(GONE);
+            expirationDateSentriLbl.setVisibility(GONE);
+            noSentriLbl.setVisibility(GONE);
             uploadSentriPhotoBtn.setVisibility(View.VISIBLE);
-            uploadSentriPhotoBtn.setText("Subir nueva sentri o comprobante de renovación");
-            SentriImportant.setVisibility(View.GONE);
+            uploadSentriPhotoBtn.setText("Aprobación del vehiculo para SENTRI o Global Entry");
+            SentriImportant.setVisibility(GONE);
         }
 
         ArrayList<String> vehiculos = UpdateData.getVehicles();
@@ -427,32 +438,33 @@ public class ReqInscriptionFragment extends Fragment {
             TextView FactEmailLbl = binding.FactEmailLbl;
             TextView FactCelLbl = binding.FactCelLbl;
 
-            uploadOfficialIDPhotoBtn.setVisibility(View.GONE);
-            uploadOfficialReverseIDPhotoBtn.setVisibility(View.GONE);
-            addressTitle.setVisibility(View.GONE);
-            streetInput.setVisibility(View.GONE);
-            streetLbl.setVisibility(View.GONE);
-            noExtLbl.setVisibility(View.GONE);
-            noExtInput.setVisibility(View.GONE);
-            ColonyLbl.setVisibility(View.GONE);
-            ColonyInput.setVisibility(View.GONE);
-            CityLbl.setVisibility(View.GONE);
-            CityInput.setVisibility(View.GONE);
-            StateLbl.setVisibility(View.GONE);
-            StateInput.setVisibility(View.GONE);
-            CPLbl.setVisibility(View.GONE);
-            CPInput.setVisibility(View.GONE);
-            billingTitle.setVisibility(View.GONE);
-            BusinessNameLbl.setVisibility(View.GONE);
-            BusinessNameInput.setVisibility(View.GONE);
-            RFCLbl.setVisibility(View.GONE);
-            RFCInput.setVisibility(View.GONE);
-            ResidenceLbl.setVisibility(View.GONE);
-            ResidenceInput.setVisibility(View.GONE);
-            FactEmailLbl.setVisibility(View.GONE);
-            FactEmailInput.setVisibility(View.GONE);
-            FactCelLbl.setVisibility(View.GONE);
-            FactCelInput.setVisibility(View.GONE);
+            uploadOfficialIDPhotoBtn.setVisibility(View.VISIBLE);
+            uploadOfficialReverseIDPhotoBtn.setVisibility(View.VISIBLE);
+            uploadSentriPhotoBtn.setVisibility(View.VISIBLE);
+            addressTitle.setVisibility(GONE);
+            streetInput.setVisibility(GONE);
+            streetLbl.setVisibility(GONE);
+            noExtLbl.setVisibility(GONE);
+            noExtInput.setVisibility(GONE);
+            ColonyLbl.setVisibility(GONE);
+            ColonyInput.setVisibility(GONE);
+            CityLbl.setVisibility(GONE);
+            CityInput.setVisibility(GONE);
+            StateLbl.setVisibility(GONE);
+            StateInput.setVisibility(GONE);
+            CPLbl.setVisibility(GONE);
+            CPInput.setVisibility(GONE);
+            billingTitle.setVisibility(GONE);
+            BusinessNameLbl.setVisibility(GONE);
+            BusinessNameInput.setVisibility(GONE);
+            RFCLbl.setVisibility(GONE);
+            RFCInput.setVisibility(GONE);
+            ResidenceLbl.setVisibility(GONE);
+            ResidenceInput.setVisibility(GONE);
+            FactEmailLbl.setVisibility(GONE);
+            FactEmailInput.setVisibility(GONE);
+            FactCelLbl.setVisibility(GONE);
+            FactCelInput.setVisibility(GONE);
         }
 
         getPrices();
@@ -600,7 +612,8 @@ public class ReqInscriptionFragment extends Fragment {
         btnMixto.setOnClickListener(v -> {
             saldoSel = false;
             NameShow.setVisibility(View.VISIBLE);
-            TarifasShow.setEnabled(false);
+            TarifasShow.setVisibility(GONE);
+            NameShow.setVisibility(GONE);
 
             if (Nacionalidad.equals("")) {
                 return;
@@ -615,13 +628,13 @@ public class ReqInscriptionFragment extends Fragment {
                 Convenio = anual_mixto_mx;
                 ConvenioAnualidad = anual_mixto_mx;
                 TarifasShow.setText("Tarifa: " + anual_mixto_mx);
-                NameShow.setText("Mixto (Zaragoza - Lerdo)");
+                NameShow.setText("Mixto ");
             }
             if (Nacionalidad.equals("USA")) {
                 Convenio = anual_mixto_us;
                 ConvenioAnualidad = anual_mixto_us;
                 TarifasShow.setText("Tarifa: " + anual_mixto_us);
-                NameShow.setText("Mixto (Zaragoza - Lerdo)");
+                NameShow.setText("Mixto ");
             }
             textoPuenteSel = NameShow.getText().toString();
 
@@ -775,6 +788,13 @@ public class ReqInscriptionFragment extends Fragment {
                     handler.postDelayed(() -> popup_Window.dismiss(), counter);
                     return;
                 }
+                if (SentriPhotoImageView2.getDrawable() == null) {
+                    popup_Head.setText("Fotografía SENTRI");
+                    popup_Body.setText("Se requiere de una fotografía de SENTRI (reverso)");
+                    popup_Window.showAtLocation(popup_view, Gravity.TOP|Gravity.END, 0, 0);
+                    handler.postDelayed(() -> popup_Window.dismiss(), counter);
+                    return;
+                }
                 if (numSentriExp.equals("")) {
                     popup_Head.setText("SENTRI: Fecha de expiración");
                     popup_Body.setText("Rellene este campo, por favor.");
@@ -792,6 +812,13 @@ public class ReqInscriptionFragment extends Fragment {
                 if (IdOficialReversePhotoImageView.getDrawable() == null) {
                     popup_Head.setText("ID Oficial (Reverso)");
                     popup_Body.setText("Se requiere una fotografía de su ÏD (Reverso)");
+                    popup_Window.showAtLocation(popup_view, Gravity.TOP|Gravity.END, 0, 0);
+                    handler.postDelayed(() -> popup_Window.dismiss(), counter);
+                    return;
+                }
+                if (IdOficialReversePhotoImageView2.getDrawable() == null) {
+                    popup_Head.setText("ID Oficial (Reverso)");
+                    popup_Body.setText("Se requiere una fotografía de su identificación");
                     popup_Window.showAtLocation(popup_view, Gravity.TOP|Gravity.END, 0, 0);
                     handler.postDelayed(() -> popup_Window.dismiss(), counter);
                     return;
@@ -1000,6 +1027,13 @@ public class ReqInscriptionFragment extends Fragment {
             takePicture("Photo_Sentri", "Solicitud_Inscripcion_PhotoSentri");
             SentriPhotoImageView.setVisibility(View.VISIBLE);
         });
+
+        uploadSentriPhotoBtn2.setOnClickListener(v -> {
+            currentImageView = SentriPhotoImageView2;
+            takePicture("Photo_Sentri2", "Solicitud_Inscripcion_PhotoSentri2");
+            SentriPhotoImageView2.setVisibility(View.VISIBLE);
+        });
+
         uploadOfficialIDPhotoBtn.setOnClickListener(v -> {
             currentImageView = IdOficialPhotoImageView;
             takePicture("Photo_idOficial", "Solicitud_Inscripcion_PhotoidOficial");
@@ -1007,8 +1041,17 @@ public class ReqInscriptionFragment extends Fragment {
         });
         uploadOfficialReverseIDPhotoBtn.setOnClickListener(v -> {
             currentImageView = IdOficialReversePhotoImageView;
+<<<<<<< Updated upstream
             takePicture("Photo_idOficialReverse", "Solicitud_Inscripcion_PhotoidOficialReverse");
+=======
+            takePicture("Photo_idOficialReverse", "Solicitud-Inscripcion-Photo_idOficialReverse");
+>>>>>>> Stashed changes
             IdOficialReversePhotoImageView.setVisibility(View.VISIBLE);
+        });
+        uploadOfficialReverseIDPhotoBtn2.setOnClickListener(v -> {
+            currentImageView = IdOficialReversePhotoImageView2;
+            takePicture("Photo_idOficialReverse2", "Solicitud-Inscripcion-Photo_idOficialReverse2");
+            IdOficialReversePhotoImageView2.setVisibility(View.VISIBLE);
         });
         uploadCirculationCardPhotoBtn.setOnClickListener(v -> {
             currentImageView = TarjetaCirculacionPhotoImageView;
@@ -1088,7 +1131,12 @@ public class ReqInscriptionFragment extends Fragment {
             try {
 
                 InputStream inputStream;
+<<<<<<< Updated upstream
                 String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/procs/p01";
+=======
+                //String url_process = getResources().getString(R.string.apiURL) + "api/v1/procs/p01";
+                String url_process = "https://apis.fpfch.gob.mx/api/v1/procs/p01";
+>>>>>>> Stashed changes
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -1332,6 +1380,14 @@ public class ReqInscriptionFragment extends Fragment {
                                     //File for sign
                                     FileTypeCount = 8;
                                 }
+                                if (newi == 10){
+                                    //File por Sentri(Rev)
+                                    FileTypeCount = 9;
+                                }
+                                if (newi == 11){
+                                    //File for official identificaction
+                                    FileTypeCount = 10;
+                                }
 
 
                                 if (newi == getFullNameTramites.size()) {
@@ -1409,13 +1465,15 @@ public class ReqInscriptionFragment extends Fragment {
                 System.out.println("Este FileType :" + FileType);
                 Uri uri = null;
                 if (photoOne != null && Integer.parseInt(FileType) == 1) {uri = photoOne; photoOne = null;}
-                if (photoTwo != null && Integer.parseInt(FileType) == 2) {uri = photoTwo; photoTwo = null;}
-                if (photoThree != null && Integer.parseInt(FileType) == 3) {uri = photoThree; photoThree = null;}
-                if (photoFour != null && Integer.parseInt(FileType) == 4) {uri = photoFour; photoFour = null;}
-                if (photoFive != null && Integer.parseInt(FileType) == 5) {uri = photoFive; photoFive = null;}
-                if (photoSix != null && Integer.parseInt(FileType) == 6) {uri = photoSix; photoSix = null;}
-                if (photoSeven != null && Integer.parseInt(FileType) == 7) {uri = photoSeven; photoSeven = null;}
-                if (photoEighth != null && Integer.parseInt(FileType) == 8) {uri = photoEighth; photoEighth = null;}
+                if (photoTwo != null && Integer.parseInt(FileType) == 1) {uri = photoTwo; photoTwo = null;}
+                if (photoThree != null && Integer.parseInt(FileType) == 2) {uri = photoThree; photoThree = null;}
+                if (photoFour != null && Integer.parseInt(FileType) == 3) {uri = photoFour; photoFour = null;}
+                if (photoFive != null && Integer.parseInt(FileType) == 2) {uri = photoFive; photoFive = null;}
+                if (photoSix != null && Integer.parseInt(FileType) == 4) {uri = photoSix; photoSix = null;}
+                if (photoSeven != null && Integer.parseInt(FileType) == 5) {uri = photoSeven; photoSeven = null;}
+                if (photoEighth != null && Integer.parseInt(FileType) == 6) {uri = photoEighth; photoEighth = null;}
+                if (photoNine != null && Integer.parseInt(FileType) == 7) {uri = photoNine; photoNine = null;}
+                if (photoTen != null && Integer.parseInt(FileType) == 8) {uri = photoTen; photoTen = null;}
                 System.out.println("Este para el filePath?: " + uri);
 
                 String filePath = null;
@@ -1443,7 +1501,12 @@ public class ReqInscriptionFragment extends Fragment {
                                         .build();
                                 Request request = new Request.Builder()
                                         .header("Authorization", "Bearer " + Token)
+<<<<<<< Updated upstream
                                         .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+=======
+                                        //.url(getResources().getString(R.string.apiURL) + "api/v1/files")
+                                        .url("https://apis.fpfch.gob.mx/api/v1/files")
+>>>>>>> Stashed changes
                                         .post(requestBody)
                                         .build();
                                 Response response = client.newCall(request).execute();
@@ -1474,7 +1537,12 @@ public class ReqInscriptionFragment extends Fragment {
 
                                     Request request = new Request.Builder()
                                             .header("Authorization", "Bearer " + Token)
+<<<<<<< Updated upstream
                                             .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+=======
+                                            //.url(getResources().getString(R.string.apiURL) + "api/v1/files")
+                                            .url("https://apis.fpfch.gob.mx/api/v1/files")
+>>>>>>> Stashed changes
                                             .post(requestBody)
                                             .build();
                                     Response response = client.newCall(request).execute();
@@ -1543,7 +1611,12 @@ public class ReqInscriptionFragment extends Fragment {
 
                         Request request = new Request.Builder()
                                 .header("Authorization", "Bearer " + Token)
+<<<<<<< Updated upstream
                                 .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+=======
+                                //.url(getResources().getString(R.string.apiURL) + "api/v1/files")
+                                .url("https://apis.fpfch.gob.mx/api/v1/files")
+>>>>>>> Stashed changes
                                 .post(requestBody)
                                 .build();
 
@@ -1688,13 +1761,15 @@ public class ReqInscriptionFragment extends Fragment {
                 Uri selectedImage = data.getData();
 
                 if (currentTramiteFoto.contains("Photo_Sentri")) {photoOne = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_idOficial")) {photoTwo = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_idOficialReverse")) {photoThree = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_tarjetaCirculacion")) {photoFour = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_polizaSeguro")) {photoFive = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_polizaSeguro2")) {photoSix = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_AprovacionUSA")) {photoSeven = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_cartaPoder")) {photoEighth = selectedImage;}
+                if (currentTramiteFoto.contains("Photo_Sentri2")) {photoTwo = selectedImage;}
+                if (currentTramiteFoto.contains("Photo_idOficial")) {photoThree = selectedImage;}
+                if (currentTramiteFoto.contains("Photo_idOficialReverse")) {photoFour = selectedImage;}
+                if (currentTramiteFoto.contains("Photo_idOficialReverse2")) {photoFive = selectedImage;}
+                if (currentTramiteFoto.contains("Photo_tarjetaCirculacion")) {photoSix = selectedImage;}
+                if (currentTramiteFoto.contains("Photo_polizaSeguro")) {photoSeven = selectedImage;}
+                if (currentTramiteFoto.contains("Photo_polizaSeguro2")) {photoEighth = selectedImage;}
+                if (currentTramiteFoto.contains("Photo_AprovacionUSA")) {photoNine = selectedImage;}
+                if (currentTramiteFoto.contains("Photo_cartaPoder")) {photoTen = selectedImage;}
 
                 try {
                     bitmap = rotateImage(MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(),selectedImage), 0);
@@ -1835,7 +1910,12 @@ public class ReqInscriptionFragment extends Fragment {
 
     public void getPrices(){
         new Thread(() -> {
+<<<<<<< Updated upstream
             String jsonURL = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/config/mobile";
+=======
+            //String jsonURL = getResources().getString(R.string.apiURL) + "api/v1/config/mobile";
+            String jsonURL = "https://apis.fpfch.gob.mx/api/v1/config/mobile";
+>>>>>>> Stashed changes
             URL url;
             try {
                 url = new URL(jsonURL);

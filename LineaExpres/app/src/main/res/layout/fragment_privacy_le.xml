@@ -24,28 +24,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             >
 
-           <!-- <TextView
-                android:id="@+id/Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="28dp"
-                android:fontFamily="@font/merriweather_regular"
-                android:text="@string/Loading"
-                android:textColor="@color/black"
-                android:textSize="@dimen/globalFontSize"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintStart_toStartOf="parent" /> -->
-
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="24dp"
                 android:fontFamily="@font/montserrat_regular"
-                android:text="Aviso de Privacidad de Telepeaje"
+                android:text="Aviso de Privacidad de Linea Express"
                 android:textColor="@color/black"
                 android:textSize="35sp"
                 android:textStyle="bold"
@@ -53,7 +39,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.592"  />
+                app:layout_constraintVertical_bias="0.592"/>
 
             <TextView
                 android:id="@+id/textView"
@@ -89,16 +75,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="28dp"
                 android:fontFamily="@font/merriweather_regular"
-                android:text="•	Nombre completo
-                              \n•	Firma
-                              \n•	Correo electrónico
-                              \n•	Teléfono
-                              \n•	Domicilio
-                              \n•	Registro Federal de Contribuyentes
-                              \n•	Constancia de situación fiscal
-                              \n•	Número de placa o matricula vehicular
-                              \n•	Tarjeta de Circulación o Registro Vehicular\n
-                              \nNo se recaban datos personales sensibles.
+                android:text="\n•	Nombre y apellidos de la persona titular del SENTRI o Global Entry.
+\n•	Nombre y apellidos de la persona titular del vehículo a registrar, o en caso de tratarse de una persona moral, denominación o razón social y nombre del representante legal.
+\n•	Domicilio
+\n•	Teléfono
+\n•	Correo Electrónico
+\n•	Firma
+\n•	Número de SENTRI o Global Entry.
+\n•	RFC
+\n•	Tarjeta de circulación o registro vehicular
+\n•	Número de placa o matricula vehicular
+\n•	Número de identificación de póliza de seguro vehicular.
+\n•	Datos del vehículo: Marca, año, modelo y color.\n
+\nAsí mismo, se realiza la digitalización y conservación de los siguientes documentos mediante escaneo:\n
+\n•	Credencial de identificación SENTRI o Global Entry.
+\n•	Tarjeta de Circulación o Documento de Registro Vehicular.
+\n•	Póliza de Seguro.
+\n•	En el caso de personas físicas documento de Identificación del solicitante.
+\n•	En el caso de las personas morales el documento que acredita las facultades con las que cuenta el representante legal.
+\n•	Formato de solicitud de trámite.\n
+\nAdicionalmente en los casos que el trámite se realiza con un vehículo bajo el esquema de arrendamiento se recopila la denominación o razón social del arrendador y se realiza la digitalización y conservación mediante escaneo del contrato de arrendamiento del vehículo.\n
+\nNo se recaban datos personales sensibles.
+
 "
                 android:textColor="@color/black"
                 android:textSize="@dimen/globalFontSize"
@@ -128,10 +126,11 @@
                 android:layout_marginBottom="28dp"
                 android:fontFamily="@font/merriweather_regular"
                 android:text="Los datos personales que nos entregue serán recopilados y almacenados en el registro de usuarios de servicios de Telepeaje en una base de datos digital, lo que servirá para elaborar un expediente histórico de usuario, el cual tendrá las siguientes finalidades:\n
-                \n•	Verificación de identidad y cotejo de información para realizar la de contratación del servicio de telepeaje, la acreditación de saldo por daño, robo o extravío, dar trámite a la reclamación de garantía de TAG o tarjeta de proximidad por falla y en su caso efectuar la terminación o suspensión del servicio.
-                \n•	Remisión de los datos de facturación al encargado de validar la información con la base de datos del Servicio de Administración Tributaria (SAT) para la emisión de facturas.
-                \n•	Envío de correos electrónicos con fines de comunicación entre los usuarios y el Fideicomiso de Puentes Fronterizos de Chihuahua con fines informativos o de notificaciones legales por faltas al Contrato de Adhesión a la Prestación de Servicio de Telepeaje.
-                \n•	Elaboración de estadísticas de control para mejoras en el servicio.\n
+                \n•	Verificación de identidad y cotejo de información para realizar la inscripción, el cambio de vehículo o cambio de TAG cuando así se solicite, dar trámite a la solicitud de transferencia de saldo y en su caso efectuar la baja de TAG.
+\n•	Comprobación de transacciones en el sistema de comercio electrónico.
+\n•	Remisión de los datos de facturación al encargado de validar la información con la base de datos del Servicio de Administración Tributaria (SAT) para la emisión de facturas.
+\n•	Envío de correos electrónicos con fines de comunicación entre los usuarios y el Fideicomiso de Puentes Fronterizos de Chihuahua.
+\n•	Elaboración de estadísticas de control para mejoras en el servicio.\n
                 \nLos datos personales recabados pueden ser tratados por el Fideicomiso de Puentes Fronterizos de Chihuahua, a través de la Coordinación de Línea Exprés, el Departamento de Sistemas y/o la Dirección de Operaciones, quienes utilizarán la información referida para los fines antes señalados, estableciendo y manteniendo las medidas de seguridad de carácter administrativo, físico y técnico para la protección de los mismos, que permitan protegerlos contra daño, pérdida, alteración, destrucción o su uso, acceso o tratamiento no autorizado, así como garantizar su confidencialidad, integridad y disponibilidad.\n
                 \nLos datos personales serán bloqueados cuando hayan dejado de ser necesarios para el cumplimiento de las finalidades previstas en el presente aviso de privacidad y suprimidos una vez que cumplan su periodo de conservación."
                 android:textColor="@color/black"
