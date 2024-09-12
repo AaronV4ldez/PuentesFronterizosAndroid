@@ -60,7 +60,8 @@ public class LoginFragment extends Fragment {
     TextView passwordEmptyTView;
     //EditText Sentri;
     TextView sentriEmptyTView;
-    String loginUrl = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/session/login";
+    //String loginUrl = getResources().getString(R.string.apiURL) + "https://apis.fpfch.gob.mx/api/v1/session/login";
+    String loginUrl = "https://apis.fpfch.gob.mx/api/v1/session/login";
 
     UserLog userLog;
 
@@ -152,6 +153,7 @@ public class LoginFragment extends Fragment {
 
                 // Open connection and set properties
                 HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+                Log.d("detectando entradas", url);
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
                 conn.setRequestProperty("Accept", "application/json");

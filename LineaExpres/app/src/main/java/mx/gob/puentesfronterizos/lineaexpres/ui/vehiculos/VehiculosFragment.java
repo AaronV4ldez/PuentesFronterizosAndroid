@@ -63,6 +63,7 @@ public class VehiculosFragment extends Fragment {
     String Token;
     UserLog userLog;
     updateData UpdateData;
+    updateData openDb;
 
     Button BtnSolicitudInscripcion;
 
@@ -146,7 +147,7 @@ public class VehiculosFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/vehicles";
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/vehicles";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -179,7 +180,7 @@ public class VehiculosFragment extends Fragment {
 
                         requireActivity().runOnUiThread(() -> {
                             Toast.makeText(requireContext(), msgString, Toast.LENGTH_SHORT).show();
-                                popupWindow.dismiss();
+                            popupWindow.dismiss();
                             if (BtnSolicitudInscripcion.getTag().toString().equals("Inscripción")) {
                                 BtnSolicitudInscripcion.setOnClickListener(view -> {
                                     UpdateData.updateCarSelected("Inscripcion");
@@ -221,11 +222,29 @@ public class VehiculosFragment extends Fragment {
                         String ctl_stall_id = Tramites.optString("ctl_stall_id", "undefined");
                         String ctl_user_id = Tramites.optString("ctl_user_id", "undefined");
                         String ctl_id = Tramites.optString("ctl_id", "undefined");
+                        String id = Tramites.optString("id");
                         System.out.println("Estos son los tag de Linea Expres: " + tag);
+                        Log.d("resultados", String.valueOf(tipoVeh));
+
                         if (tipoVeh == 1) {
                             BtnSolicitudInscripcion.setText("Trámite para agregar un vehículo");
                             BtnSolicitudInscripcion.setTag("");
-                            UpdateData.insertVehicles(new String(String.valueOf(tipoVeh)), Marca, Linea, tag, imgurl, new String(String.valueOf(ctl_contract_type)), clt_expiration_date, saldo, placa, color, anio, ctl_stall_id, ctl_user_id, ctl_id);
+                            UpdateData.insertVehicles(new String(String.valueOf(tipoVeh)),
+                                    Marca,
+                                    Linea,
+                                    tag,
+                                    imgurl,
+                                    new String(String.valueOf(ctl_contract_type)),
+                                    clt_expiration_date,
+                                    saldo,
+                                    placa,
+                                    color,
+                                    anio,
+                                    ctl_stall_id,
+                                    ctl_user_id,
+                                    ctl_id,
+                                    id
+                            );
                         }
 
                     }

@@ -1041,11 +1041,7 @@ public class ReqInscriptionFragment extends Fragment {
         });
         uploadOfficialReverseIDPhotoBtn.setOnClickListener(v -> {
             currentImageView = IdOficialReversePhotoImageView;
-<<<<<<< Updated upstream
-            takePicture("Photo_idOficialReverse", "Solicitud_Inscripcion_PhotoidOficialReverse");
-=======
             takePicture("Photo_idOficialReverse", "Solicitud-Inscripcion-Photo_idOficialReverse");
->>>>>>> Stashed changes
             IdOficialReversePhotoImageView.setVisibility(View.VISIBLE);
         });
         uploadOfficialReverseIDPhotoBtn2.setOnClickListener(v -> {
@@ -1131,12 +1127,9 @@ public class ReqInscriptionFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-<<<<<<< Updated upstream
-                String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/procs/p01";
-=======
                 //String url_process = getResources().getString(R.string.apiURL) + "api/v1/procs/p01";
                 String url_process = "https://apis.fpfch.gob.mx/api/v1/procs/p01";
->>>>>>> Stashed changes
+
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -1501,12 +1494,9 @@ public class ReqInscriptionFragment extends Fragment {
                                         .build();
                                 Request request = new Request.Builder()
                                         .header("Authorization", "Bearer " + Token)
-<<<<<<< Updated upstream
-                                        .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
-=======
+
                                         //.url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                         .url("https://apis.fpfch.gob.mx/api/v1/files")
->>>>>>> Stashed changes
                                         .post(requestBody)
                                         .build();
                                 Response response = client.newCall(request).execute();
@@ -1537,12 +1527,8 @@ public class ReqInscriptionFragment extends Fragment {
 
                                     Request request = new Request.Builder()
                                             .header("Authorization", "Bearer " + Token)
-<<<<<<< Updated upstream
-                                            .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
-=======
-                                            //.url(getResources().getString(R.string.apiURL) + "api/v1/files")
+                               //.url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                             .url("https://apis.fpfch.gob.mx/api/v1/files")
->>>>>>> Stashed changes
                                             .post(requestBody)
                                             .build();
                                     Response response = client.newCall(request).execute();
@@ -1611,12 +1597,9 @@ public class ReqInscriptionFragment extends Fragment {
 
                         Request request = new Request.Builder()
                                 .header("Authorization", "Bearer " + Token)
-<<<<<<< Updated upstream
-                                .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
-=======
                                 //.url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                 .url("https://apis.fpfch.gob.mx/api/v1/files")
->>>>>>> Stashed changes
+
                                 .post(requestBody)
                                 .build();
 
@@ -1643,7 +1626,7 @@ public class ReqInscriptionFragment extends Fragment {
         public void run() {
             try {
                 InputStream inputStream;
-                String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/procs";
+                String url_process = getResources().getString(R.string.apiURL) + "api/v1/procs";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -1910,12 +1893,9 @@ public class ReqInscriptionFragment extends Fragment {
 
     public void getPrices(){
         new Thread(() -> {
-<<<<<<< Updated upstream
-            String jsonURL = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/config/mobile";
-=======
             //String jsonURL = getResources().getString(R.string.apiURL) + "api/v1/config/mobile";
             String jsonURL = "https://apis.fpfch.gob.mx/api/v1/config/mobile";
->>>>>>> Stashed changes
+
             URL url;
             try {
                 url = new URL(jsonURL);

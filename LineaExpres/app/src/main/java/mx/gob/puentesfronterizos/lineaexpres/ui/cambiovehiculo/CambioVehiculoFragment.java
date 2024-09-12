@@ -142,22 +142,11 @@ public class CambioVehiculoFragment extends Fragment {
     Uri photoSix = null;
     Uri photoSeven = null;
     Uri photoEighth = null;
-    Uri photoNine = null;
-    Uri photoTen = null;
-    Uri photoEleven = null;
 
     File imageFile = null;
 
     Button uploadInsurancePolicyBtnSecond;
-    Button btnUploadNewSentriOrRenewal3;
-    Button uploadOfficialReverseIDPhotoBtn3;
-    Button uploadOfficialIDPhotoBtn2;
-    Button uploadOfficialReverseIDPhotoBtn4;
     ImageView PolizaSeguroPhotoImageViewSecond;
-    ImageView IMGNewSentriOrRenewal3;
-    ImageView idOficialReversePhotoImageView;
-    ImageView idOficialPhotoImageView;
-    ImageView idOficialReversePhotoImageView2;
 
     String currentTramiteFoto = "";
 
@@ -256,22 +245,11 @@ public class CambioVehiculoFragment extends Fragment {
         Button BtnUploadPowerAttorney = binding.BtnUploadPowerAttorney;
         ImageView IMGPowerAttorney = binding.IMGPowerAttorney;
 
-        //Other ImageView
-        ImageView idOficialReversePhotoImageView = binding.idOficialReversePhotoImageView;
-
-
         Button btnSendForm = binding.sendFormBtn;
 
 
         uploadInsurancePolicyBtnSecond = binding.BtnUploadInsurancePolicySecond;
         PolizaSeguroPhotoImageViewSecond = binding.IMGInsurancePolicySecond;
-        btnUploadNewSentriOrRenewal3 = binding.btnUploadNewSentriOrRenewal3;
-        uploadOfficialReverseIDPhotoBtn3 = binding.uploadOfficialReverseIDPhotoBtn3;
-        IMGNewSentriOrRenewal3 = binding.IMGNewSentriOrRenewal3;
-        uploadOfficialIDPhotoBtn2 = binding.uploadOfficialIDPhotoBtn2;
-        idOficialPhotoImageView = binding.idOficialPhotoImageView;
-        uploadOfficialReverseIDPhotoBtn4 = binding.uploadOfficialReverseIDPhotoBtn4;
-        idOficialReversePhotoImageView2 = binding.idOficialReversePhotoImageView2;
 
 
 
@@ -288,11 +266,6 @@ public class CambioVehiculoFragment extends Fragment {
         BtnUploadCirculationCard.setOnClickListener(v -> {
             currentImageView = IMGCirculationCard;
             takePicture("Photo_tarjetaCirculacion", "Solicitud_Inscripcion_PhototarjetaCirculacion");
-            currentImageView.setVisibility(View.VISIBLE);
-        });
-        btnUploadNewSentriOrRenewal3.setOnClickListener(v -> {
-            currentImageView = IMGNewSentriOrRenewal3;
-            takePicture("Photo_Sentri2", "Solicitud_Inscripcion_PhotoSentri2");
             currentImageView.setVisibility(View.VISIBLE);
         });
 
@@ -320,24 +293,6 @@ public class CambioVehiculoFragment extends Fragment {
             currentImageView.setVisibility(View.VISIBLE);
         });
 
-        uploadOfficialIDPhotoBtn2.setOnClickListener(v -> {
-            currentImageView = idOficialPhotoImageView;
-            takePicture("Photo_idOficial", "Photo_officialImage");
-            currentImageView.setVisibility(View.VISIBLE);
-        });
-
-        uploadOfficialReverseIDPhotoBtn4.setOnClickListener(v -> {
-            currentImageView = idOficialReversePhotoImageView2;
-            takePicture("Photo_idOficial2", "Photo_officialImage2");
-            currentImageView.setVisibility(View.VISIBLE);
-        });
-
-        uploadOfficialReverseIDPhotoBtn3.setOnClickListener(v -> {
-            currentImageView = idOficialReversePhotoImageView;
-            takePicture("Photo_official_ID", "Photo_imageOfficial_ID");
-            currentImageView.setVisibility(View.VISIBLE);
-        });
-
         BtnOriginNational.setOnClickListener(v -> {
             Nacionalidad = "Nacional";
             BtnOriginUSA.setBackgroundResource(R.drawable.buttons2);
@@ -350,7 +305,7 @@ public class CambioVehiculoFragment extends Fragment {
 
 
         BtnOriginUSA.setOnClickListener(v -> {
-           Nacionalidad = "USA";
+            Nacionalidad = "USA";
             BtnOriginNational.setBackgroundResource(R.drawable.buttons2);
             BtnOriginUSA.setBackgroundResource(R.drawable.buttons);
         });
@@ -461,7 +416,7 @@ public class CambioVehiculoFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/procs/p03";
+                String url_process = getResources().getString(R.string.apiURL) + "api/v1/procs/p03";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -675,9 +630,6 @@ public class CambioVehiculoFragment extends Fragment {
                 if (photoSix != null && Integer.parseInt(FileType) == 6) {uri = photoSix; photoSix = null;}
                 if (photoSeven != null && Integer.parseInt(FileType) == 7) {uri = photoSeven; photoSeven = null;}
                 if (photoEighth != null && Integer.parseInt(FileType) == 8) {uri = photoEighth; photoEighth = null;}
-                if (photoNine != null && Integer.parseInt(FileType) == 2) {uri = photoNine; photoNine = null;}
-                if (photoTen != null && Integer.parseInt(FileType) == 2) {uri = photoTen; photoTen = null;}
-                if (photoEleven != null && Integer.parseInt(FileType) == 2) {uri = photoEleven; photoEleven = null;}
                 System.out.println("Este para el filePath?: " + uri);
 
                 String filePath = null;
@@ -705,7 +657,7 @@ public class CambioVehiculoFragment extends Fragment {
                                         .build();
                                 Request request = new Request.Builder()
                                         .header("Authorization", "Bearer " + Token)
-                                        .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                                        .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                         .post(requestBody)
                                         .build();
                                 Response response = client.newCall(request).execute();
@@ -736,7 +688,7 @@ public class CambioVehiculoFragment extends Fragment {
 
                                     Request request = new Request.Builder()
                                             .header("Authorization", "Bearer " + Token)
-                                            .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                                            .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                             .post(requestBody)
                                             .build();
                                     Response response = client.newCall(request).execute();
@@ -805,7 +757,7 @@ public class CambioVehiculoFragment extends Fragment {
 
                         Request request = new Request.Builder()
                                 .header("Authorization", "Bearer " + Token)
-                                .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                                .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                 .post(requestBody)
                                 .build();
 
@@ -875,15 +827,12 @@ public class CambioVehiculoFragment extends Fragment {
 
                 if (currentTramiteFoto.contains("Photo_Sentri")) {photoOne = selectedImage;}
                 if (currentTramiteFoto.contains("Photo_idOficial")) {photoTwo = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_idOficial2")) {photoTen = selectedImage;}
                 if (currentTramiteFoto.contains("Photo_idOficialReverse")) {photoThree = selectedImage;}
                 if (currentTramiteFoto.contains("Photo_tarjetaCirculacion")) {photoFour = selectedImage;}
                 if (currentTramiteFoto.contains("Photo_polizaSeguro")) {photoFive = selectedImage;}
                 if (currentTramiteFoto.contains("Photo_polizaSeguro2")) {photoSix = selectedImage;}
                 if (currentTramiteFoto.contains("Photo_AprovacionUSA")) {photoSeven = selectedImage;}
                 if (currentTramiteFoto.contains("Photo_cartaPoder")) {photoEighth = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_official_ID")) {photoNine = selectedImage;}
-                if (currentTramiteFoto.contains("Photo_Sentri2")) {photoEleven = selectedImage;}
 
                 try {
                     bitmap = rotateImage(MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(),selectedImage), 0);

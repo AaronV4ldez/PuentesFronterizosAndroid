@@ -149,7 +149,7 @@ public class ReqCambioTagFragment extends Fragment {
     private FragmentReqCambioTagBinding binding;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-    ReqCambioTagViewModel cambioVehiculoFragment =
+        ReqCambioTagViewModel cambioVehiculoFragment =
                 new ViewModelProvider(this).get(ReqCambioTagViewModel.class);
 
         binding = FragmentReqCambioTagBinding.inflate(inflater, container, false);
@@ -292,7 +292,7 @@ public class ReqCambioTagFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/procs/p03";
+                String url_process = getResources().getString(R.string.apiURL) + "api/v1/procs/p03";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -574,7 +574,7 @@ public class ReqCambioTagFragment extends Fragment {
                                         .build();
                                 Request request = new Request.Builder()
                                         .header("Authorization", "Bearer " + Token)
-                                        .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                                        .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                         .post(requestBody)
                                         .build();
                                 Response response = client.newCall(request).execute();
@@ -605,7 +605,7 @@ public class ReqCambioTagFragment extends Fragment {
 
                                     Request request = new Request.Builder()
                                             .header("Authorization", "Bearer " + Token)
-                                            .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                                            .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                             .post(requestBody)
                                             .build();
                                     Response response = client.newCall(request).execute();
@@ -674,7 +674,7 @@ public class ReqCambioTagFragment extends Fragment {
 
                         Request request = new Request.Builder()
                                 .header("Authorization", "Bearer " + Token)
-                                .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                                .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                 .post(requestBody)
                                 .build();
 

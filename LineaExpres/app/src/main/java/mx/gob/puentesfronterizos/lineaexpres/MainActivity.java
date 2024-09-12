@@ -1,6 +1,11 @@
 package mx.gob.puentesfronterizos.lineaexpres;
 
 
+import static java.security.AccessController.getContext;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,6 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.content.Context;
+import android.content.DialogInterface;
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -75,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         mx.gob.puentesfronterizos.lineaexpres.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-     
+
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
@@ -102,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton img = findViewById(R.id.goToHome);
 
         Glide.with(this)
-                .load("https://lineaexpress.desarrollosenlanube.net/wp-content/uploads/2022/07/Cabezal714x119_Color.png")
+                .load(getResources().getString(R.string.noticiasURL) + "wp-content/uploads/2022/07/Cabezal714x119_Color.png")
                 .into(img);
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#121212")));
 
@@ -172,24 +180,19 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-<<<<<<< Updated upstream
-=======
 
         // aviso para las versiones de prueba
-        /*
-       Context context = this;
+       /*Context context = this;
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("Version de prueba de la app Puentes Fronterizos 170624");
+        builder.setMessage("Version de prueba de la app Puentes Fronterizos 260324");
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
 
         });
-        builder.create().show();
-        */
+        builder.create().show(); */
 
->>>>>>> Stashed changes
         //Floatin Action Button
         String WhtieColor = "#ffffff";
         FloatingActionButton a = findViewById(R.id.fab_button);
@@ -241,19 +244,19 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-       // downloadReporteDePuentesInfo();
+        // downloadReporteDePuentesInfo();
 
-       //int TimerDelay = 300000; // 5 Minutes
-       //Handler handler = new Handler();
-       //Runnable runnable = new Runnable()
-       //{
-       //    @Override
-       //    public void run() {
-       //       // downloadReporteDePuentesInfo();
-       //        handler.postDelayed(this, TimerDelay);
-       //    }
-       //};
-       //handler.postDelayed(runnable, TimerDelay);
+        //int TimerDelay = 300000; // 5 Minutes
+        //Handler handler = new Handler();
+        //Runnable runnable = new Runnable()
+        //{
+        //    @Override
+        //    public void run() {
+        //       // downloadReporteDePuentesInfo();
+        //        handler.postDelayed(this, TimerDelay);
+        //    }
+        //};
+        //handler.postDelayed(runnable, TimerDelay);
 
 
     }
@@ -326,20 +329,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void Navigation_Requests(String destination) {
-       try {
-           if ("BackView".equals(destination)) {
-               navController.popBackStack();
-           }
-       }catch (Exception e) {
-           Log.e(TAG, "Navigation_Requests: ", e);
-       }
+        try {
+            if ("BackView".equals(destination)) {
+                navController.popBackStack();
+            }
+        }catch (Exception e) {
+            Log.e(TAG, "Navigation_Requests: ", e);
+        }
     }
 
     public void downloadReporteDePuentesInfo() {
         new Thread(() -> {
             URL url = null;
             try {
-                url = new URL("http://lineaexpressapp.desarrollosenlanube.net/bwt.json");
+                url = new URL("https://apis.fpfch.gob.mx/bwt.json");
 
                 URLConnection request = url.openConnection();
                 request.connect();
@@ -493,11 +496,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startDownload() {
-        System.out.println("Aplicación resumida, estamos recargando todo again");
         updateData DownloadData = new updateData(MainActivity.this); //Open local db connection
         new Thread(() -> {
             //Downloading last 10 notes
-            String jsonURL = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/posts?per_page=10&categories=18&_embed";
+            String jsonURL = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/posts?per_page=10&categories=18&_embed";
             URL url;
             try {
                 url = new URL(jsonURL);
@@ -526,7 +528,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             // Downloading "Servicios"
-            String Servicios = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/posts?categories=15&_embed";
+            String Servicios = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/posts?categories=15&_embed";
             URL urlServicios;
             try {
                 urlServicios = new URL(Servicios);
@@ -559,7 +561,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             // Downloading "Servicios"
-            String Lineamientos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1305?_embed";
+            String Lineamientos = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1305?_embed";
             URL urlLineamientos;
             try {
                 urlLineamientos = new URL(Lineamientos);
@@ -578,7 +580,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "WhoWeAre"
-            String QuienesSomos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/647?_embed";
+            String QuienesSomos = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1710?_embed";
             URL urlQuienesSomos;
             try {
                 urlQuienesSomos = new URL(QuienesSomos);
@@ -598,7 +600,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "Terminos y condiciones"
-            String TerminosYCondiciones = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1309?_embed";
+            String TerminosYCondiciones = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1309?_embed";
             URL urlTerminosYCondiciones;
             try {
                 urlTerminosYCondiciones = new URL(TerminosYCondiciones);
@@ -620,7 +622,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             //Downloading Objetivo
-            String Objetivo = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/662?_embed";
+            String Objetivo = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/662?_embed";
             URL url_Objetivo;
             try {
                 url_Objetivo = new URL(Objetivo);
@@ -641,7 +643,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading Mision
-            String Mision = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/724?_embed";
+            String Mision = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/724?_embed";
             URL url_Mision;
             try {
                 url_Mision = new URL(Mision);
@@ -661,7 +663,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading Vision
-            String Vision = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/730?_embed";
+            String Vision = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/730?_embed";
             URL url_Vision;
             try {
                 url_Vision = new URL(Vision);
@@ -681,7 +683,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "Privacy"
-            String Privacy = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/3?_embed";
+            String Privacy = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/3?_embed";
             URL urlPrivacy;
             try {
                 urlPrivacy = new URL(Privacy);
@@ -702,7 +704,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             //Downloading "CurrentRates"
-            String CurrentRates = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1119?_embed";
+            String CurrentRates = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1119?_embed";
             URL urlCurrentRates;
             try {
                 urlCurrentRates = new URL(CurrentRates);
@@ -720,5 +722,4 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 }
-
 

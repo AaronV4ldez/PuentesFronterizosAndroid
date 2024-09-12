@@ -80,7 +80,7 @@ public class HomeFragment extends Fragment {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-       HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
@@ -235,7 +235,7 @@ public class HomeFragment extends Fragment {
             }
         });
         OpenCameras.setOnClickListener(v -> {
-           MainActivity.nav_req(R.id.navigation_cameras);
+            MainActivity.nav_req(R.id.navigation_cameras);
         });
 
 
@@ -253,7 +253,7 @@ public class HomeFragment extends Fragment {
 
             URL url;
             try {
-                url = new URL("https://lineaexpressapp.desarrollosenlanube.net/api/v1/clima");
+                url = new URL(getResources().getString(R.string.apiURL) + "api/v1/clima");
                 URLConnection requestWeather = url.openConnection();
                 requestWeather.connect();
                 JsonArray jsonArray = JsonParser.parseReader(new InputStreamReader((InputStream) requestWeather.getContent())).getAsJsonArray();
@@ -336,7 +336,7 @@ public class HomeFragment extends Fragment {
         webSettings.setUseWideViewPort(true);
 
         new Thread(() -> {
-            String jsonURL = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/config/mobile";
+            String jsonURL = getResources().getString(R.string.apiURL) + "api/v1/config/mobile";
             URL url;
             try {
                 url = new URL(jsonURL);
@@ -365,7 +365,7 @@ public class HomeFragment extends Fragment {
         imageAd = (ImageView) binding.adCarousel;
 
         new Thread(() -> {
-            String jsonURL = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/config/mobile";
+            String jsonURL = getResources().getString(R.string.apiURL) + "api/v1/config/mobile";
             URL url;
             try {
 

@@ -3,7 +3,12 @@ package mx.gob.puentesfronterizos.lineaexpres.ui.vehiculosperfil;
 
 import static mx.gob.puentesfronterizos.lineaexpres.ui.login.LoginFragment.convertStreamToString;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -18,10 +23,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 
@@ -30,10 +34,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -49,10 +55,13 @@ import java.util.concurrent.atomic.AtomicReference;
 import mx.gob.puentesfronterizos.lineaexpres.MainActivity;
 import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentVehiculosPerfilBinding;
+import mx.gob.puentesfronterizos.lineaexpres.databinding.RecargaVehiculosPlantillaBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.UserLog;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
 public class VehiculosPerfilFragment extends Fragment {
+
+    ConstraintLayout MainBorraTagLayout;
 
     ScrollView scrollView;
     LinearLayout linearLayout;
@@ -88,6 +97,9 @@ public class VehiculosPerfilFragment extends Fragment {
         User = userData.get(0);
         Token = userData.get(1);
 
+
+
+
         scrollView = binding.ScrollContainer;
         linearLayout = binding.LinearLayoutContainer;
 
@@ -117,7 +129,9 @@ public class VehiculosPerfilFragment extends Fragment {
                         openDb.cleanVehiculos();
 
                         InputStream inputStream;
-                        String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/vehicles";
+                        //cambio 20 02 24
+                        //String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/vehicles";
+                        String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/vehicles";
 
                         URL url = new URL(accountActivation_url);
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -145,7 +159,6 @@ public class VehiculosPerfilFragment extends Fragment {
 
                         for (int i = 0; i < Result.length(); i++) {
                             JSONObject Tramites = (JSONObject) Result.get(i);
-
                             int tipoVeh = (int) Tramites.get("tipo");
                             String Marca = (String) Tramites.get("marca");
                             String Linea = (String) Tramites.get("linea");
@@ -160,13 +173,34 @@ public class VehiculosPerfilFragment extends Fragment {
                             String ctl_stall_id = Tramites.optString("ctl_stall_id", "undefined");
                             String ctl_user_id = Tramites.optString("ctl_user_id", "undefined");
                             String ctl_id = Tramites.optString("ctl_id", "undefined");
+                            String id = Tramites.optString("id");
 
                             //if (tipoVeh != 1) {
                             //    continue;
                             //}
 
-                            openDb.insertVehicles(new String(String.valueOf(tipoVeh)), Marca, Linea, tag, imgurl, new String(String.valueOf(ctl_contract_type)), clt_expiration_date, saldo, placa, color, anio, ctl_stall_id, ctl_user_id, ctl_id);
+
+                            openDb.insertVehicles(new String(String.valueOf(tipoVeh)),
+                                    Marca,
+                                    Linea,
+                                    tag,
+                                    imgurl,
+                                    //new String(String.valueOf(ctl_contract_type)),
+                                    new String(ctl_contract_type),
+                                    clt_expiration_date,
+                                    saldo,
+                                    placa,
+                                    color,
+                                    anio,
+                                    ctl_stall_id,
+                                    ctl_user_id,
+                                    ctl_id,
+                                    id
+
+                            );
+
                         }
+
                         conn.disconnect();
                     } catch (IOException | JSONException e) {
                         e.printStackTrace();
@@ -175,7 +209,6 @@ public class VehiculosPerfilFragment extends Fragment {
                     requireActivity().runOnUiThread(() -> {
                         vehiculos = openDb.getProfileVehicles();
                         if (vehiculos.size() != 0) {
-                            int ekisde = 0;
                             for (int i = 0; i < vehiculos.size(); i++) {
                                 View plantillaView = inflater.inflate(R.layout.recarga_vehiculos_plantilla, linearLayout, false);
 
@@ -187,20 +220,19 @@ public class VehiculosPerfilFragment extends Fragment {
                                 TextView saldoText = (TextView) plantillaView.findViewById(R.id.saldoText);
                                 Button recarga = (Button) plantillaView.findViewById(R.id.btnRecarga);
                                 Button misCruces = (Button) plantillaView.findViewById(R.id.btnMisCruces);
+                                Button misCruces2 = (Button) plantillaView.findViewById(R.id.btnMisCruces2);
+                                Button CancelarBorrarTAG = (Button) plantillaView.findViewById(R.id.btnCancelarBorrarTAG);
+                                Button AceptarCancelarTAG = (Button) plantillaView.findViewById(R.id.btnAceptarCancelarTAG);
+
 
                                 String[] splitArray = vehiculos.get(i).split("∑");
-<<<<<<< Updated upstream
-=======
-                                ekisde = ekisde +1;
+
                                 //Verificar los datos que se insertan en la tabla de la base de datos
-                                Log.d("id", String.valueOf(ekisde) );
                                 for  (String ValueId: splitArray
-                                     ) {
+                                ) {
                                     Log.d("Result", ValueId);
 
                                 }
-
->>>>>>> Stashed changes
                                 String vehType = splitArray[0];
                                 String Marca = splitArray[1];
                                 String Linea = splitArray[2];
@@ -212,6 +244,7 @@ public class VehiculosPerfilFragment extends Fragment {
                                 String Placa = splitArray[8];
                                 String ctl_user_id = splitArray[12];
                                 String ctl_id = splitArray[13];
+                                String id = splitArray[14];
 
                                 //if (vehType.equals("1")) {
                                 //    hasLineaVeh++;
@@ -226,8 +259,6 @@ public class VehiculosPerfilFragment extends Fragment {
                                     }
                                 }
 
-<<<<<<< Updated upstream
-=======
 
                                 //Borrar TAG
                                 ConstraintLayout MainBorraTagLayout = (ConstraintLayout) plantillaView.findViewById(R.id.MainBorraTagLayout);
@@ -235,7 +266,21 @@ public class VehiculosPerfilFragment extends Fragment {
 
                                 misCruces2.setOnClickListener(v -> {
                                     MainBorraTagLayout.setVisibility(View.VISIBLE);
+                                    /*Verificar el tag y el id
+                                    Context context = getContext();
 
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                                    // Establece el mensaje del diálogo
+                                    builder.setMessage("El id es " + id + " el tag es " + Tag);
+                                    // Añade un botón "Aceptar" al diálogo
+                                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                        }
+
+                                    });
+                                    builder.create().show();*/
                                 });
 
                                 CancelarBorrarTAG.setOnClickListener(v -> {
@@ -248,37 +293,16 @@ public class VehiculosPerfilFragment extends Fragment {
                                     MainBorraTagLayout.setVisibility(View.GONE);
                                 });
                                 //Fin Borrar Tag
->>>>>>> Stashed changes
                                 recarga.setTag(Placa);
                                 if (ctl_id.equals("null")) {
-                                    //misCruces.setVisibility(View.GONE);
+                                    misCruces.setVisibility(View.GONE);
                                 }
 
                                 misCruces.setTag(Placa);
-                                /*misCruces.setOnClickListener((View v) -> {
-                                    openDb.updateCarSelected(misCruces.getTag().toString());
-                                    Log.d("Tag de cruces: ", Tag);
-                                    MainActivity.nav_req(R.id.navigation_mis_cruces);
-                                });*/
                                 misCruces.setOnClickListener((View v) -> {
-                                    // Obtén el valor del Tag
-                                    String tag = Tag;
-
-                                    // Actualiza el coche seleccionado
                                     openDb.updateCarSelected(misCruces.getTag().toString());
-
-                                    // Imprime el valor del Tag en el log
-                                    Log.d("Tag de cruces: ", tag);
-
-                                    // Crea un Bundle para pasar el argumento
-                                    Bundle bundle = new Bundle();
-                                    bundle.putString("tag", tag);
-
-                                    // Usa NavController para navegar y pasar el Bundle
-                                    NavController navController = Navigation.findNavController(v);
-                                    navController.navigate(R.id.navigation_mis_cruces, bundle);
+                                    MainActivity.nav_req(R.id.navigation_mis_cruces);
                                 });
-
 
                                 if (vehType.equals("0")) {
                                     type.setText("Telepeaje");
@@ -288,6 +312,7 @@ public class VehiculosPerfilFragment extends Fragment {
                                     String fecha = clt_expiration_date;
                                     //String fecha = "2023-08-16";
                                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                    misCruces2.setVisibility(View.GONE);
 
 
                                     if (!clt_expiration_date.contains("undefined")) {
@@ -413,7 +438,7 @@ public class VehiculosPerfilFragment extends Fragment {
         CompletableFuture.supplyAsync(() -> {
             try {
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/tags/exists/" + Tag;
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/tags/exists/" + Tag;
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -459,6 +484,72 @@ public class VehiculosPerfilFragment extends Fragment {
         return future;
     }
 
+
+    public void postDeleteTag(String id) {
+        new Thread(() -> {
+            try {
+                InputStream inputStream;
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/vehicles/" + id;
+
+                URL url = new URL(accountActivation_url);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setRequestProperty("Content-Type", "text");
+                conn.setRequestProperty("Accept", "application/json");
+                conn.setRequestProperty("Authorization", "Bearer " + Token);
+                conn.setRequestMethod("DELETE");
+
+                int status = conn.getResponseCode();
+
+                Log.i(TAG, "httpPostRequest: status = " + status);
+                Log.i(TAG, "httpPostRequest: msg = " + conn.getResponseMessage());
+                Log.d(TAG, "URL de la solicitud: " + accountActivation_url);
+                Log.d("link de eliminacion",accountActivation_url);
+
+
+                if (status != HttpURLConnection.HTTP_OK) {
+                    inputStream = new BufferedInputStream(conn.getErrorStream());
+
+                } else {
+                    inputStream = new BufferedInputStream(conn.getInputStream());
+                }
+
+                String responseData = convertStreamToString(inputStream);
+                Log.d(TAG, "Este es el responseData de Register Fragment " + responseData);
+
+                // Manejo de la respuesta si es necesario
+                // ...
+                getActivity().runOnUiThread(() -> {
+                    // Código para mostrar el diálogo aquí
+                    // ...
+                    // Posible Verificación
+                    Context context = getContext();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                    // Establece el mensaje del diálogo
+                    builder.setMessage("El tag se ha eliminado correctamente!");
+
+                    // Añade un botón "Aceptar" al diálogo
+                    builder.setPositiveButton("Aceptar", (dialog, which) -> {
+                        MainActivity.nav_req(R.id.navigation_vehiculos_perfil);
+                    });
+
+                    builder.create().show();
+
+
+                });
+                conn.disconnect();
+
+                // Acceso a la interfaz de usuario para mostrar el diálogo
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Manejo de errores de conexión a Internet aquí
+            }
+
+        }).start();
+    }
 
 
     @Override

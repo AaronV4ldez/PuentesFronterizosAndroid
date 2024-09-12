@@ -144,12 +144,8 @@
                 android:id="@+id/IdOficialPhotoImageView"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-<<<<<<< Updated upstream
-                android:visibility="gone"
-                />
-=======
                 android:visibility="gone" />
->>>>>>> Stashed changes
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uploadOfficialReverseIDPhotoBtn"
@@ -165,11 +161,8 @@
                 android:id="@+id/IdOficialReversePhotoImageView"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-<<<<<<< Updated upstream
-                android:visibility="gone"/>
-=======
                 android:visibility="gone" />
->>>>>>> Stashed changes
+
 
 
             <androidx.appcompat.widget.AppCompatButton

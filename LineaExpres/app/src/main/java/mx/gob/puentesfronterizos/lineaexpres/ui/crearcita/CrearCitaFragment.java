@@ -75,7 +75,7 @@ public class CrearCitaFragment extends Fragment {
     final Calendar myCalendar= Calendar.getInstance();
     private FragmentCrearcitaBinding binding;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-       CrearCitaViewModel FormalitiesViewModel = new ViewModelProvider(this).get(CrearCitaViewModel.class);
+        CrearCitaViewModel FormalitiesViewModel = new ViewModelProvider(this).get(CrearCitaViewModel.class);
         binding = FragmentCrearcitaBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
@@ -158,7 +158,7 @@ public class CrearCitaFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/appointments/available";
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/appointments/available";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -225,7 +225,7 @@ public class CrearCitaFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/appointments/create";
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/appointments/create";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();

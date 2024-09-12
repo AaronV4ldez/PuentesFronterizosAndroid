@@ -50,7 +50,7 @@ import java.util.Date;
 
 public class ChangeCitaDateFragment extends Fragment {
 
- //Database declaration
+    //Database declaration
     UserLog userLog;
     updateData UpdateData;
 
@@ -84,7 +84,7 @@ public class ChangeCitaDateFragment extends Fragment {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-       ChangeCitaDateViewModel ChangeCitaViewModel = new ViewModelProvider(this).get(ChangeCitaDateViewModel.class);
+        ChangeCitaDateViewModel ChangeCitaViewModel = new ViewModelProvider(this).get(ChangeCitaDateViewModel.class);
         binding = FragmentCitasChangeDateBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
@@ -177,7 +177,7 @@ public class ChangeCitaDateFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/appointments";
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/appointments";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -250,12 +250,12 @@ public class ChangeCitaDateFragment extends Fragment {
         }).start();
     }
 
-        public void getDates(String Date){
+    public void getDates(String Date){
         new Thread(() -> {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/appointments/available";
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/appointments/available";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -322,7 +322,7 @@ public class ChangeCitaDateFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/appointments/change";
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/appointments/change";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();

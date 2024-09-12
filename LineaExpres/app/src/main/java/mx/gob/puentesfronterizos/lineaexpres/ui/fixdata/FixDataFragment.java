@@ -322,7 +322,7 @@ public class FixDataFragment extends Fragment {
                                         .build();
                                 Request request = new Request.Builder()
                                         .header("Authorization", "Bearer " + Token)
-                                        .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                                        .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                         .post(requestBody)
                                         .build();
                                 Response response = client.newCall(request).execute();
@@ -382,7 +382,7 @@ public class FixDataFragment extends Fragment {
 
                                     Request request = new Request.Builder()
                                             .header("Authorization", "Bearer " + Token)
-                                            .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                                            .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                             .post(requestBody)
                                             .build();
                                     Response response = client.newCall(request).execute();
@@ -478,7 +478,7 @@ public class FixDataFragment extends Fragment {
 
                         Request request = new Request.Builder()
                                 .header("Authorization", "Bearer " + Token)
-                                .url("https://lineaexpressapp.desarrollosenlanube.net/api/v1/files")
+                                .url(getResources().getString(R.string.apiURL) + "api/v1/files")
                                 .post(requestBody)
                                 .build();
 
@@ -706,7 +706,7 @@ public class FixDataFragment extends Fragment {
         }
         return true;
     }
-    
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

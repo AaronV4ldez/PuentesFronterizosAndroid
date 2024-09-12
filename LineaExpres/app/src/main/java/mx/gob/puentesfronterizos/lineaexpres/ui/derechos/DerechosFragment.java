@@ -22,6 +22,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
+import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentDerechosBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
@@ -50,8 +51,8 @@ public class DerechosFragment extends Fragment {
 
         new Thread(() -> {
 
-                String Servicios = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/1445?_embed";
-                URL urlServicios;
+            String Servicios = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1445?_embed";
+            URL urlServicios;
             try {
                 urlServicios = new URL(Servicios);
                 URLConnection requestCurrentRates = urlServicios.openConnection();

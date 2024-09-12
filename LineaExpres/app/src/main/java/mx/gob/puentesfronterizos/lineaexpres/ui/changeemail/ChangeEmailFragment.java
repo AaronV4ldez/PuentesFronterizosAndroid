@@ -118,7 +118,7 @@ public class ChangeEmailFragment extends Fragment {
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/user/emailchangereq";
+                String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/user/emailchangereq";
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -185,9 +185,9 @@ public class ChangeEmailFragment extends Fragment {
                     sqlOnInit.UserSetIdOnInit();
                     requireActivity().runOnUiThread(() -> {
 
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        show_Notification("Cambio de email", "Recibirás un código por SMS y un correo, favor de revisar tu bandeja de entrada o spam.");
-                    }
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            show_Notification("Cambio de email", "Recibirás un código por SMS y un correo, favor de revisar tu bandeja de entrada o spam.");
+                        }
                     });
                 }
 

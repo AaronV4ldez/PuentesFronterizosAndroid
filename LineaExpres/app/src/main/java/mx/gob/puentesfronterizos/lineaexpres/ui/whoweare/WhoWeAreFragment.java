@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import mx.gob.puentesfronterizos.lineaexpres.R;
 import mx.gob.puentesfronterizos.lineaexpres.databinding.FragmentWhoWeAreBinding;
 import mx.gob.puentesfronterizos.lineaexpres.localDB.updateData;
 
@@ -40,7 +41,7 @@ public class WhoWeAreFragment extends Fragment {
         TextView layoutBody = binding.Body;
 
         new Thread(() -> {
-            String QuienesSomos = "https://lineaexpress.desarrollosenlanube.net/wp-json/wp/v2/pages/647?_embed";
+            String QuienesSomos = getResources().getString(R.string.noticiasURL) + "wp-json/wp/v2/pages/1710?_embed";
             URL urlQuienesSomos;
             try {
                 urlQuienesSomos = new URL(QuienesSomos);
@@ -55,8 +56,8 @@ public class WhoWeAreFragment extends Fragment {
                 String BodyText_QuienesSomos = BodyContent_QuienesSomos.get("rendered").getAsString(); // getting BodyText
 
                 requireActivity().runOnUiThread(() -> {
-                layoutTitle.setText(titleArrayTitle_QuienesSomos);
-                layoutBody.setText(Html.fromHtml(BodyText_QuienesSomos));
+                    layoutTitle.setText(titleArrayTitle_QuienesSomos);
+                    layoutBody.setText(Html.fromHtml(BodyText_QuienesSomos));
                 });
             } catch (IOException e) {
                 e.printStackTrace();

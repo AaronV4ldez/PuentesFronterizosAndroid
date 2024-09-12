@@ -101,19 +101,8 @@ public class BanortestFragment extends Fragment {
         Container.addView(RespWebView);
 
         requireActivity().runOnUiThread(() -> {
-<<<<<<< Updated upstream
 
-          //String Nombre = "";
-          //String Nombre = "";
-          //String Nombre = "";
-          //String Nombre = "";
-          //String Nombre = "";
-          //String Nombre = "";
-
-            RespWebView.loadUrl("https://lineaexpressapp.desarrollosenlanube.net/pagosmovil/#/"+num_tag+"/"+MontoSeleccionado+"/"+TIPOP);
-=======
             RespWebView.loadUrl(getResources().getString(R.string.apiURL) + "pagosmovil/#/" + num_tag + "/" + MontoSeleccionado + "/" + TIPOP);
->>>>>>> Stashed changes
 
             RespWebView.setWebViewClient(new WebViewClient() {
                 @Override

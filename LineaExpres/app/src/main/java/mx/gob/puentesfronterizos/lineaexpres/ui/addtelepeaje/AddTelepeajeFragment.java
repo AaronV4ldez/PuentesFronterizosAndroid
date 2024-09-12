@@ -92,7 +92,7 @@ public class AddTelepeajeFragment extends Fragment implements View.OnClickListen
         EditText PlatesVehicleInput = binding.PlatesVehicleInput;
         EditText VIMNumberInput = binding.VIMNumberInput;
         TagVehicleInput = binding.TagVehicleInput;
-       // EditText BridgeVehicleInput = binding.BridgeVehicleInput;
+        // EditText BridgeVehicleInput = binding.BridgeVehicleInput;
         Button uploadTeleVehicle = binding.uploadTeleVehicle;
 
         tagChecker = binding.tagChecker;
@@ -104,19 +104,20 @@ public class AddTelepeajeFragment extends Fragment implements View.OnClickListen
         validarTag.setOnClickListener(view -> {
 
             TAGC = tagValue.getText().toString();
-           //if (TAGC.length() > 0 && !Character.isLetter(TAGC.charAt(0))) {
-           //    TAGC = TAGC.substring(0, TAGC.length() - 1);
-           //}
+            //if (TAGC.length() > 0 && !Character.isLetter(TAGC.charAt(0))) {
+            //    TAGC = TAGC.substring(0, TAGC.length() - 1);
+            //}
 
             System.out.println("Se supone que este es: " + TAGC);
 
-            verifyTag(TAGC);
+            verifyTag2(TAGC);
+            //verifyTag(TAGC);
         });
 
         uploadTeleVehicle.setOnClickListener(view -> {
 
 
-           uploadVeh(BrandVehicleInput.getText().toString(), ModelVehicleInput.getText().toString(), YearVehicleInput.getText().toString(), ColorVehicleInput.getText().toString(), PlatesVehicleInput.getText().toString(), TAGC, "N/A");
+            uploadVeh(BrandVehicleInput.getText().toString(), ModelVehicleInput.getText().toString(), YearVehicleInput.getText().toString(), ColorVehicleInput.getText().toString(), PlatesVehicleInput.getText().toString(), TAGC, "N/A");
         });
 
 
@@ -142,7 +143,7 @@ public class AddTelepeajeFragment extends Fragment implements View.OnClickListen
             try {
 
                 InputStream inputStream;
-                String url_process = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/vehicles";
+                String url_process = getResources().getString(R.string.apiURL) + "api/v1/vehicles";
 
                 URL url = new URL(url_process);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -191,10 +192,10 @@ public class AddTelepeajeFragment extends Fragment implements View.OnClickListen
                 }
 
                 if (Result.has("id")) {
-                        requireActivity().runOnUiThread(() -> {
-                            Toast.makeText(requireContext(), "El vehiculo ha sido agregado correctamente", Toast.LENGTH_SHORT).show();
-                            MainActivity.nav_req(R.id.navigation_vehiculos_perfil);
-                        });
+                    requireActivity().runOnUiThread(() -> {
+                        Toast.makeText(requireContext(), "El vehiculo ha sido agregado correctamente", Toast.LENGTH_SHORT).show();
+                        MainActivity.nav_req(R.id.navigation_vehiculos_perfil);
+                    });
 
                 }
 
@@ -214,7 +215,8 @@ public class AddTelepeajeFragment extends Fragment implements View.OnClickListen
             try {
 
                 InputStream inputStream;
-                String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/tags/exists/" + Tag;
+                //String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/tags/exists/" + Tag;
+                String accountActivation_url = "https://apis.fpfch.gob.mx/api/v1/tags/exists/" + Tag;
 
                 URL url = new URL(accountActivation_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -275,6 +277,74 @@ public class AddTelepeajeFragment extends Fragment implements View.OnClickListen
         }).start();
     }
 
+    public void verifyTag2(String tagValue) {
+        new Thread(() -> {
+            try {
+
+                InputStream inputStream;
+                String url_process = getResources().getString(R.string.apiURL) + "api/v1/vehicles";
+
+                URL url = new URL(url_process);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                conn.setRequestProperty("Accept","application/json");
+                conn.setRequestProperty("Authorization", "Bearer " + Token);
+                conn.setRequestMethod("POST");
+
+                JSONObject jsonParam = new JSONObject();
+                jsonParam.put("tag", tagValue);
+                jsonParam.put("tt", 2);
+
+                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                os.writeBytes(jsonParam.toString());
+
+                os.flush();
+                os.close();
+
+                int Status = conn.getResponseCode();
+                if (Status != 200) {
+                    inputStream = new BufferedInputStream(conn.getErrorStream());
+                }else {
+                    inputStream = new BufferedInputStream(conn.getInputStream());
+                }
+                String ResponseData = convertStreamToString(inputStream);
+
+                System.out.println("Este es el response Data de inscrpition  " + ResponseData);
+
+                JSONObject Result = new JSONObject(ResponseData);
+                System.out.println("Este es el response Data de sentri add  " + Result);
+
+                if (Result.has("message")) {
+                    String Message = Result.getString("message");
+                    Log.d("Primer IF",Message);
+                    if (Message.contains("El tag ya está asignado a otro vehículo.")) {
+                        requireActivity().runOnUiThread(() -> {
+                            Toast.makeText(requireContext(), Message, Toast.LENGTH_SHORT).show();
+                            Log.d("Segundo If", Message);
+                        });
+                    }else if (!Message.contains("El tag ya está asignado a otro vehículo.")) {
+                        requireActivity().runOnUiThread(() -> {
+                            verifyTag(tagValue);
+                        });
+                    }
+                }
+                        /*else verifyTag(tagValue); {
+                        verifyTag(tagValue);
+                        Log.d("nuevotag",tagValue);
+                    }*/
+
+
+
+                conn.disconnect();
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
+
+        }).start();
+    }
+
+
     @Override
     public void onClick(View view) {
         // Crear un objeto IntentIntegrator para iniciar el escaneo del código de barras
@@ -300,11 +370,15 @@ public class AddTelepeajeFragment extends Fragment implements View.OnClickListen
                 String barcode = result.getContents();
                 if (barcode.startsWith("01") && barcode.length() == 14) {
                     // El código de barras contiene un GTIN de 14 dígitos (EAN-14)
-                    String gtin = barcode.substring(2, 14);
+                    //cambio 20/02/2024
+                    //String gtin = barcode.substring(2, 14);
+                    String gtin = barcode.substring(0, 13);
                     BarCode = gtin;
                     Toast.makeText(getContext(), "Código de barras escaneado: " + gtin, Toast.LENGTH_LONG).show();
+                    Log.d("Escaneo", gtin);
                 } else {
                     Toast.makeText(getContext(), "El código de barras escaneado no es un código de barras 128 válido", Toast.LENGTH_LONG).show();
+                    Log.d("Escaneo", BarCode);
                 }
             }
         }

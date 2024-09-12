@@ -142,14 +142,11 @@ public class MisCrucesFragment extends Fragment {
             public void run() {
                 try {
                     InputStream inputStream;
-<<<<<<< Updated upstream
-                    String accountActivation_url = "https://lineaexpressapp.desarrollosenlanube.net/api/v1/le/crossings/"+ctl_user_id+"/"+ctl_id+"";
-=======
+
                     //cambio 24 02 24
                     //String accountActivation_url = getResources().getString(R.string.apiURL) + "api/v1/le/crossings/"+ctl_user_id+"/"+ctl_id+"";
                     //String accountActivation_url =  "https://apis.fpfch.gob.mx/api/v1/le/crossings/"+ctl_user_id+"/"+ctl_id+"";
                     String accountActivation_url =  "https://apis.fpfch.gob.mx/api/v1/le/crossingsnew/" + num_tag + "";
->>>>>>> Stashed changes
 
                     URL url = new URL(accountActivation_url);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
