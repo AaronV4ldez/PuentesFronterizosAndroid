@@ -24,10 +24,10 @@
         android:id="@+id/navigation_callus"
         android:icon="@drawable/phone_fill"
         android:title="@string/title_callus" />
-
-    <item
+    <!-- desaparecer botón de LE  -->
+   <!-- <item
         android:id="@+id/navigation_formalities"
         android:icon="@drawable/square_and_pencil"
-        android:title="@string/title_tramites" />
+        android:title="@string/title_tramites" />-->
 
 </menu>
